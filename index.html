@@ -76,8 +76,8 @@
   .tb-eco .ext{opacity:.75;margin-left:1px}
   .mainbar{background:#fff;border-bottom:1px solid var(--line)}
   .mainbar-inner{display:flex;align-items:center;gap:12px;min-height:64px}
-  .brand{display:flex;align-items:center;gap:11px;cursor:pointer;flex-shrink:0}
-  .logo{width:120px;height:120px;margin:-28px 0;border-radius:var(--radius);flex-shrink:0;overflow:visible}
+  .brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+  .logo{width:80px;height:80px;margin:-8px 0;border-radius:var(--radius);flex-shrink:0;overflow:hidden;cursor:pointer}
   .logo img{width:100%;height:100%;object-fit:contain;display:block}
   .brand b{color:var(--blue-d);font-size:1.05rem;display:block;line-height:1.1}
   .brand small{color:var(--muted);font-size:.85rem;font-weight:400}
@@ -200,12 +200,12 @@
   .fn-sec{scroll-margin-top:120px}
 
   /* ===== Home tabs — chuyển các khối dưới hero thành tab, không cần cuộn ===== */
-  .hometabs-wrap{background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(1,41,50,.06)}
-  .hometabs{display:flex;gap:4px;overflow-x:auto;padding:12px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .hometabs-wrap{background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(1,41,50,.08);position:sticky;top:108px;z-index:50}
+  .hometabs{display:flex;gap:6px;overflow-x:auto;padding:14px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .hometabs::-webkit-scrollbar{display:none}
-  .htab{flex:0 0 auto;border:0;background:transparent;color:var(--blue-d);font-family:inherit;font-size:.88rem;font-weight:500;padding:9px 16px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:.15s}
-  .htab:hover{background:var(--blue-l)}
-  .htab.on{background:var(--blue);color:#fff;font-weight:700}
+  .htab{flex:0 0 auto;border:1.5px solid var(--line);background:#fff;color:var(--blue-d);font-family:inherit;font-size:.9rem;font-weight:600;padding:10px 20px;border-radius:24px;cursor:pointer;white-space:nowrap;transition:all .2s;box-shadow:0 1px 2px rgba(1,41,50,.04)}
+  .htab:hover{background:var(--blue-l);border-color:var(--blue);color:var(--blue);transform:translateY(-1px);box-shadow:0 4px 12px rgba(1,41,50,.1)}
+  .htab.on{background:var(--blue);color:#fff;font-weight:700;border-color:var(--blue);box-shadow:0 4px 16px rgba(3,123,150,.3)}
   .hometab-panel{display:none}
   .hometab-panel.on{display:block;animation:fade .2s ease}
   /* Di động: bỏ hệ thống tab, hiện tất cả khối theo thứ tự — cuộn bình thường */
@@ -377,13 +377,10 @@
   .qlink svg{flex-shrink:0;color:var(--blue)}
   .qlink b{display:block;font-size:.93rem}
   .qlink small{display:block;color:var(--muted);font-weight:400;font-size:.78rem}
-  /* băng tham gia mạng lưới — v6 hạ tông: navy đặc chỉ còn panel Minh bạch + footer */
-  .member-band{background:var(--bg);border-top:1.5px solid var(--blue);border-bottom:1.5px solid var(--blue);color:var(--ink);padding:48px 0}
-  .member-band h2{color:var(--blue-d);font-size:1.7rem;margin-bottom:4px}
-  .member-band .eyebrow{color:var(--blue)}
-  .member-inner{display:grid;grid-template-columns:minmax(0,1.5fr) auto;gap:26px;align-items:center}
-  .member-band ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:7px}
-  .member-band li{color:var(--ink);font-size:.95rem}
+  /* Mạng lưới chuyên gia — checklist minh bạch */
+  .member-checklist{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:11px}
+  .member-checklist li{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:.95rem}
+  .member-checklist .mc-ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--blue-l);color:var(--blue-d);display:flex;align-items:center;justify-content:center}
   /* avatar ảnh chân dung */
   .avatar{position:relative;overflow:hidden}
   .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
@@ -431,7 +428,6 @@
     .quick6{grid-template-columns:repeat(2,1fr)}
     .topics-grid{grid-template-columns:repeat(2,1fr)}
     .ne-grid{grid-template-columns:1fr;gap:26px}
-    .member-inner{grid-template-columns:1fr}
   }
   @media(max-width:1000px){
     nav.main{display:none;position:fixed;top:0;right:0;bottom:0;width:min(88vw,360px);background:#fff;margin:0;overflow-y:auto;box-shadow:-4px 0 24px rgba(0,0,0,.18);z-index:80;padding:14px;align-items:stretch}
@@ -460,7 +456,6 @@
     .qlink small{display:none}
     .qlink svg{width:22px;height:22px}
     .vision-band .vision-line{font-size:.95rem}
-    .member-band h2{font-size:1.35rem}
     .g2,.g3,.g4{grid-template-columns:1fr}
     .topics-grid{grid-template-columns:repeat(2,1fr);gap:10px}
     .topics-grid .card-body{padding:10px 12px 12px}
@@ -767,12 +762,12 @@
   .hero-logos-big{margin-top:36px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14)}
   .hero-logos-big .hlb-label{font-size:.72rem;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.5);font-weight:700;margin-bottom:16px;text-align:center}
   .hero-logos-big .hlb-viewport{overflow:hidden}
-  .hero-logos-big .hlb-track{display:flex;gap:32px;width:max-content;animation:hlb-scroll 28s linear infinite}
+  .hero-logos-big .hlb-track{display:flex;gap:32px;width:max-content;animation:hlb-scroll 60s linear infinite}
   .hero-logos-big .hlb-logo{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:170px;height:90px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);font-weight:700;font-size:.88rem;color:#E7EDFB;text-align:center;padding:8px;line-height:1.25}
   .hero-logos-small{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1)}
   .hero-logos-small .hls-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:12px;text-align:center}
   .hero-logos-small .hls-viewport{overflow:hidden}
-  .hero-logos-small .hls-track{display:flex;gap:18px;width:max-content;animation:hls-scroll 38s linear infinite}
+  .hero-logos-small .hls-track{display:flex;gap:18px;width:max-content;animation:hls-scroll 80s linear infinite}
   .hero-logos-small .hls-logo{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:130px;height:52px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);font-weight:600;font-size:.74rem;color:rgba(255,255,255,.7);text-align:center;padding:6px;line-height:1.2}
   @media(max-width:720px){
     .hero-logos-big .hlb-logo{width:140px;height:72px;font-size:.78rem}
@@ -807,8 +802,8 @@
   <!-- Tầng 2: nav chính -->
   <div class="mainbar">
     <div class="wrap mainbar-inner">
-      <div class="brand" onclick="go('home')">
-        <div class="logo"><img src="assets/images/logo.png" alt="CCHC"></div>
+      <div class="brand">
+        <div class="logo" onclick="go('home')"><img src="assets/images/logo.png" alt="CCHC"></div>
       </div>
       <button class="m-search-btn" aria-label="Mở tìm kiếm" onclick="openSearch()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
       <button class="menu-toggle" aria-label="Mở menu" onclick="toggleMenu()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
@@ -1039,7 +1034,7 @@
       </div>
 
       <div class="hero-logos-small">
-        <div class="hls-label">Đơn vị đồng hành</div>
+        <div class="hls-label">Đối tác truyền thông</div>
         <div class="hls-viewport">
           <div class="hls-track">
             <div class="hls-logo">Bệnh viện<br>Bạch Mai</div>
@@ -1078,6 +1073,7 @@
         <button type="button" class="htab" data-hometab="thamgia" onclick="homeTab('thamgia')" role="tab" aria-selected="false">Mạng lưới chuyên gia</button>
         <button type="button" class="htab" data-hometab="tintuc" onclick="homeTab('tintuc')" role="tab" aria-selected="false">Tin tức &amp; Sự kiện</button>
         <button type="button" class="htab on" data-hometab="chude" onclick="homeTab('chude')" role="tab" aria-selected="true">Chủ đề</button>
+        <button type="button" class="htab" data-hometab="tuvan" onclick="homeTab('tuvan')" role="tab" aria-selected="false">Tư vấn &amp; Chuyển giao KHCN</button>
       </div>
     </div>
   </div>
@@ -1163,20 +1159,27 @@
   </section>
 
   <!-- Lớp 8 (v6): Băng Tham gia mạng lưới — hạ tông nền sáng -->
-  <section class="member-band fn-sec hometab-panel" id="sec-thamgia">
-    <div class="wrap member-inner">
-      <div>
-        <div class="eyebrow">Mạng lưới chuyên gia</div>
-        <h2>Cùng đưa tri thức y học chính thống tới cộng đồng</h2>
-        <ul>
-          <li>✓ Phản biện có ghi nhận tên trên từng bài viết</li>
-          <li>✓ Công khai xung đột lợi ích (COI) minh bạch</li>
-          <li>✓ Không thương mại hóa quan điểm chuyên môn</li>
-        </ul>
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" onclick="go('form','Tham gia mạng lưới chuyên gia','ca-nhan')">Tham gia mạng lưới</a>
-        <a class="btn sec" onclick="go('lien-he')">Liên hệ</a>
+  <section class="blk fn-sec hometab-panel" id="sec-thamgia">
+    <div class="wrap">
+      <div class="feat75">
+        <div>
+          <div class="eyebrow">Mạng lưới chuyên gia</div>
+          <h2 style="font-size:1.8rem">Cùng đưa tri thức y học chính thống tới cộng đồng</h2>
+          <p class="muted" style="max-width:56ch">Mỗi bài viết trên CCHC đều qua phản biện của chuyên gia thuộc mạng lưới Tổng hội Y học Việt Nam — công khai danh tính, công khai xung đột lợi ích.</p>
+          <ul class="member-checklist">
+            <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Phản biện có ghi nhận tên trên từng bài viết</li>
+            <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Công khai xung đột lợi ích (COI) minh bạch</li>
+            <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Không thương mại hóa quan điểm chuyên môn</li>
+          </ul>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+            <a class="btn" onclick="go('form','Tham gia mạng lưới chuyên gia','ca-nhan')">Tham gia mạng lưới</a>
+            <a class="btn sec" onclick="go('lien-he')">Liên hệ</a>
+          </div>
+        </div>
+        <div>
+          <div class="feat-img"><img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=800&amp;h=520&amp;fit=crop&amp;auto=format" alt="Hai chuyên gia y tế cùng xem kết quả chẩn đoán hình ảnh (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+          <p class="imgcap">Ảnh minh hoạ (Unsplash)</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1266,6 +1269,21 @@
             <h3>Tiêm chủng</h3>
             <div class="desc">Những mũi người lớn hay bỏ quên và lịch nhắc lại.</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk alt fn-sec hometab-panel" id="sec-tuvan">
+    <div class="wrap">
+      <div class="hoptac-compact">
+        <div class="hc-tx">
+          <div class="eyebrow">Dịch vụ chuyên môn</div>
+          <h2 style="font-size:1.5rem;margin-bottom:6px">Đồng hành chuyên môn &amp; Hợp tác KHCN cùng tổ chức</h2>
+          <p class="muted" style="max-width:64ch;margin:0">CCHC đồng hành với viện, trường, doanh nghiệp và cơ quan về truyền thông sức khỏe, tư vấn khung nội dung và hỗ trợ khoa học – công nghệ (KHCN) — luôn trên nền tảng độc lập chuyên môn. Mọi hợp tác đặt kết luận chuyên môn và quy trình biên soạn 8 bước lên trên yêu cầu thương mại.</p>
+        </div>
+        <div class="hc-cta">
+          <a class="btn" onclick="go('dich-vu')">Xem dịch vụ chuyên môn &amp; KHCN →</a>
         </div>
       </div>
     </div>
