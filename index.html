@@ -581,7 +581,11 @@
   .res-card.res-lead:hover{border-color:var(--blue)}
   .res-note{color:var(--muted);font-size:.9rem;margin:18px 0 0}
   @media(max-width:920px){.res-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.res-grid{grid-template-columns:repeat(2,1fr);gap:10px}.res-card{padding:13px 13px}.res-card small{display:none}.res-card.res-lead small{display:block}}
+  @media(max-width:560px){
+    .res-grid{grid-template-columns:1fr;gap:10px}
+    .res-card{padding:15px 16px}
+    .res-card .res-ic{width:40px;height:40px}
+  }
 
   /* ===== v7: Xem trên điện thoại (nhấn #7) ===== */
   .phone-fab{position:fixed;right:20px;bottom:78px;z-index:56;display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:0;border-radius:24px;padding:11px 18px;font-family:inherit;font-size:.9rem;font-weight:500;cursor:pointer;box-shadow:0 6px 18px rgba(1,41,50,.28)}
