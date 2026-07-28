@@ -1,5 +1,56 @@
   // Logo carousels now use pure CSS marquee animation — no JS needed
 
+  // ===== Measure sticky header/tabs height so snap targets aren't hidden underneath them =====
+  (function(){
+    var root = document.documentElement;
+    var header, tabs;
+    function stuckHeight(el){
+      if(!el) return 0;
+      var cs = getComputedStyle(el);
+      if(cs.display === 'none') return 0;
+      return (parseFloat(cs.top) || 0) + el.offsetHeight;
+    }
+    function measure(){
+      root.style.setProperty('--snap-header-h', stuckHeight(header) + 'px');
+      root.style.setProperty('--snap-tabs-h', stuckHeight(tabs) + 'px');
+    }
+    function init(){
+      header = document.querySelector('header');
+      tabs = document.querySelector('.hometabs-wrap');
+      measure();
+      window.addEventListener('resize', measure);
+      window.addEventListener('orientationchange', measure);
+    }
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  })();
+
+  // ===== Disable snap once the user has scrolled to/past the last snap point (sec-hoptac) =====
+  (function(){
+    var html = document.documentElement;
+    var lastSnap = null;
+    var snapping = true;
+    function init(){
+      lastSnap = document.getElementById('sec-hoptac');
+      if(!lastSnap) return;
+      window.addEventListener('scroll', checkSnap, {passive:true});
+    }
+    function checkSnap(){
+      if(!lastSnap || !html.classList.contains('is-home')) return;
+      var lastTop = lastSnap.getBoundingClientRect().top;
+      var pastLast = lastTop <= 10; // user has reached/scrolled past the last snap point
+      if(pastLast && snapping){
+        html.style.scrollSnapType = 'none';
+        snapping = false;
+      } else if(!pastLast && !snapping){
+        html.style.scrollSnapType = '';
+        snapping = true;
+      }
+    }
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  })();
+
   // ===== SPA navigation with back stack =====
   var navStack = ['home'];
   var soonData = {
@@ -25,7 +76,7 @@
   // go(page, arg1, arg2)
   function go(id, a, b){
     // close mobile menu + search overlay
-    document.getElementById('mainnav').classList.remove('open');
+    closeMenu();
     var so=document.getElementById('searchOverlay');
     if(so){so.classList.remove('open');}
     closeMap();
@@ -80,8 +131,22 @@
   }
 
   function toggleMenu(){
-    document.getElementById('mainnav').classList.toggle('open');
+    if(document.getElementById('mainnav').classList.contains('open')) closeMenu();
+    else openMenu();
   }
+  function openMenu(){
+    document.getElementById('mainnav').classList.add('open');
+    document.getElementById('navBackdrop').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu(){
+    document.getElementById('mainnav').classList.remove('open');
+    document.getElementById('navBackdrop').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMenu();
+  });
 
   // ===== Form toggle Cá nhân / Tổ chức =====
   function setToggle(mode){
@@ -393,90 +458,6 @@
       tabs[j].setAttribute('aria-selected', isActive ? 'true' : 'false');
     }
   }
-
-  // ===== Snap giữa các vùng trang chủ: hero · carousel · thanh tab · phần còn lại =====
-  // So sánh theo VÙNG (zone) hiện tại thay vì đoán khoảng cách cuộn — nên luôn dừng đúng
-  // MỘT ranh giới liền kề mỗi lần, bất kể cử chỉ cuộn lớn hay nhỏ, nhanh hay chậm, chuột
-  // lăn hay trackpad. Once đã vào "phần còn lại" (#sec-hoptac) thì thả hoàn toàn, cuộn tự
-  // nhiên tới cuối trang.
-  (function(){
-    var stepping = false, releaseTimer = null;
-    function headerHeight(){
-      var h = document.querySelector('header');
-      return h ? h.offsetHeight : 110;
-    }
-    function absTop(el){
-      // Cộng dồn offsetTop qua offsetParent — vị trí tự nhiên trong tài liệu,
-      // KHÔNG bị lệch khi phần tử là position:sticky và đang ở trạng thái "dính"
-      // (getBoundingClientRect() sẽ trả vị trí dính hiện tại, không phải vị trí thật).
-      var top = 0;
-      while(el){ top += el.offsetTop || 0; el = el.offsetParent; }
-      return top;
-    }
-    function topOf(sel){
-      var el = document.querySelector(sel);
-      if(!el) return null;
-      return Math.max(0, absTop(el) - headerHeight());
-    }
-    function zoneTops(){
-      // Các ranh giới theo đúng thứ tự trong DOM (tăng dần): hero → carousel → thanh tab → phần còn lại
-      var z = [0];
-      var c = topOf('#bannerCarousel'); if(c!==null) z.push(c);
-      var t = topOf('.hometabs-wrap'); if(t!==null) z.push(t);
-      var s = topOf('#sec-hoptac'); if(s!==null) z.push(s);
-      return z;
-    }
-    function zoneIndex(y, z){
-      var idx = 0;
-      for(var i=0; i<z.length; i++){ if(y >= z[i]-2) idx = i; }
-      return idx;
-    }
-    function goTo(y){
-      stepping = true;
-      window.scrollTo({top:y, behavior:'smooth'});
-      clearTimeout(releaseTimer);
-      releaseTimer = setTimeout(function(){ stepping = false; }, 550);
-    }
-
-    window.addEventListener('wheel', function(e){
-      if(stepping || !document.documentElement.classList.contains('is-home')) return;
-      var tabsEl = document.querySelector('.hometabs-wrap');
-      if(!tabsEl || tabsEl.offsetHeight===0) return; // di động: đã ẩn thanh tab — cuộn tự nhiên
-      var z = zoneTops();
-      var belowTop = z[z.length-1];
-      var y = window.pageYOffset;
-      if(e.deltaY>0){
-        if(y>=belowTop-2) return; // đã ở "phần còn lại" — cuộn tự nhiên, không chặn
-        var idx = zoneIndex(y, z);
-        e.preventDefault();
-        goTo(z[Math.min(idx+1, z.length-1)]);
-      }
-      // Cuộn lên: KHÔNG chặn ở đây. e.deltaY không đáng tin để đoán khoảng cách cuộn thực tế
-      // (chuột lăn thường báo theo "dòng" chứ không phải pixel). Xử lý bằng scroll-listener
-      // bên dưới, dựa trên VÙNG hiện tại nên bắt được cả cú cuộn rất nhanh/rất lớn.
-    }, {passive:false});
-
-    var lastY = window.pageYOffset;
-    window.addEventListener('scroll', function(){
-      var y = window.pageYOffset;
-      if(stepping || !document.documentElement.classList.contains('is-home')){ lastY = y; return; }
-      var tabsEl = document.querySelector('.hometabs-wrap');
-      if(!tabsEl || tabsEl.offsetHeight===0){ lastY = y; return; }
-      if(y < lastY - 1){ // đang cuộn lên
-        var z = zoneTops();
-        var prevIdx = zoneIndex(lastY, z);
-        var curIdx = zoneIndex(y, z);
-        if(curIdx < prevIdx){
-          // vừa vượt qua một hay nhiều ranh giới trong một cú cuộn — luôn dừng đúng vùng
-          // liền kề phía trên vị trí cũ, không để trôi thẳng lên hero bỏ qua vùng giữa
-          goTo(z[prevIdx-1]);
-          lastY = y;
-          return;
-        }
-      }
-      lastY = y;
-    }, {passive:true});
-  })();
 
   // ===== v19-A: mega-panel "Bản đồ nội dung" (tầng ngoài) =====
   function openMap(){
