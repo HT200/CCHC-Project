@@ -199,6 +199,30 @@
 
   .fn-sec{scroll-margin-top:120px}
 
+  /* ===== Banner carousel (AMA-style) ===== */
+  .banner-carousel{position:relative;width:100%;overflow:hidden;background:var(--navy)}
+  .banner-carousel .bc-track{display:flex;transition:transform .5s ease}
+  .banner-carousel .bc-slide{flex:0 0 100%;position:relative;min-height:440px;display:flex;align-items:center}
+  .banner-carousel .bc-slide .bc-img{position:absolute;inset:0;background-size:cover;background-position:center}
+  .banner-carousel .bc-slide .bc-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,41,50,.88) 35%,rgba(1,41,50,.35) 70%,rgba(1,41,50,.1) 100%)}
+  .banner-carousel .bc-slide .bc-text{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:60px 28px;color:#fff;width:100%}
+  .banner-carousel .bc-slide .bc-text .bc-tag{display:inline-block;background:var(--blue);color:#fff;font-size:.72rem;padding:3px 10px;border-radius:3px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+  .banner-carousel .bc-slide .bc-text h2{color:#fff;font-size:2.2rem;max-width:16ch;margin-bottom:10px;line-height:1.2}
+  .banner-carousel .bc-slide .bc-text p{color:rgba(255,255,255,.85);font-size:1rem;max-width:42ch;margin-bottom:18px}
+  .banner-carousel .bc-dots{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:2}
+  .banner-carousel .bc-dots button{width:8px;height:8px;border-radius:50%;border:2px solid rgba(255,255,255,.6);background:transparent;cursor:pointer;padding:0;transition:.2s}
+  .banner-carousel .bc-dots button.active{background:#fff;border-color:#fff}
+  .banner-carousel .bc-arr{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;font-size:1.2rem}
+  .banner-carousel .bc-arr:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5)}
+  .banner-carousel .bc-arr.prev{left:20px}
+  .banner-carousel .bc-arr.next{right:20px}
+  @media(max-width:720px){
+    .banner-carousel .bc-slide{min-height:320px}
+    .banner-carousel .bc-slide .bc-overlay{background:linear-gradient(90deg,rgba(1,41,50,.88) 0%,rgba(1,41,50,.5) 100%)}
+    .banner-carousel .bc-slide .bc-text h2{font-size:1.5rem}
+    .banner-carousel .bc-slide .bc-text p{font-size:.9rem}
+  }
+
   /* ===== Home tabs — chuyển các khối dưới hero thành tab, không cần cuộn ===== */
   .hometabs-wrap{background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(1,41,50,.08);position:sticky;top:108px;z-index:50}
   .hometabs{display:flex;gap:6px;overflow-x:auto;padding:14px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
@@ -768,10 +792,15 @@
   .hero-logos-small .hls-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:12px;text-align:center}
   .hero-logos-small .hls-viewport{overflow:hidden}
   .hero-logos-small .hls-track{display:flex;gap:18px;width:max-content;animation:hls-scroll 80s linear infinite}
-  .hero-logos-small .hls-logo{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:130px;height:52px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);font-weight:600;font-size:.74rem;color:rgba(255,255,255,.7);text-align:center;padding:6px;line-height:1.2}
+  .hero-logos-small .hls-logo{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:6px;width:120px}
+  .hero-logos-small .hls-mark{width:100%;height:52px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:8px 10px;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+  .hero-logos-small .hls-mark img{max-width:100%;max-height:100%;object-fit:contain}
+  .hero-logos-small .hls-name{font-size:.64rem;font-weight:500;color:rgba(255,255,255,.6);text-align:center;line-height:1.2}
   @media(max-width:720px){
     .hero-logos-big .hlb-logo{width:140px;height:72px;font-size:.78rem}
-    .hero-logos-small .hls-logo{width:110px;height:44px;font-size:.68rem}
+    .hero-logos-small .hls-logo{width:100px}
+    .hero-logos-small .hls-mark{height:42px}
+    .hero-logos-small .hls-name{font-size:.6rem}
     .hero-logos-big .hlb-track{gap:20px}
     .hero-logos-small .hls-track{gap:12px}
   }
@@ -1037,30 +1066,82 @@
         <div class="hls-label">Đối tác truyền thông</div>
         <div class="hls-viewport">
           <div class="hls-track">
-            <div class="hls-logo">Bệnh viện<br>Bạch Mai</div>
-            <div class="hls-logo">Bệnh viện<br>Chợ Rẫy</div>
-            <div class="hls-logo">Bệnh viện<br>Nhi TW</div>
-            <div class="hls-logo">Bệnh viện<br>Tâm thần TW</div>
-            <div class="hls-logo">Viện Pasteur<br>TP.HCM</div>
-            <div class="hls-logo">Viện Sốt rét<br>KST-CT TW</div>
-            <div class="hls-logo">Trường ĐH<br>Y tế Công cộng</div>
-            <div class="hls-logo">Hội Y tế<br>Công cộng VN</div>
-            <div class="hls-logo">Hội Phổi<br>Việt Nam</div>
-            <div class="hls-logo">Hội Ung thư<br>Việt Nam</div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vnexpress.webp" alt="VnExpress" loading="lazy"></span><span class="hls-name">VnExpress</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/tuoitre.svg" alt="Tuổi Trẻ" loading="lazy"></span><span class="hls-name">Tuổi Trẻ</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/thanhnien.webp" alt="Thanh Niên" loading="lazy"></span><span class="hls-name">Thanh Niên</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/dantri.webp" alt="Dân Trí" loading="lazy"></span><span class="hls-name">Dân Trí</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamnet.svg" alt="VietNamNet" loading="lazy"></span><span class="hls-name">VietNamNet</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/laodong.webp" alt="Lao Động" loading="lazy"></span><span class="hls-name">Lao Động</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/nguoilaodong.webp" alt="Người Lao Động" loading="lazy"></span><span class="hls-name">Người Lao Động</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/suckhoedoisong.webp" alt="Sức Khỏe &amp; Đời Sống" loading="lazy"></span><span class="hls-name">Sức Khỏe &amp; Đời Sống</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamplus.png" alt="VietnamPlus" loading="lazy"></span><span class="hls-name">VietnamPlus</span></div>
             <!-- duplicate for seamless loop -->
-            <div class="hls-logo">Bệnh viện<br>Bạch Mai</div>
-            <div class="hls-logo">Bệnh viện<br>Chợ Rẫy</div>
-            <div class="hls-logo">Bệnh viện<br>Nhi TW</div>
-            <div class="hls-logo">Bệnh viện<br>Tâm thần TW</div>
-            <div class="hls-logo">Viện Pasteur<br>TP.HCM</div>
-            <div class="hls-logo">Viện Sốt rét<br>KST-CT TW</div>
-            <div class="hls-logo">Trường ĐH<br>Y tế Công cộng</div>
-            <div class="hls-logo">Hội Y tế<br>Công cộng VN</div>
-            <div class="hls-logo">Hội Phổi<br>Việt Nam</div>
-            <div class="hls-logo">Hội Ung thư<br>Việt Nam</div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vnexpress.webp" alt="VnExpress" loading="lazy"></span><span class="hls-name">VnExpress</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/tuoitre.svg" alt="Tuổi Trẻ" loading="lazy"></span><span class="hls-name">Tuổi Trẻ</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/thanhnien.webp" alt="Thanh Niên" loading="lazy"></span><span class="hls-name">Thanh Niên</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/dantri.webp" alt="Dân Trí" loading="lazy"></span><span class="hls-name">Dân Trí</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamnet.svg" alt="VietNamNet" loading="lazy"></span><span class="hls-name">VietNamNet</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/laodong.webp" alt="Lao Động" loading="lazy"></span><span class="hls-name">Lao Động</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/nguoilaodong.webp" alt="Người Lao Động" loading="lazy"></span><span class="hls-name">Người Lao Động</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/suckhoedoisong.webp" alt="Sức Khỏe &amp; Đời Sống" loading="lazy"></span><span class="hls-name">Sức Khỏe &amp; Đời Sống</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamplus.png" alt="VietnamPlus" loading="lazy"></span><span class="hls-name">VietnamPlus</span></div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Banner carousel — sự kiện nổi bật -->
+  <section class="banner-carousel" id="bannerCarousel" aria-label="Sự kiện nổi bật">
+    <div class="bc-track" id="bcTrack">
+      <div class="bc-slide">
+        <div class="bc-img" style="background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1400&h=500&fit=crop&auto=format')"></div>
+        <div class="bc-overlay"></div>
+        <div class="bc-text">
+          <span class="bc-tag">12 Tháng 8 · Trực tuyến</span>
+          <h2>Tọa đàm: Sống khỏe cùng bệnh đái tháo đường</h2>
+          <p>Phối hợp Hội Nội tiết &amp; Đái tháo đường Việt Nam — dinh dưỡng, vận động, theo dõi đường huyết và hỏi–đáp cùng chuyên gia.</p>
+          <a class="btn white" onclick="go('form','Đăng ký sự kiện cộng đồng','ca-nhan')">Đăng ký tham dự</a>
+        </div>
+      </div>
+      <div class="bc-slide">
+        <div class="bc-img" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&h=500&fit=crop&auto=format')"></div>
+        <div class="bc-overlay"></div>
+        <div class="bc-text">
+          <span class="bc-tag">27 Tháng 8 · Hà Nội</span>
+          <h2>Hội thảo báo chí: Truyền thông y tế có trách nhiệm</h2>
+          <p>Dành cho phóng viên, biên tập viên — nguyên tắc đưa tin y tế chính xác, tránh giật gân, dẫn nguồn đúng.</p>
+          <a class="btn white" onclick="go('form','Đăng ký sự kiện cộng đồng','ca-nhan')">Đăng ký tham dự</a>
+        </div>
+      </div>
+      <div class="bc-slide">
+        <div class="bc-img" style="background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1400&h=500&fit=crop&auto=format')"></div>
+        <div class="bc-overlay"></div>
+        <div class="bc-text">
+          <span class="bc-tag">09 Tháng 9 · Trực tuyến</span>
+          <h2>Diễn đàn chuyên gia: Cập nhật hướng dẫn phòng đột quỵ</h2>
+          <p>Nhận biết sớm theo quy tắc F.A.S.T, xử trí kịp thời — có cấp tài liệu sau sự kiện.</p>
+          <a class="btn white" onclick="go('form','Đăng ký sự kiện cộng đồng','ca-nhan')">Đăng ký tham dự</a>
+        </div>
+      </div>
+      <div class="bc-slide">
+        <div class="bc-img" style="background-image:url('https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1400&h=500&fit=crop&auto=format')"></div>
+        <div class="bc-overlay"></div>
+        <div class="bc-text">
+          <span class="bc-tag">Xem tất cả</span>
+          <h2>Chuỗi sự kiện sức khỏe cộng đồng 2026</h2>
+          <p>Tọa đàm, hội thảo, diễn đàn chuyên gia — kết nối tri thức chính thống tới cộng đồng.</p>
+          <a class="btn white" onclick="go('tin-tuc-su-kien','#lich-sukien')">Xem toàn bộ lịch</a>
+        </div>
+      </div>
+    </div>
+    <button class="bc-arr prev" onclick="bannerCarousel.prev()" aria-label="Trước">◂</button>
+    <button class="bc-arr next" onclick="bannerCarousel.next()" aria-label="Sau">▸</button>
+    <div class="bc-dots" id="bcDots">
+      <button class="active" data-idx="0"></button>
+      <button data-idx="1"></button>
+      <button data-idx="2"></button>
+      <button data-idx="3"></button>
     </div>
   </section>
 
@@ -1276,14 +1357,24 @@
 
   <section class="blk alt fn-sec hometab-panel" id="sec-tuvan">
     <div class="wrap">
-      <div class="hoptac-compact">
-        <div class="hc-tx">
+      <div class="feat75">
+        <div>
           <div class="eyebrow">Dịch vụ chuyên môn</div>
-          <h2 style="font-size:1.5rem;margin-bottom:6px">Đồng hành chuyên môn &amp; Hợp tác KHCN cùng tổ chức</h2>
-          <p class="muted" style="max-width:64ch;margin:0">CCHC đồng hành với viện, trường, doanh nghiệp và cơ quan về truyền thông sức khỏe, tư vấn khung nội dung và hỗ trợ khoa học – công nghệ (KHCN) — luôn trên nền tảng độc lập chuyên môn. Mọi hợp tác đặt kết luận chuyên môn và quy trình biên soạn 8 bước lên trên yêu cầu thương mại.</p>
+          <h2 style="font-size:1.8rem">Đồng hành chuyên môn &amp; Hợp tác KHCN cùng tổ chức</h2>
+          <p class="muted" style="max-width:56ch">CCHC đồng hành với viện, trường, doanh nghiệp và cơ quan về truyền thông sức khỏe, tư vấn khung nội dung và hỗ trợ khoa học – công nghệ (KHCN) — luôn trên nền tảng độc lập chuyên môn.</p>
+          <ul class="member-checklist">
+            <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Tư vấn khung nội dung truyền thông sức khỏe</li>
+            <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Phản biện chuyên môn cho ấn phẩm &amp; chương trình</li>
+            <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Hỗ trợ chuyển giao khoa học – công nghệ (KHCN)</li>
+          </ul>
+          <p class="muted" style="max-width:56ch;font-size:.86rem;margin-top:14px">Mọi hợp tác đặt kết luận chuyên môn và quy trình biên soạn 8 bước lên trên yêu cầu thương mại.</p>
+          <div style="margin-top:16px">
+            <a class="btn" onclick="go('dich-vu')">Xem dịch vụ chuyên môn &amp; KHCN →</a>
+          </div>
         </div>
-        <div class="hc-cta">
-          <a class="btn" onclick="go('dich-vu')">Xem dịch vụ chuyên môn &amp; KHCN →</a>
+        <div>
+          <div class="feat-img"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&amp;h=520&amp;fit=crop&amp;auto=format" alt="Chuyên gia làm việc với thiết bị phân tích trong phòng xét nghiệm (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+          <p class="imgcap">Ảnh minh hoạ (Unsplash)</p>
         </div>
       </div>
     </div>

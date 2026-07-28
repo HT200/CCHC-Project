@@ -394,20 +394,42 @@
     }
   }
 
-  // ===== Snap giữa 3 vùng trang chủ: hero · thanh tab · phần còn lại =====
-  // Chặn trực tiếp cử chỉ lăn chuột/trackpad (wheel) và nhảy thẳng tới vùng kế tiếp —
-  // không đoán ngưỡng khoảng cách, nên luôn nhận biết được cử chỉ cuộn.
-  // Once đã vào "phần còn lại" (#sec-hoptac) thì thả hoàn toàn, cuộn tự nhiên tới cuối trang.
+  // ===== Snap giữa các vùng trang chủ: hero · carousel · thanh tab · phần còn lại =====
+  // So sánh theo VÙNG (zone) hiện tại thay vì đoán khoảng cách cuộn — nên luôn dừng đúng
+  // MỘT ranh giới liền kề mỗi lần, bất kể cử chỉ cuộn lớn hay nhỏ, nhanh hay chậm, chuột
+  // lăn hay trackpad. Once đã vào "phần còn lại" (#sec-hoptac) thì thả hoàn toàn, cuộn tự
+  // nhiên tới cuối trang.
   (function(){
     var stepping = false, releaseTimer = null;
     function headerHeight(){
       var h = document.querySelector('header');
       return h ? h.offsetHeight : 110;
     }
+    function absTop(el){
+      // Cộng dồn offsetTop qua offsetParent — vị trí tự nhiên trong tài liệu,
+      // KHÔNG bị lệch khi phần tử là position:sticky và đang ở trạng thái "dính"
+      // (getBoundingClientRect() sẽ trả vị trí dính hiện tại, không phải vị trí thật).
+      var top = 0;
+      while(el){ top += el.offsetTop || 0; el = el.offsetParent; }
+      return top;
+    }
     function topOf(sel){
       var el = document.querySelector(sel);
       if(!el) return null;
-      return Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - headerHeight());
+      return Math.max(0, absTop(el) - headerHeight());
+    }
+    function zoneTops(){
+      // Các ranh giới theo đúng thứ tự trong DOM (tăng dần): hero → carousel → thanh tab → phần còn lại
+      var z = [0];
+      var c = topOf('#bannerCarousel'); if(c!==null) z.push(c);
+      var t = topOf('.hometabs-wrap'); if(t!==null) z.push(t);
+      var s = topOf('#sec-hoptac'); if(s!==null) z.push(s);
+      return z;
+    }
+    function zoneIndex(y, z){
+      var idx = 0;
+      for(var i=0; i<z.length; i++){ if(y >= z[i]-2) idx = i; }
+      return idx;
     }
     function goTo(y){
       stepping = true;
@@ -415,19 +437,45 @@
       clearTimeout(releaseTimer);
       releaseTimer = setTimeout(function(){ stepping = false; }, 550);
     }
+
     window.addEventListener('wheel', function(e){
       if(stepping || !document.documentElement.classList.contains('is-home')) return;
       var tabsEl = document.querySelector('.hometabs-wrap');
       if(!tabsEl || tabsEl.offsetHeight===0) return; // di động: đã ẩn thanh tab — cuộn tự nhiên
-      var belowTop = topOf('#sec-hoptac');
+      var z = zoneTops();
+      var belowTop = z[z.length-1];
       var y = window.pageYOffset;
-      if(belowTop===null || y>=belowTop-2) return; // đã ở "phần còn lại" — cuộn tự nhiên, không chặn
-      var tabsTop = topOf('.hometabs-wrap');
-      if(tabsTop===null) return;
-      e.preventDefault();
-      if(e.deltaY>0){ goTo(y < tabsTop-2 ? tabsTop : belowTop); }
-      else if(e.deltaY<0){ goTo(y > tabsTop+2 ? tabsTop : 0); }
+      if(e.deltaY>0){
+        if(y>=belowTop-2) return; // đã ở "phần còn lại" — cuộn tự nhiên, không chặn
+        var idx = zoneIndex(y, z);
+        e.preventDefault();
+        goTo(z[Math.min(idx+1, z.length-1)]);
+      }
+      // Cuộn lên: KHÔNG chặn ở đây. e.deltaY không đáng tin để đoán khoảng cách cuộn thực tế
+      // (chuột lăn thường báo theo "dòng" chứ không phải pixel). Xử lý bằng scroll-listener
+      // bên dưới, dựa trên VÙNG hiện tại nên bắt được cả cú cuộn rất nhanh/rất lớn.
     }, {passive:false});
+
+    var lastY = window.pageYOffset;
+    window.addEventListener('scroll', function(){
+      var y = window.pageYOffset;
+      if(stepping || !document.documentElement.classList.contains('is-home')){ lastY = y; return; }
+      var tabsEl = document.querySelector('.hometabs-wrap');
+      if(!tabsEl || tabsEl.offsetHeight===0){ lastY = y; return; }
+      if(y < lastY - 1){ // đang cuộn lên
+        var z = zoneTops();
+        var prevIdx = zoneIndex(lastY, z);
+        var curIdx = zoneIndex(y, z);
+        if(curIdx < prevIdx){
+          // vừa vượt qua một hay nhiều ranh giới trong một cú cuộn — luôn dừng đúng vùng
+          // liền kề phía trên vị trí cũ, không để trôi thẳng lên hero bỏ qua vùng giữa
+          goTo(z[prevIdx-1]);
+          lastY = y;
+          return;
+        }
+      }
+      lastY = y;
+    }, {passive:true});
   })();
 
   // ===== v19-A: mega-panel "Bản đồ nội dung" (tầng ngoài) =====
@@ -500,6 +548,42 @@
 
   // init
   show('home');
+
+  // ===== Banner carousel (big) — tự động chuyển =====
+  var bannerCarousel = (function(){
+    var track = null, dots = null, slides = 0, idx = 0, timer = null;
+    function init(){
+      track = document.getElementById('bcTrack');
+      var dotsEl = document.getElementById('bcDots');
+      if(!track || !dotsEl) return;
+      dots = dotsEl.querySelectorAll('button');
+      slides = dots.length;
+      idx = 0;
+      go(0);
+      auto();
+    }
+    function go(n){
+      idx = ((n % slides) + slides) % slides;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      for(var i = 0; i < dots.length; i++) dots[i].classList.toggle('active', i === idx);
+    }
+    function next(){ go(idx + 1); resetAuto(); }
+    function prev(){ go(idx - 1); resetAuto(); }
+    function auto(){ timer = setInterval(next, 5000); }
+    function resetAuto(){ clearInterval(timer); auto(); }
+    var dotsEl = document.getElementById('bcDots');
+    if(dotsEl){
+      dotsEl.addEventListener('click', function(e){
+        var b = e.target.closest('button');
+        if(!b) return;
+        go(parseInt(b.getAttribute('data-idx')));
+        resetAuto();
+      });
+    }
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+    return { next: next, prev: prev };
+  })();
 
   // ===== Back-to-top visibility (only show when scrolled past hero) =====
   (function(){
