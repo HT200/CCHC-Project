@@ -206,7 +206,7 @@
   .banner-carousel{position:relative;width:100%;overflow:hidden;background:var(--navy);scroll-snap-align:start;scroll-margin-top:var(--snap-header-h)}
   .banner-carousel .bc-track{display:flex;transition:transform .5s ease}
   .banner-carousel .bc-slide{flex:0 0 100%;position:relative;min-height:440px;display:flex;align-items:center}
-  .banner-carousel .bc-slide .bc-img{position:absolute;inset:0;background-size:cover;background-position:center}
+  .banner-carousel .bc-slide .bc-img{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#fff}
   .banner-carousel .bc-slide .bc-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,41,50,.88) 35%,rgba(1,41,50,.35) 70%,rgba(1,41,50,.1) 100%)}
   .banner-carousel .bc-slide .bc-text{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:60px 28px;color:#fff;width:100%}
   .banner-carousel .bc-slide .bc-text .bc-tag{display:inline-block;background:var(--blue);color:#fff;font-size:.72rem;padding:3px 10px;border-radius:3px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
@@ -1128,6 +1128,16 @@
   <section class="banner-carousel" id="bannerCarousel" aria-label="Sự kiện nổi bật">
     <div class="bc-track" id="bcTrack">
       <div class="bc-slide">
+        <div class="bc-img" style="background-image:url('assets/images/THYHVN.jpg');background-size:contain;background-repeat:no-repeat"></div>
+        <div class="bc-overlay"></div>
+        <div class="bc-text">
+          <span class="bc-tag">Lễ kỷ niệm 70 năm</span>
+          <h2>Tổng hội Y học Việt Nam</h2>
+          <p>Vì sự nghiệp phát triển Y học Việt Nam. Lễ kỷ niệm 70 năm thành lập Tổng hội Y học Việt Nam và Tôn vinh trí thức tiêu biểu lần thứ Tư năm 2025.</p>
+          <a class="btn white" href="http://tonghoiyhoc.vn/" target="_blank" rel="noopener">Xem website Tổng hội →</a>
+        </div>
+      </div>
+      <div class="bc-slide">
         <div class="bc-img" style="background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1400&h=500&fit=crop&auto=format')"></div>
         <div class="bc-overlay"></div>
         <div class="bc-text">
@@ -1165,16 +1175,6 @@
           <h2>Chuỗi sự kiện sức khỏe cộng đồng 2026</h2>
           <p>Tọa đàm, hội thảo, diễn đàn chuyên gia — kết nối tri thức chính thống tới cộng đồng.</p>
           <a class="btn white" onclick="go('tin-tuc-su-kien','#lich-sukien')">Xem toàn bộ lịch</a>
-        </div>
-      </div>
-      <div class="bc-slide">
-        <div class="bc-img" style="background-image:url('assets/images/banner.png');background-position:center top"></div>
-        <div class="bc-overlay"></div>
-        <div class="bc-text">
-          <span class="bc-tag">Lễ kỷ niệm 70 năm</span>
-          <h2>Tổng hội Y học Việt Nam</h2>
-          <p>Vì sự nghiệp phát triển Y học Việt Nam. Lễ kỷ niệm 70 năm thành lập Tổng hội Y học Việt Nam và Tôn vinh trí thức tiêu biểu lần thứ Tư năm 2025.</p>
-          <a class="btn white" href="http://tonghoiyhoc.vn/" target="_blank" rel="noopener">Xem website Tổng hội →</a>
         </div>
       </div>
     </div>
@@ -1422,6 +1422,21 @@
           <div class="feat-img"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&amp;h=520&amp;fit=crop&amp;auto=format" alt="Chuyên gia làm việc với thiết bị phân tích trong phòng xét nghiệm (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
           <p class="imgcap">Ảnh minh hoạ (Unsplash)</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minh bạch & Trách nhiệm (navy panel) -->
+  <section class="navy-panel">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between">
+      <div style="max-width:62ch">
+        <div class="eyebrow">Minh bạch &amp; Trách nhiệm</div>
+        <h2>Cách chúng tôi làm ra mỗi nội dung</h2>
+        <p style="margin:0">Quy trình biên soạn 8 bước công khai, chuyên gia phản biện ghi rõ tên, công khai tài trợ và nhật ký đính chính. Mọi nội dung trên trang đều dẫn về đây.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn white" onclick="go('minh-bach')">Xem quy trình &amp; minh bạch</a>
+        <a class="btn ghost" onclick="go('chinh-sach-tai-tro')">Chính sách tài trợ</a>
       </div>
     </div>
   </section>
@@ -3150,70 +3165,22 @@
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
-    <div class="fgrid" style="grid-template-columns:1fr">
+    <div class="fgrid" style="grid-template-columns:1fr 1fr">
       <div>
         <div class="brand" style="margin-bottom:10px"><div class="logo" style="background:transparent"><img src="assets/images/logo.png" alt="CCHC" style="width:100%;height:100%;object-fit:contain"></div></div>
         <p style="font-size:.86rem;color:#82E6FD;max-width:52ch">Trung tâm Truyền thông và Chăm sóc Sức khỏe Cộng đồng. Đưa tri thức y học chính thống tới cộng đồng. AI hỗ trợ, con người chịu trách nhiệm cuối cùng.</p>
       </div>
-    </div>
-    <!-- v19-A3: sơ đồ trang phân nhóm theo 4 tầng (cùng cấu trúc panel Khám phá) -->
-    <div class="fmap">
-      <div>
-        <h4><span class="fnum">01</span> Chính danh</h4>
-        <ul>
-          <li><a onclick="go('ve-chung-toi')">Giới thiệu CCHC</a></li>
-          <li><a onclick="go('ve-chung-toi')">Tư cách pháp lý</a></li>
-          <li><a onclick="go('ve-chung-toi','#tamnhin')">Tầm nhìn – Sứ mệnh</a></li>
-          <li><a onclick="go('ve-chung-toi','#hoidong')">Hội đồng khoa học</a></li>
-          <li><a onclick="go('ve-chung-toi','#nangluc')">Năng lực cốt lõi</a></li>
-          <li><a onclick="go('tong-hoi-chinh-sach')">Tổng hội &amp; Chính sách</a></li>
-          <li><a onclick="go('tong-hoi-chinh-sach','#hoi-ck-list')">Hội chuyên khoa</a></li>
-          <li><a onclick="go('bao-chi')">Dành cho báo chí</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4><span class="fnum">02</span> Tri thức</h4>
-        <ul>
-          <li><a onclick="go('tri-thuc')">Thư viện tri thức</a></li>
-          <li><a onclick="go('chu-de')">Hồ sơ chủ đề</a></li>
-          <li><a onclick="go('article')">Bài viết</a></li>
-          <li><a onclick="go('video')">Video / Podcast</a></li>
-          <li><a onclick="go('myth')">Myth-busting</a></li>
-          <li><a onclick="go('faq')">FAQ / tài liệu</a></li>
-          <li><a onclick="go('soon','Nghiên cứu &amp; Dữ liệu','nghien-cuu')">Nghiên cứu &amp; Dữ liệu</a></li>
-          <li><a onclick="go('dao-tao')">Đào tạo</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4><span class="fnum">03</span> Hành động</h4>
-        <ul>
-          <li><a onclick="go('form','Tham gia mạng lưới chuyên gia','ca-nhan')">Tham gia mạng lưới chuyên gia</a></li>
-          <li><a onclick="go('tvpbcd')">Tư vấn – Phản biện – Cộng đồng</a></li>
-          <li><a onclick="go('dich-vu')">Dịch vụ &amp; KHCN</a></li>
-          <li><a onclick="go('doi-tac')">Đối tác &amp; Hợp tác</a></li>
-          <li><a onclick="go('form','Đăng ký sự kiện cộng đồng','ca-nhan')">Đăng ký sự kiện</a></li>
-          <li><a onclick="go('tvpbcd','#tv-brief')">Gửi brief</a></li>
-          <li><a onclick="go('lien-he')">Liên hệ / Tham gia</a></li>
-          <li><a onclick="go('form','Yêu cầu phỏng vấn / phát ngôn','to-chuc')">Yêu cầu phỏng vấn</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4><span class="fnum">04</span> Minh bạch</h4>
-        <ul>
-          <li><a onclick="go('minh-bach','#cms8')">Quy trình biên soạn 8 bước</a></li>
-          <li><a onclick="go('minh-bach','#bientap')">Chính sách biên tập</a></li>
-          <li><a onclick="go('chinh-sach-tai-tro')">Tài trợ &amp; COI</a></li>
-          <li><a onclick="go('coi-ai')">AI có kiểm soát</a></li>
-          <li><a onclick="go('minh-bach','#disclaimer')">Medical disclaimer</a></li>
-          <li><a onclick="go('minh-bach','#dinhchinh')">Nhật ký đính chính</a></li>
-          <li><a onclick="go('hop-tac')">Cách CCHC hợp tác &amp; giới hạn</a></li>
-          <li>lienhe@cchc.org.vn · 024 3936 5127 <span style="color:#82E6FD">(minh hoạ)</span></li>
-        </ul>
+      <div style="text-align:right">
+        <h4 style="color:#fff;font-size:.95rem;margin-bottom:10px">Liên hệ</h4>
+        <p style="font-size:.86rem;color:#82E6FD;margin:0 0 6px"><b style="color:#fff">Email:</b> lienhe@cchc.org.vn</p>
+        <p style="font-size:.86rem;color:#82E6FD;margin:0 0 6px"><b style="color:#fff">Điện thoại:</b> 024 3936 5127</p>
+        <p style="font-size:.86rem;color:#82E6FD;margin:0 0 6px"><b style="color:#fff">Địa chỉ:</b> Hà Nội, Việt Nam</p>
+        <p style="font-size:.78rem;color:#82E6FD;margin:8px 0 0">(thông tin liên hệ tạm thời · minh hoạ)</p>
       </div>
     </div>
     <div class="fbot">
-      <span>© 2026 CCHC — Bản demo định hướng giao diện, không phải thiết kế cuối cùng.</span>
-      <span>Nội dung trên trang là minh hoạ.</span>
+      <span>© 2026 CCHC — Trực thuộc Tổng hội Y học Việt Nam. Mọi quyền được bảo lưu.</span>
+      <span>Nội dung được cấp phép theo <a style="text-decoration:underline">Creative Commons CC BY-NC-ND 4.0</a> (trừ khi có ghi chú khác).</span>
     </div>
   </div>
 </footer>
