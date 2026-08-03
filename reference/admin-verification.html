@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xác minh chuyên gia | CCHC Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="cms-layout">
+  <aside class="cms-sidebar" aria-label="Menu CMS">
+    <strong>CCHC CMS</strong>
+    <a href="admin.html">Tổng quan</a>
+    <a href="admin-editor.html">Soạn &amp; kiểm nguồn</a>
+    <a href="admin-review.html">Phản biện &amp; phê duyệt</a>
+    <a href="admin-corrections.html">Đính chính</a>
+    <a href="admin-emergency.html">Công bố khẩn</a>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Quản trị</div>
+      <a href="admin-verification.html" class="is-active">Xác minh chuyên gia</a>
+      <a href="admin-ai.html">Nhật ký AI</a>
+    </div>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Công khai</div>
+      <a href="chuyen-gia.html">← Danh sách chuyên gia (công khai)</a>
+      <a href="minh-bach.html#coi">← Bản khai COI (công khai)</a>
+    </div>
+  </aside>
+
+  <div class="cms-content">
+    <header class="cms-topbar">
+      <div>
+        <strong>Xác minh hồ sơ chuyên gia</strong><br>
+        <span class="cms-role">FLOW-09 · DEC-016 · Prototype</span>
+      </div>
+      <span class="cms-status">Quyền đề xuất — cần duyệt</span>
+    </header>
+
+    <div class="cms-body">
+      <a class="cms-back-link" href="admin.html">← Tổng quan CMS</a>
+      <h1 style="font-size:24px;font-weight:700;margin:0 0 6px;">Hồ sơ BS. Nguyễn Văn A</h1>
+      <p style="color:var(--ink-3);font-size:14px;margin:0 0 24px;">Kiểm tra bằng cấp, đơn vị công tác, phạm vi chuyên môn và xung đột lợi ích trước khi phê duyệt hồ sơ chuyên gia.</p>
+
+      <div class="cms-two-col">
+        <div>
+          <h2 style="font-size:18px;font-weight:600;margin:0 0 14px;">Bằng chứng</h2>
+          <div style="overflow-x:auto;">
+            <table class="cms-table">
+              <tbody>
+                <tr><td>Bằng cấp</td><td><span class="status safe">Đã đối chiếu</span></td></tr>
+                <tr><td>Đơn vị công tác</td><td><span class="status warn">Chờ phản hồi</span></td></tr>
+                <tr><td>Phạm vi chuyên môn</td><td><span class="status safe">Khớp hồ sơ</span></td></tr>
+                <tr><td>Xung đột lợi ích</td><td><span class="status">Đã khai báo</span></td></tr>
+                <tr><td>Chứng chỉ hành nghề</td><td><span class="status safe">Còn hiệu lực</span></td></tr>
+                <tr><td>Hội chuyên môn</td><td><span class="status safe">Hội Tim mạch VN</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="font-size:18px;font-weight:600;margin:0 0 14px;">Quyết định</h2>
+          <div class="panel" style="padding:20px;border:1px solid var(--line);border-radius:10px;">
+            <label style="display:block;margin-bottom:16px;">
+              <span style="font-size:13px;font-weight:600;display:block;margin-bottom:6px;">Hiệu lực xác minh</span>
+              <select style="width:100%;min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:6px;">
+                <option>12 tháng (giả định)</option>
+                <option>24 tháng</option>
+                <option>36 tháng</option>
+              </select>
+            </label>
+            <p style="font-size:13px;color:var(--ink-3);margin-bottom:16px;">Chưa chốt: nguồn xác minh chính thức, chu kỳ tái xác minh, cách xử lý hồ sơ hết hạn và quyền khiếu nại.</p>
+            <button style="background:var(--cobalt);color:#fff;border:none;padding:12px 20px;border-radius:8px;font-weight:600;cursor:pointer;font-size:14px;" type="button">Phê duyệt mô phỏng</button>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-size:18px;font-weight:600;margin:32px 0 14px;">Hàng đợi xác minh</h2>
+      <div style="overflow-x:auto;">
+        <table class="cms-table">
+          <thead>
+            <tr><th>Chuyên gia</th><th>Chuyên khoa</th><th>Ngày đăng ký</th><th>Trạng thái</th><th>SLA</th><th>Hành động</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BS. Nguyễn Văn A</td>
+              <td>Tim mạch</td>
+              <td>10/07/2026</td>
+              <td><span class="status warn">Đang kiểm tra</span></td>
+              <td>2 ngày</td>
+              <td><button class="btn btn-outline" type="button" style="padding:6px 14px;font-size:13px;">Mở</button></td>
+            </tr>
+            <tr>
+              <td>BS. Trần Thị B</td>
+              <td>Nội tiết</td>
+              <td>08/07/2026</td>
+              <td><span class="status safe">Đã duyệt</span></td>
+              <td>—</td>
+              <td><button class="btn btn-outline" type="button" style="padding:6px 14px;font-size:13px;">Xem</button></td>
+            </tr>
+            <tr>
+              <td>BS. Lê Minh C</td>
+              <td>Y học gia đình</td>
+              <td>22/07/2026</td>
+              <td><span class="status">Mới</span></td>
+              <td>7 ngày</td>
+              <td><button class="btn btn-outline" type="button" style="padding:6px 14px;font-size:13px;">Mở</button></td>
+            </tr>
+            <tr>
+              <td>BS. Phạm Quang D</td>
+              <td>Tiêu hóa</td>
+              <td>01/06/2026</td>
+              <td><span class="status danger">Hết hạn</span></td>
+              <td>Quá hạn 15 ngày</td>
+              <td><button class="btn btn-outline" type="button" style="padding:6px 14px;font-size:13px;">Mở</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cms-alert cms-alert-warn" style="margin-top:24px;">
+        <strong>Prototype — DEC-016 chưa duyệt</strong>
+        <p>Cần phê duyệt nguồn xác minh chính thức, chu kỳ tái xác minh, xử lý hồ sơ hết hạn và quyền khiếu nại. Bản khai COI công khai xem tại <a href="minh-bach.html#coi">trang Minh bạch</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

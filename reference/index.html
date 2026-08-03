@@ -7,66 +7,112 @@
 <meta name="description" content="Thông tin sức khỏe đúng — để bạn sống chủ động hơn. Nội dung có bảo chứng chuyên môn, minh bạch tài trợ và xung đột lợi ích. Trực thuộc Tổng hội Y học Việt Nam.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=29">
+<link rel="stylesheet" href="assets/css/main.css?v=48">
 </head>
 <body>
 <a href="#main" class="skip-link">Bỏ qua đến nội dung</a>
 
-<!-- TOPBAR -->
-<div class="topbar">
-  <div class="container">
-    <span class="org">Trực thuộc Tổng hội Y học Việt Nam</span>
-    <nav aria-label="Tiện ích">
-      <a href="chuyen-gia.html">Chuyên gia</a>
-      <a href="bao-chi.html">Báo chí</a>
-      <a href="lien-he.html">Liên hệ</a>
-      <button class="a11y-toggle" aria-pressed="false" title="Bật/tắt chế độ truy cập cho người lớn tuổi"><span class="aa">A</span> Truy cập</button>
-      <button class="simple-toggle" aria-pressed="false" title="Bật/tắt giao diện đơn giản">Đơn giản</button>
-    </nav>
-  </div>
-</div>
-
 <!-- MAINBAR -->
 <header class="mainbar">
   <div class="container">
-    <a class="brand" href="index.html">
-      <img class="logo" src="https://cchc.vn/wp-content/uploads/2026/05/Logo-file-PNG-1024x768.png" alt="Logo CCHC" style="height:64px;width:auto" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
-      <span style="display:none">
-        <span class="name">CCHC</span><br>
-        <span class="sub">Trung tâm Truyền thông và Chăm sóc Sức khỏe Cộng đồng</span>
-      </span>
-    </a>
+    <a class="brand" href="index.html"><img class="logo" src="https://cchc.vn/wp-content/uploads/2026/05/Logo-file-PNG-1024x768.png" alt="Logo CCHC" style="height:64px;width:auto" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'"><span style="display:none"><span class="name">CCHC</span><br><span class="sub">Trung tâm Truyền thông và Chăm sóc Sức khỏe Cộng đồng</span></span></a>
     <nav class="mainnav" aria-label="Điều hướng chính">
-      <a href="tri-thuc.html">Tri thức</a>
-      <a href="chuyen-gia.html">Chuyên gia</a>
-      <a href="bao-chi.html">Báo chí</a>
-      <a href="su-kien.html">Sự kiện</a>
-      <a href="doi-tac.html">Đối tác</a>
-      <a href="chinh-sach.html">Chính sách</a>
-      <a href="ve-chung-toi.html">Về chúng tôi</a>
-      <a href="minh-bach.html">Minh bạch</a>
+      <div class="nav-item">
+        <a href="su-kien.html">Tin tức &amp; Sự kiện</a>
+        <div class="nav-dropdown">
+          <a href="bao-chi.html">Tin hoạt động</a>
+          <a href="su-kien.html">Lịch sự kiện</a>
+          <a href="su-kien.html">Diễn đàn &amp; Chiến dịch CĐ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="tri-thuc.html">Tri thức</a>
+        <div class="nav-dropdown">
+          <a href="tri-thuc.html">Chủ đề sức khỏe</a>
+          <a href="bai-viet.html">Bài viết</a>
+          <a href="khi-nao-can-di-kham.html">Khi nào cần đi khám</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="nghien-cuu.html">Nghiên cứu &amp; Dữ liệu</a>
+        <div class="nav-dropdown">
+          <a href="nghien-cuu.html">Danh mục nghiên cứu</a>
+          <a href="nghien-cuu.html">Đạo đức nghiên cứu</a>
+          <a href="nghien-cuu.html">Hợp tác nghiên cứu</a>
+          <a href="nghien-cuu.html">Chuyên mục dữ liệu &amp; kinh tế y tế</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="chuyen-gia.html">Chuyên gia</a>
+        <div class="nav-dropdown">
+          <a href="chuyen-gia.html">Danh bạ chuyên gia</a>
+          <a href="chuyen-gia.html">Góc chuyên gia (Hỏi đáp)</a>
+          <a href="chuyen-gia.html">Hồ sơ hội chuyên khoa</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="bao-chi.html">Trung tâm báo chí</a>
+        <div class="nav-dropdown">
+          <a href="bao-chi.html">Thông cáo báo chí</a>
+          <a href="bao-chi.html#media-kit">Media kit &amp; Tài liệu</a>
+          <a href="bao-chi.html#fact-check">Yêu cầu kiểm chứng</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="chinh-sach.html">Chính sách</a>
+        <div class="nav-dropdown">
+          <a href="chinh-sach.html">Giải mã chính sách</a>
+          <a href="chinh-sach.html#dien-dan">Diễn đàn đối thoại</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="doi-tac.html">Đối tác</a>
+        <div class="nav-dropdown">
+          <a href="doi-tac.html">Mạng lưới đối tác &amp; Tài trợ</a>
+          <a href="tu-van.html">Tư vấn &amp; Phản biện (Dịch vụ)</a>
+          <a href="doi-tac.html">Nguyên tắc hợp tác</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="minh-bach.html">Minh bạch</a>
+        <div class="nav-dropdown">
+          <a href="minh-bach.html#cms">Quy trình kiểm soát 8 bước</a>
+          <a href="minh-bach.html#coi">Minh bạch lợi ích (COI)</a>
+          <a href="minh-bach.html#dinh-chinh">Nhật ký đính chính</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="ve-chung-toi.html">Về chúng tôi</a>
+        <div class="nav-dropdown">
+          <a href="ve-chung-toi.html">Giới thiệu CCHC</a>
+          <a href="ve-chung-toi.html">Đội ngũ &amp; Hội đồng</a>
+          <a href="lien-he.html">Gửi yêu cầu / Liên hệ</a>
+        </div>
+      </div>
     </nav>
+    <a href="admin.html" class="cms-login-btn">Log in</a>
     <button class="burger" aria-expanded="false" aria-label="Mở menu">☰</button>
   </div>
 </header>
 
-<!-- HERO: chip P1 → H1/search P2 → trustbar P1 (thứ tự khóa) -->
+<!-- HERO: chip → tagline → H1 → P1(lead) → search → safety(P0) → trustbar (thứ tự khóa) -->
 <main id="main">
 <section class="hero">
   <div class="container">
     <span class="chip">Trực thuộc Tổng hội Y học Việt Nam</span>
+    <p class="hero-tagline">Thông tin sức khỏe đúng — để bạn sống chủ động hơn</p>
     <h1>Thông tin đúng, chuyên gia đúng, thông điệp đúng</h1>
-    <p class="lead">Bảo chứng chuyên môn với quy trình kiểm soát có trách nhiệm. Không bán hàng, không chẩn đoán, không kê đơn, không thay thế bác sĩ, không có lợi ích ẩn.</p>
+    <p class="lead">Nền tảng truyền thông – tri thức – kết nối chuyên gia vì sức khỏe cộng đồng. Tri thức y học được kiểm chứng bởi chuyên gia, diễn giải phù hợp cho từng nhóm người đọc và kết nối đến nguồn hỗ trợ phù hợp. Quy trình kiểm soát có trách nhiệm: không chẩn đoán, không kê đơn, không bán hàng, không thay thế bác sĩ, không lợi ích ẩn.</p>
     <form class="hero-search" role="search" aria-label="Tìm kiếm chủ đề sức khỏe">
       <input type="search" placeholder="Tìm chủ đề: tăng huyết áp, đái tháo đường, đột quỵ…" aria-label="Tìm chủ đề sức khỏe" required>
       <button type="submit" aria-label="Tra cứu chủ đề sức khỏe">Tra cứu →</button>
     </form>
-    <p class="hero-safety" role="complementary" aria-label="Cảnh báo an toàn"><span class="hero-safety-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" fill="currentColor" stroke="none"></circle><line x1="12" y1="8" x2="12" y2="12" stroke="#fff" stroke-width="2.5"></line><circle cx="12" cy="16" r="1" fill="#fff" stroke="none"></circle></svg></span> Có dấu hiệu bất thường? <a href="khi-nao-can-di-kham.html">Xem khi nào cần đi khám</a></p>
+    <p class="hero-safety" role="complementary" aria-label="Lưu ý an toàn">Có dấu hiệu bất thường? <a href="khi-nao-can-di-kham.html">Xem khi nào cần đi khám</a></p>
     <div class="trustbar" role="complementary" aria-label="Cam kết minh bạch và đáng tin cậy">
-      <span class="cred-item">Hội đồng Y khoa thẩm định từng bài</span>
-      <span class="cred-item">Mức bằng chứng công khai</span>
-      <span class="cred-item">Bản khai xung đột lợi ích minh bạch</span>
-      <span class="cred-item">Nhật ký đính chính không xóa</span>
+      <span class="cred-item">Kiểm duyệt nhiều lớp</span>
+      <span class="cred-item">Bằng chứng công khai</span>
+      <span class="cred-item">Minh bạch lợi ích</span>
+      <span class="cred-item">Đính chính không xóa</span>
     </div>
   </div>
 </section>
@@ -100,11 +146,11 @@
         <p>Nguồn phát ngôn chính thống, thông cáo, chuyên gia, bộ tài liệu báo chí.</p>
         <span class="cta">Xem trung tâm báo chí →</span>
       </a>
-      <a class="res-card" href="lien-he.html">
+      <a class="res-card" href="ve-chung-toi.html">
         <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><path d="M9 9v.01"></path><path d="M9 12v.01"></path><path d="M9 15v.01"></path><path d="M9 18v.01"></path></svg>
         <h3>Tổng hội / hội chuyên khoa</h3>
         <p>Công bố hoạt động, chuyển tải khuyến cáo, phối hợp chương trình.</p>
-        <span class="cta">Hợp tác cùng CCHC →</span>
+        <span class="cta">Tìm hiểu Tổng hội →</span>
       </a>
       <a class="res-card" href="dao-tao.html">
         <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
@@ -112,11 +158,11 @@
         <p>Hợp tác nghiên cứu, đào tạo, truyền thông sức khỏe.</p>
         <span class="cta">Xem chương trình đào tạo →</span>
       </a>
-      <a class="res-card" href="lien-he.html">
+      <a class="res-card" href="chinh-sach.html">
         <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4M9 9h.01M15 9h.01M9 13h.01M15 13h.01"></path></svg>
         <h3>Cơ quan chính sách</h3>
         <p>Báo cáo, dữ liệu tổng hợp, tóm tắt chính sách, diễn đàn.</p>
-        <span class="cta">Kết nối cơ quan →</span>
+        <span class="cta">Tra cứu chính sách →</span>
       </a>
       <a class="res-card" href="doi-tac.html">
         <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
@@ -183,6 +229,59 @@
             <span class="news-date">09/07/2026</span>
           </a>
         </div>
+        <!-- Tin ngắn (tầng 3) -->
+        <ul class="news-brief">
+          <li>
+            <a href="minh-bach.html#dinh-chinh">
+              <span class="news-brief-text">
+                <span class="news-tag">Đính chính</span>
+                <h4>Cập nhật nhật ký đính chính quý II/2026: 8 nội dung được hiệu chỉnh</h4>
+                <span class="news-brief-meta">
+                  <span class="news-new-badge">MỚI</span>
+                  <span class="news-rel-time" data-time="2026-07-29T14:00">3 giờ trước</span>
+                </span>
+              </span>
+              <img src="https://cchc.vn/wp-content/uploads/2026/06/706198617_122100040749330410_2705021752713480062_n-300x200.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+            </a>
+          </li>
+          <li>
+            <a href="chuyen-gia.html">
+              <span class="news-brief-text">
+                <span class="news-tag">Chuyên gia</span>
+                <h4>Bổ sung 5 chuyên gia vào Hội đồng thẩm định nội dung</h4>
+                <span class="news-brief-meta">
+                  <span class="news-new-badge">MỚI</span>
+                  <span class="news-rel-time" data-time="2026-07-28T09:30">1 ngày trước</span>
+                </span>
+              </span>
+              <img src="https://cchc.vn/wp-content/uploads/2026/06/712623692_122101395603330410_4971881551224983760_n-300x200.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+            </a>
+          </li>
+          <li>
+            <a href="su-kien.html">
+              <span class="news-brief-text">
+                <span class="news-tag">Sự kiện</span>
+                <h4>Tổng kết chiến dịch truyền thông phòng chống sốt xuất huyết 2026</h4>
+                <span class="news-brief-meta">
+                  <span class="news-rel-time" data-time="2026-07-22T10:00">7 ngày trước</span>
+                </span>
+              </span>
+              <img src="https://cchc.vn/wp-content/uploads/2026/06/704406806_122100040761330410_4699191622049850179_n-1-300x200.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+            </a>
+          </li>
+          <li>
+            <a href="nghien-cuu.html">
+              <span class="news-brief-text">
+                <span class="news-tag">Nghiên cứu</span>
+                <h4>Công bố khảo sát nhận thức sức khỏe cộng đồng 2026</h4>
+                <span class="news-brief-meta">
+                  <span class="news-rel-time" data-time="2026-07-15T08:00">2 tuần trước</span>
+                </span>
+              </span>
+              <img src="https://cchc.vn/wp-content/uploads/2026/06/quang-canh-le-ra-mat-van-phong-1779436640570614567812-1024x682.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+            </a>
+          </li>
+        </ul>
       </div>
       <!-- Cột phải: Sự kiện -->
       <aside class="news-side">
@@ -211,6 +310,46 @@
             <p>Cho phóng viên · Trực tuyến qua Zoom</p>
           </div>
         </div>
+        <div class="news-side-head u-mt-28">
+          <h3>Đọc nhiều nhất</h3>
+        </div>
+        <ol class="most-read">
+          <li>
+            <span class="mr-num mr-1">1</span>
+            <span class="mr-body">
+              <a href="bai-viet.html">Tăng huyết áp: hiểu đúng để kiểm soát lâu dài</a>
+              <span class="mr-meta">48,4K lượt đọc</span>
+            </span>
+          </li>
+          <li>
+            <span class="mr-num mr-2">2</span>
+            <span class="mr-body">
+              <a href="bai-viet.html">5 hiểu lầm thường gặp về mỡ máu và cholesterol</a>
+              <span class="mr-meta">46,3K lượt đọc</span>
+            </span>
+          </li>
+          <li>
+            <span class="mr-num mr-3">3</span>
+            <span class="mr-body">
+              <a href="bai-viet.html">Đái tháo đường type 2: dấu hiệu sớm cần lưu ý</a>
+              <span class="mr-meta">42,6K lượt đọc</span>
+            </span>
+          </li>
+          <li>
+            <span class="mr-num">4</span>
+            <span class="mr-body">
+              <a href="bai-viet.html">Khi nào một cơn đau đầu là dấu hiệu nguy hiểm?</a>
+              <span class="mr-meta">41,4K lượt đọc</span>
+            </span>
+          </li>
+          <li>
+            <span class="mr-num">5</span>
+            <span class="mr-body">
+              <a href="bai-viet.html">Dinh dưỡng cho người cao tuổi: nguyên tắc cơ bản</a>
+              <span class="mr-meta">41,1K lượt đọc</span>
+            </span>
+          </li>
+        </ol>
       </aside>
     </div>
   </div>
@@ -277,7 +416,7 @@
       <div>
         <div class="kicker">Người đứng sau thông tin</div>
         <h2>Chuyên gia thẩm định</h2>
-        <p class="u-sec-sub">Các bác sĩ và giáo sư hàng đầu từ các bệnh viện lớn</p>
+        <p class="u-sec-sub">Chuyên gia từ các bệnh viện và viện nghiên cứu, có hồ sơ công khai</p>
       </div>
       <a class="more" href="chuyen-gia.html">Xem tất cả chuyên gia →</a>
     </div>
@@ -365,18 +504,18 @@
       <div>
         <div class="kicker">Chuỗi giá trị CCHC</div>
         <h2>Mạch vận hành CCHC</h2>
-        <p class="u-sec-sub">6 nhóm hoạt động cốt lõi từ truyền thông đến tác động xã hội</p>
+        <p class="u-sec-sub">6 nhóm hoạt động cốt lõi từ truyền thông đến kết nối cộng đồng</p>
       </div>
       <a class="more" href="minh-bach.html">Xem quy trình đầy đủ →</a>
     </div>
-    <div class="flow">
-      <div class="flow-step"><span class="n">1</span><h4>Truyền thông</h4><p>Tạo nhịp cập nhật và kéo người dùng vào chủ đề</p></div>
-      <div class="flow-step"><span class="n">2</span><h4>Tri thức sức khỏe</h4><p>Diễn giải dễ hiểu, có nguồn, có người chịu trách nhiệm</p></div>
-      <div class="flow-step"><span class="n">3</span><h4>Nghiên cứu &amp; Dữ liệu</h4><p>Báo cáo, khảo sát, insight, policy brief</p></div>
-      <div class="flow-step"><span class="n">4</span><h4>Đào tạo</h4><p>Học liệu, tập huấn, hội thảo, tài liệu sau sự kiện</p></div>
-      <div class="flow-step"><span class="n">5</span><h4>Tư vấn khoa học</h4><p>Thiết kế chương trình, kiểm soát claim, phản biện độc lập</p></div>
-      <div class="flow-step"><span class="n">6</span><h4>Tác động xã hội</h4><p>Chương trình cộng đồng, hồ sơ đối tác, minh bạch tài trợ</p></div>
-    </div>
+    <ol class="flow flow-process">
+      <li class="flow-step"><span class="n">1</span><h4>Tin tức &amp; Sự kiện</h4><p>Cập nhật định kỳ, đưa người đọc đến chủ đề đang được quan tâm</p></li>
+      <li class="flow-step"><span class="n">2</span><h4>Tri thức sức khỏe</h4><p>Diễn giải y khoa dễ hiểu — có nguồn, có người chịu trách nhiệm</p></li>
+      <li class="flow-step"><span class="n">3</span><h4>Nghiên cứu &amp; Dữ liệu</h4><p>Tổng hợp báo cáo, khảo sát và phân tích chính sách y tế</p></li>
+      <li class="flow-step"><span class="n">4</span><h4>Đào tạo</h4><p>Cung cấp học liệu, hội thảo và tài liệu cập nhật năng lực</p></li>
+      <li class="flow-step"><span class="n">5</span><h4>Tư vấn / Phản biện</h4><p>Thiết kế chương trình, kiểm soát thông tin và phản biện độc lập</p></li>
+      <li class="flow-step"><span class="n">6</span><h4>Đối tác &amp; Tác động</h4><p>Kết nối đối tác, minh bạch tài trợ và đo lường tác động cộng đồng</p></li>
+    </ol>
   </div>
 </section>
 
@@ -571,7 +710,7 @@
       </div>
       <div>
         <h5>Minh bạch</h5>
-        <a href="minh-bach.html">Quy trình kiểm soát 8 bước</a>
+        <a href="minh-bach.html">Quy trình CMS 8 bước</a>
         <a href="minh-bach.html#dinh-chinh">Nhật ký đính chính</a>
         <a href="minh-bach.html#coi">Bản khai xung đột lợi ích</a>
       </div>
@@ -581,9 +720,7 @@
         <a href="bao-chi.html">Yêu cầu kiểm chứng (48h)</a>
       </div>
     </div>
-    <div class="legal">
-      <span>© 2026 CCHC — Trung tâm Truyền thông và Chăm sóc Sức khỏe Cộng đồng · Thành lập 2007 · Trực thuộc Tổng hội Y học Việt Nam</span>
-    </div>
+    <div class="legal"><span>© 2026 CCHC — Trực thuộc Tổng hội Y học Việt Nam</span><span>Prototype · Dữ liệu minh họa</span></div>
   </div>
 </footer>
 

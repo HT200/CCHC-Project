@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phản biện &amp; phê duyệt | CCHC Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="cms-layout">
+  <aside class="cms-sidebar" aria-label="Menu CMS">
+    <strong>CCHC CMS</strong>
+    <a href="admin.html">Tổng quan</a>
+    <a href="admin-editor.html">Soạn &amp; kiểm nguồn</a>
+    <a href="admin-review.html" class="is-active">Phản biện &amp; phê duyệt</a>
+    <a href="admin-corrections.html">Đính chính</a>
+    <a href="admin-emergency.html">Công bố khẩn</a>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Quản trị</div>
+      <a href="admin-verification.html">Xác minh chuyên gia</a>
+      <a href="admin-ai.html">Nhật ký AI</a>
+    </div>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Công khai</div>
+      <a href="minh-bach.html">← Trang minh bạch</a>
+      <a href="index.html">← Website công khai</a>
+    </div>
+  </aside>
+
+  <div class="cms-content">
+    <header class="cms-topbar">
+      <div>
+        <strong>Phản biện &amp; phê duyệt</strong><br>
+        <span class="cms-role">RACI đề xuất — không phải quyền đã cấu hình · Prototype</span>
+      </div>
+      <span class="cms-status">Quyền đề xuất — cần duyệt</span>
+    </header>
+
+    <div class="cms-body">
+      <a class="cms-back-link" href="admin.html">← Tổng quan CMS</a>
+      <h1 style="font-size:24px;font-weight:700;margin:0 0 6px;">Hàng đợi phê duyệt</h1>
+      <p style="color:var(--ink-3);font-size:14px;margin:0 0 20px;">Nội dung chờ phản biện và phê duyệt, phân loại theo risk tier và Separation of Duties.</p>
+
+      <div class="cms-alert cms-alert-warn" style="margin-bottom:24px;">
+        <strong>M4 chưa đủ điều kiện build</strong>
+        <p>Cần chốt quorum, số approver, delegation, recusal, sửa sau duyệt và break-glass. Wireframe dùng giả định tạm: 2 approver độc lập, người viết không tự duyệt.</p>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table class="cms-table">
+          <thead>
+            <tr><th>Nội dung</th><th>Tier</th><th>Responsible</th><th>Accountable</th><th>SoD</th><th>Hành động</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hướng dẫn nhận diện đột quỵ</td>
+              <td>M4</td>
+              <td>Medical Reviewer</td>
+              <td>HĐ Y khoa (2 người)</td>
+              <td><span class="status safe">Không tự duyệt</span></td>
+              <td><button class="btn btn-outline" type="button" style="padding:6px 14px;font-size:13px;">Mở</button></td>
+            </tr>
+            <tr>
+              <td>Hiểu đúng chỉ số huyết áp</td>
+              <td>M3</td>
+              <td>Medical Reviewer</td>
+              <td>Scientific Approver</td>
+              <td><span class="status safe">Đạt</span></td>
+              <td><button class="btn btn-outline" type="button" style="padding:6px 14px;font-size:13px;">Mở</button></td>
+            </tr>
+            <tr>
+              <td>Bài do chính approver soạn</td>
+              <td>M4</td>
+              <td>Medical Reviewer</td>
+              <td>Chưa gán</td>
+              <td><span class="status danger">Recusal</span></td>
+              <td><button class="btn btn-outline" type="button" disabled style="padding:6px 14px;font-size:13px;opacity:.5;">Chặn</button></td>
+            </tr>
+            <tr>
+              <td>Dinh dưỡng người cao tuổi</td>
+              <td>M2</td>
+              <td>Editor</td>
+              <td>Medical Reviewer</td>
+              <td><span class="status safe">Đạt</span></td>
+              <td><button class="btn btn-outline" type="button" style="padding:6px 14px;font-size:13px;">Mở</button></td>
+            </tr>
+            <tr>
+              <td>Thực phẩm chức năng: đọc nhãn</td>
+              <td>M3</td>
+              <td>Medical Reviewer</td>
+              <td>Pháp chế + HĐ Y khoa</td>
+              <td><span class="status warn">Chờ Pháp chế</span></td>
+              <td><button class="btn btn-outline" type="button" style="padding:6px 14px;font-size:13px;">Mở</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="font-size:18px;font-weight:600;margin:32px 0 14px;">Quy tắc Separation of Duties (SoD)</h2>
+      <div class="grid grid-2 u-gap-20">
+        <div class="panel" style="padding:18px;border:1px solid var(--line);border-radius:10px;">
+          <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;">Người viết không tự duyệt</h3>
+          <p style="font-size:14px;color:var(--ink-3);">Nếu approver là người soạn bài, hệ thống tự động chặn và yêu cầu gán approver khác.</p>
+        </div>
+        <div class="panel" style="padding:18px;border:1px solid var(--line);border-radius:10px;">
+          <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;">M4 cần 2 approver độc lập</h3>
+          <p style="font-size:14px;color:var(--ink-3);">Nội dung risk tier M4 yêu cầu hai approver độc lập từ HĐ Y khoa. Không cho phép delegation trừ trường hợp khẩn cấp.</p>
+        </div>
+        <div class="panel" style="padding:18px;border:1px solid var(--line);border-radius:10px;">
+          <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;">Recusal khi xung đột lợi ích</h3>
+          <p style="font-size:14px;color:var(--ink-3);">Approver có khai báo COI với chủ đề bài viết phải tự recusal. Hệ thống kiểm tra tự động.</p>
+        </div>
+        <div class="panel" style="padding:18px;border:1px solid var(--line);border-radius:10px;">
+          <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;">Sửa sau duyệt tạo version mới</h3>
+          <p style="font-size:14px;color:var(--ink-3);">Không ghi đè bản đã duyệt. Mọi sửa đổi hậu phê duyệt tạo version mới và cần phê duyệt lại.</p>
+        </div>
+      </div>
+
+      <div class="cms-alert cms-alert-warn" style="margin-top:24px;">
+        <strong>Prototype — không phải hệ thống thật</strong>
+        <p>Quyền RACI và workflow phê duyệt được giả định cho mục đích thiết kế. Cần DEC-007 duyệt trước khi triển khai thật.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

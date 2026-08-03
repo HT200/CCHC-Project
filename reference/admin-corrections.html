@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đính chính | CCHC Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="cms-layout">
+  <aside class="cms-sidebar" aria-label="Menu CMS">
+    <strong>CCHC CMS</strong>
+    <a href="admin.html">Tổng quan</a>
+    <a href="admin-editor.html">Soạn &amp; kiểm nguồn</a>
+    <a href="admin-review.html">Phản biện &amp; phê duyệt</a>
+    <a href="admin-corrections.html" class="is-active">Đính chính</a>
+    <a href="admin-emergency.html">Công bố khẩn</a>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Quản trị</div>
+      <a href="admin-verification.html">Xác minh chuyên gia</a>
+      <a href="admin-ai.html">Nhật ký AI</a>
+    </div>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Công khai</div>
+      <a href="minh-bach.html#dinh-chinh">← Nhật ký đính chính (công khai)</a>
+      <a href="index.html">← Website công khai</a>
+    </div>
+  </aside>
+
+  <div class="cms-content">
+    <header class="cms-topbar">
+      <div>
+        <strong>Báo lỗi &amp; đính chính</strong><br>
+        <span class="cms-role">FLOW-08 · SLA theo mức độ · Prototype</span>
+      </div>
+      <span class="cms-status">Quyền đề xuất — cần duyệt</span>
+    </header>
+
+    <div class="cms-body">
+      <a class="cms-back-link" href="admin.html">← Tổng quan CMS</a>
+      <h1 style="font-size:24px;font-weight:700;margin:0 0 6px;">Bảng phân loại sai sót</h1>
+      <p style="color:var(--ink-3);font-size:14px;margin:0 0 24px;">Sai sót được phân loại theo risk tier và xử lý theo SLA tương ứng. Nhật ký đính chính công khai xem tại <a href="minh-bach.html#dinh-chinh">trang Minh bạch</a>.</p>
+
+      <div class="cms-kanban">
+        <div class="cms-kanban-col">
+          <h3>Mới nhận · 3</h3>
+          <div class="cms-ticket">
+            <span class="status danger" style="margin-bottom:8px;display:inline-flex;">Có Content ID</span>
+            <h4>CCHC-ART-0042</h4>
+            <p>Người gửi cho rằng ngưỡng số liệu chưa đúng.</p>
+          </div>
+          <div class="cms-ticket">
+            <span class="status warn" style="margin-bottom:8px;display:inline-flex;">M2</span>
+            <h4>CCHC-ART-0050</h4>
+            <p>Đề xuất bổ sung cảnh báo về tác dụng phụ.</p>
+          </div>
+          <div class="cms-ticket">
+            <span class="status" style="margin-bottom:8px;display:inline-flex;">M1</span>
+            <h4>CCHC-ART-0048</h4>
+            <p>Lỗi chính tả nhỏ trong đoạn 3.</p>
+          </div>
+        </div>
+        <div class="cms-kanban-col">
+          <h3>Đang xác minh · 2</h3>
+          <div class="cms-ticket">
+            <span class="status warn" style="margin-bottom:8px;display:inline-flex;">M3</span>
+            <h4>CCHC-ART-0036</h4>
+            <p>Đang đối chiếu hướng dẫn mới.</p>
+          </div>
+          <div class="cms-ticket">
+            <span class="status warn" style="margin-bottom:8px;display:inline-flex;">M2</span>
+            <h4>CCHC-ART-0050</h4>
+            <p>Kiểm tra bằng chứng về tác dụng phụ.</p>
+          </div>
+        </div>
+        <div class="cms-kanban-col">
+          <h3>Chờ phê duyệt · 1</h3>
+          <div class="cms-ticket">
+            <span class="status danger" style="margin-bottom:8px;display:inline-flex;">M4</span>
+            <h4>CCHC-ART-0021</h4>
+            <p>Đề xuất đính chính và cảnh báo. Cần HĐ Y khoa duyệt.</p>
+          </div>
+        </div>
+        <div class="cms-kanban-col">
+          <h3>Đã công bố · 7</h3>
+          <div class="cms-ticket">
+            <span class="status safe" style="margin-bottom:8px;display:inline-flex;">Audit đầy đủ</span>
+            <h4>CCHC-ART-0018</h4>
+            <p>Hiển thị lịch sử thay đổi công khai.</p>
+          </div>
+          <div class="cms-ticket">
+            <span class="status safe" style="margin-bottom:8px;display:inline-flex;">Audit đầy đủ</span>
+            <h4>CCHC-ART-0036</h4>
+            <p>Sửa ngưỡng HA tại nhà ≥135/85 mmHg.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-size:18px;font-weight:600;margin:32px 0 14px;">SLA theo mức độ sai sót</h2>
+      <div style="overflow-x:auto;">
+        <table class="cms-table">
+          <thead>
+            <tr><th>Mức</th><th>Loại sai sót</th><th>Thời gian ẩn bài</th><th>Thời gian đính chính</th><th>Người duyệt</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="status safe">M1</span></td><td>Lỗi chính tả, định dạng</td><td>Không cần ẩn</td><td>7 ngày</td><td>Biên tập</td></tr>
+            <tr><td><span class="status warn">M2</span></td><td>Thiếu cảnh báo, nhắc sản phẩm</td><td>Không cần ẩn</td><td>3 ngày</td><td>Pháp chế</td></tr>
+            <tr><td><span class="status warn">M3</span></td><td>Sai số liệu, thiếu nguồn</td><td>24 giờ</td><td>1 ngày</td><td>HĐ Y khoa</td></tr>
+            <tr><td><span class="status danger">M4</span></td><td>Sai chuyên môn nghiêm trọng</td><td>1 giờ</td><td>24 giờ</td><td>HĐ Y khoa + HĐQL</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cms-alert cms-alert-warn" style="margin-top:24px;">
+        <strong>Prototype — không phải hệ thống thật</strong>
+        <p>Bảng đính chính nội bộ mô phỏng workflow FLOW-08. Nhật ký đính chính công khai xem tại <a href="minh-bach.html#dinh-chinh">trang Minh bạch</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

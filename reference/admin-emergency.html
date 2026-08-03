@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Công bố khẩn | CCHC Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="cms-layout">
+  <aside class="cms-sidebar" aria-label="Menu CMS">
+    <strong>CCHC CMS</strong>
+    <a href="admin.html">Tổng quan</a>
+    <a href="admin-editor.html">Soạn &amp; kiểm nguồn</a>
+    <a href="admin-review.html">Phản biện &amp; phê duyệt</a>
+    <a href="admin-corrections.html">Đính chính</a>
+    <a href="admin-emergency.html" class="is-active">Công bố khẩn</a>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Quản trị</div>
+      <a href="admin-verification.html">Xác minh chuyên gia</a>
+      <a href="admin-ai.html">Nhật ký AI</a>
+    </div>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Công khai</div>
+      <a href="minh-bach.html#crisis">← Sổ tay khủng hoảng (công khai)</a>
+      <a href="index.html">← Website công khai</a>
+    </div>
+  </aside>
+
+  <div class="cms-content">
+    <header class="cms-topbar">
+      <div>
+        <strong>Công bố khẩn</strong><br>
+        <span class="cms-role">FLOW-11 · break-glass có kiểm soát · Prototype</span>
+      </div>
+      <span class="cms-status">Quyền đề xuất — cần duyệt</span>
+    </header>
+
+    <div class="cms-body">
+      <a class="cms-back-link" href="admin.html">← Tổng quan CMS</a>
+      <h1 style="font-size:24px;font-weight:700;margin:0 0 6px;">Quy trình công bố khẩn</h1>
+      <p style="color:var(--ink-3);font-size:14px;margin:0 0 24px;">Khi phát hiện nội dung sai chuyên môn nghiêm trọng hoặc tin đồn y tế gây hoang mang, CCHC kích hoạt quy trình break-glass.</p>
+
+      <div class="cms-workflow">
+        <span class="active">1. Khởi tạo</span>
+        <span>2. Kiểm nguồn</span>
+        <span>3. Phê duyệt 1</span>
+        <span>4. Phê duyệt 2</span>
+        <span>5. Công bố &amp; hậu kiểm</span>
+      </div>
+
+      <div class="cms-two-col">
+        <div>
+          <h2 style="font-size:18px;font-weight:600;margin:0 0 14px;">Khởi tạo công bố khẩn</h2>
+          <div class="panel" style="padding:20px;border:1px solid var(--line);border-radius:10px;">
+            <label style="display:block;margin-bottom:16px;">
+              <span style="font-size:13px;font-weight:600;display:block;margin-bottom:6px;">Lý do khẩn cấp</span>
+              <textarea style="width:100%;min-height:100px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;font:inherit;resize:vertical;">Thông tin sai lệch có thể gây hại đang lan truyền.</textarea>
+            </label>
+            <label style="display:block;margin-bottom:16px;">
+              <span style="font-size:13px;font-weight:600;display:block;margin-bottom:6px;">Nguồn tối thiểu</span>
+              <input style="width:100%;min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:6px;background:#f8fafb;" value="2 nguồn độc lập" readonly>
+            </label>
+            <label style="display:block;margin-bottom:16px;">
+              <span style="font-size:13px;font-weight:600;display:block;margin-bottom:6px;">Kênh công bố</span>
+              <select style="width:100%;min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:6px;">
+                <option>Website + cảnh báo trang chủ</option>
+                <option>Website + Zalo OA + email</option>
+                <option>Website + Zalo OA + báo chí</option>
+              </select>
+            </label>
+            <button style="background:var(--coral);color:#fff;border:none;padding:12px 20px;border-radius:8px;font-weight:600;cursor:pointer;font-size:14px;" type="button">Yêu cầu kích hoạt</button>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="font-size:18px;font-weight:600;margin:0 0 14px;">Điều kiện bắt buộc</h2>
+          <div class="panel" style="padding:20px;border:1px solid var(--line);border-radius:10px;">
+            <ul style="margin:0 0 16px;padding-left:20px;font-size:14px;line-height:1.8;color:var(--ink-2);">
+              <li>Hai approver độc lập theo giả định tạm.</li>
+              <li>Không cho người khởi tạo tự duyệt.</li>
+              <li>Lưu lý do, thời gian, nguồn và từng quyết định.</li>
+              <li>Hậu kiểm trong 24 giờ.</li>
+              <li>Báo cáo HĐQL &amp; Tổng hội trong 48 giờ.</li>
+            </ul>
+            <div class="cms-alert cms-alert-danger" style="margin-bottom:0;">
+              <strong>Chưa cấu hình thật</strong>
+              <p>Break-glass là blocker build đến khi DEC-007 được phê duyệt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-size:18px;font-weight:600;margin:32px 0 14px;">Lịch sử công bố khẩn</h2>
+      <div style="overflow-x:auto;">
+        <table class="cms-table">
+          <thead>
+            <tr><th>Thời gian</th><th>Content ID</th><th>Lý do</th><th>Người khởi tạo</th><th>Approver 1</th><th>Approver 2</th><th>Trạng thái</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>15/07/2026 08:30</td>
+              <td><code>CCHC-ART-0036</code></td>
+              <td>Sai ngưỡng huyết áp — nguy cơ hướng dẫn sai</td>
+              <td>Editor 01</td>
+              <td>BS. Nguyễn Văn A</td>
+              <td>PGS.TS Lê Thu Hà</td>
+              <td><span class="status safe">Đã công bố</span></td>
+            </tr>
+            <tr>
+              <td>20/06/2026 14:15</td>
+              <td><code>CCHC-ART-0021</code></td>
+              <td>Tài trợ thương mại không khai báo</td>
+              <td>Editor 02</td>
+              <td>HĐ Khoa học</td>
+              <td>HĐQL</td>
+              <td><span class="status safe">Đã công bố</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cms-alert cms-alert-warn" style="margin-top:24px;">
+        <strong>Prototype — không phải hệ thống thật</strong>
+        <p>Quy trình break-glass mô phỏng FLOW-11. Sổ tay xử lý khủng hoảng công khai xem tại <a href="minh-bach.html#crisis">trang Minh bạch</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

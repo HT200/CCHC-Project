@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soạn &amp; kiểm nguồn | CCHC Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="cms-layout">
+  <aside class="cms-sidebar" aria-label="Menu CMS">
+    <strong>CCHC CMS</strong>
+    <a href="admin.html">Tổng quan</a>
+    <a href="admin-editor.html" class="is-active">Soạn &amp; kiểm nguồn</a>
+    <a href="admin-review.html">Phản biện &amp; phê duyệt</a>
+    <a href="admin-corrections.html">Đính chính</a>
+    <a href="admin-emergency.html">Công bố khẩn</a>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Quản trị</div>
+      <a href="admin-verification.html">Xác minh chuyên gia</a>
+      <a href="admin-ai.html">Nhật ký AI</a>
+    </div>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Công khai</div>
+      <a href="minh-bach.html">← Trang minh bạch</a>
+      <a href="index.html">← Website công khai</a>
+    </div>
+  </aside>
+
+  <div class="cms-content">
+    <header class="cms-topbar">
+      <div>
+        <strong>Soạn bài &amp; kiểm nguồn</strong><br>
+        <span class="cms-role">CCHC-ART-0042 · M3 · Prototype — dữ liệu minh họa</span>
+      </div>
+      <span class="cms-status">Quyền đề xuất — cần duyệt</span>
+    </header>
+
+    <div class="cms-body">
+      <a class="cms-back-link" href="admin.html">← Tổng quan CMS</a>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap;">
+        <div>
+          <span style="font-size:13px;color:var(--ink-3);">CCHC-ART-0042 · M3</span>
+          <h1 style="font-size:22px;font-weight:700;margin:4px 0 0;">Hiểu đúng chỉ số huyết áp</h1>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-outline" type="button">Lưu nháp</button>
+          <button class="btn" style="background:var(--cobalt);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:600;cursor:pointer;" type="button">Gửi phản biện</button>
+        </div>
+      </div>
+
+      <div class="cms-alert cms-alert-danger">
+        <strong>Hard-lock đang bật</strong>
+        <p>Khối dữ liệu dịch tễ chưa có nguồn Việt Nam được duyệt. Không thể gửi phản biện hoặc xuất bản.</p>
+      </div>
+
+      <div class="cms-editor-layout">
+        <div class="cms-editor-canvas">
+          <div class="cms-editor-toolbar">Tiêu đề · Đoạn văn · Trích dẫn · Safety callout · Nguồn</div>
+
+          <div class="cms-content-block">
+            <span style="font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;">Khối nội dung</span>
+            <h2 style="font-size:18px;font-weight:600;margin:8px 0;">Chỉ số nói lên điều gì?</h2>
+            <p style="color:var(--ink-2);font-size:14px;">Huyết áp thay đổi theo thời điểm và điều kiện đo. Việc đánh giá cần xem nhiều lần đo, kỹ thuật đo và bối cảnh sức khỏe.</p>
+          </div>
+
+          <div class="cms-content-block danger">
+            <span style="font-size:12px;color:var(--coral);text-transform:uppercase;letter-spacing:.04em;font-weight:600;">Khối an toàn · bắt buộc</span>
+            <h2 style="font-size:18px;font-weight:600;margin:8px 0;">Khi nào cần đi khám?</h2>
+            <p style="color:var(--ink-2);font-size:14px;">Red-flag copy chờ Hội đồng khoa học duyệt. Không tự thay đổi thuốc dựa trên nội dung website.</p>
+          </div>
+
+          <div class="cms-content-block">
+            <span style="font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;">Khối nguồn</span>
+            <h2 style="font-size:18px;font-weight:600;margin:8px 0;">Nguồn tham chiếu</h2>
+            <ol style="color:var(--ink-2);font-size:14px;padding-left:20px;">
+              <li>Hướng dẫn chuyên môn quốc gia — phiên bản cần xác nhận.</li>
+              <li>Tài liệu của tổ chức y tế quốc tế — liên kết sẽ được duyệt trước xuất bản.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="cms-editor-meta">
+          <h3>Metadata &amp; kiểm soát</h3>
+          <label class="form-label" style="margin-bottom:14px;">
+            <span style="font-size:13px;font-weight:600;margin-bottom:6px;display:block;">Risk tier</span>
+            <select class="form-select" style="width:100%;min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:6px;">
+              <option>M3 — Cao</option>
+              <option>M4 — Nghiêm trọng</option>
+              <option>M2 — Trung bình</option>
+              <option>M1 — Thấp</option>
+            </select>
+          </label>
+          <label class="form-label" style="margin-bottom:14px;">
+            <span style="font-size:13px;font-weight:600;margin-bottom:6px;display:block;">Nguồn Việt Nam</span>
+            <input class="form-control" value="Thiếu" readonly style="width:100%;min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:6px;background:#f8fafb;color:var(--coral);font-weight:600;">
+          </label>
+          <div style="margin-bottom:14px;">
+            <span style="font-size:13px;font-weight:600;display:block;margin-bottom:6px;">AI hỗ trợ</span>
+            <p style="font-size:13px;color:var(--ink-3);">Có · tóm tắt nguồn; bóc tách luận điểm. Con người chịu trách nhiệm.</p>
+          </div>
+          <div class="cms-alert cms-alert-danger" style="margin-bottom:0;">
+            <strong>Không cho override</strong>
+            <p>Break-glass chỉ áp dụng quy trình khẩn cấp sau khi DEC-007 được duyệt.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cms-alert cms-alert-warn" style="margin-top:24px;">
+        <strong>Prototype — không phải hệ thống thật</strong>
+        <p>Trang này mô phỏng giao diện soạn thảo CMS. Workflow 8 bước, hard-lock và risk tier được giả định cho mục đích thiết kế.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

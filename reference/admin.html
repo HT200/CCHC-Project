@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tổng quan CMS | CCHC Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="cms-layout">
+  <aside class="cms-sidebar" aria-label="Menu CMS">
+    <strong>CCHC CMS</strong>
+    <a href="admin.html" class="is-active">Tổng quan</a>
+    <a href="admin-editor.html">Soạn &amp; kiểm nguồn</a>
+    <a href="admin-review.html">Phản biện &amp; phê duyệt</a>
+    <a href="admin-corrections.html">Đính chính</a>
+    <a href="admin-emergency.html">Công bố khẩn</a>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Quản trị</div>
+      <a href="admin-verification.html">Xác minh chuyên gia</a>
+      <a href="admin-ai.html">Nhật ký AI</a>
+    </div>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Công khai</div>
+      <a href="minh-bach.html">← Trang minh bạch</a>
+      <a href="index.html">← Website công khai</a>
+    </div>
+  </aside>
+
+  <div class="cms-content">
+    <header class="cms-topbar">
+      <div>
+        <strong>Tổng quan vận hành</strong><br>
+        <span class="cms-role">Vai trò: Managing Editor · Prototype — dữ liệu minh họa</span>
+      </div>
+      <span class="cms-status">Quyền đề xuất — cần duyệt</span>
+    </header>
+
+    <div class="cms-body">
+      <h1 style="font-size:24px;font-weight:700;margin:0 0 6px;">Bảng việc hôm nay</h1>
+      <p style="color:var(--ink-3);font-size:14px;margin:0 0 24px;">Tổng quan công việc cần xử lý, phân loại theo trạng thái và mức độ ưu tiên.</p>
+
+      <div class="cms-donut-row">
+        <div class="cms-donut-card">
+          <div class="cms-donut" style="background: conic-gradient(var(--cobalt) 0% 62%, #e8edf0 62% 100%);"><span>8</span></div>
+          <div class="cms-donut-label">Chờ phản biện</div>
+          <div class="cms-donut-note">M2–M4 · 62% tải</div>
+        </div>
+        <div class="cms-donut-card">
+          <div class="cms-donut" style="background: conic-gradient(#d4a020 0% 38%, #e8edf0 38% 100%);"><span>5</span></div>
+          <div class="cms-donut-label">Chờ phê duyệt</div>
+          <div class="cms-donut-note">2 nội dung M4</div>
+        </div>
+        <div class="cms-donut-card">
+          <div class="cms-donut" style="background: conic-gradient(var(--coral) 0% 23%, #e8edf0 23% 100%);"><span>3</span></div>
+          <div class="cms-donut-label">Sai sót mới</div>
+          <div class="cms-donut-note">1 ưu tiên hôm nay</div>
+        </div>
+        <div class="cms-donut-card">
+          <div class="cms-donut" style="background: conic-gradient(#a32d2d 0% 15%, #e8edf0 15% 100%);"><span>2</span></div>
+          <div class="cms-donut-label">Hard-lock</div>
+          <div class="cms-donut-note">Thiếu nguồn / red-flag</div>
+        </div>
+      </div>
+
+      <div class="cms-viz-grid">
+        <div class="cms-viz-card">
+          <h3>Tiến độ mục tiêu 2027</h3>
+          <div class="cms-progress-row">
+            <div class="cms-progress-label"><span>Nội dung công bố</span><strong>48 / 300</strong></div>
+            <div class="cms-progress-track"><div class="cms-progress-fill cobalt" style="width:16%"></div></div>
+          </div>
+          <div class="cms-progress-row">
+            <div class="cms-progress-label"><span>Đối tác hoạt động</span><strong>4 / 12</strong></div>
+            <div class="cms-progress-track"><div class="cms-progress-fill green" style="width:33%"></div></div>
+          </div>
+          <div class="cms-progress-row">
+            <div class="cms-progress-label"><span>Hợp đồng ký mới</span><strong>3 / 20</strong></div>
+            <div class="cms-progress-track"><div class="cms-progress-fill amber" style="width:15%"></div></div>
+          </div>
+          <div class="cms-progress-row">
+            <div class="cms-progress-label"><span>Khóa đào tạo</span><strong>2 / 10</strong></div>
+            <div class="cms-progress-track"><div class="cms-progress-fill cobalt" style="width:20%"></div></div>
+          </div>
+          <div class="cms-progress-row">
+            <div class="cms-progress-label"><span>Báo cáo KAP</span><strong>1 / 6</strong></div>
+            <div class="cms-progress-track"><div class="cms-progress-fill coral" style="width:17%"></div></div>
+          </div>
+        </div>
+
+        <div class="cms-viz-card">
+          <h3>Phân loại nội dung theo risk tier</h3>
+          <div class="cms-viz-body">
+            <div class="cms-pie" style="background: conic-gradient(#2a9d5a 0% 45%, var(--cobalt) 45% 75%, #d4a020 75% 92%, var(--coral) 92% 100%);"></div>
+            <div class="cms-pie-legend">
+              <div class="cms-pie-legend-item"><span class="cms-pie-dot" style="background:#2a9d5a"></span> M1 — Thấp · 45%</div>
+              <div class="cms-pie-legend-item"><span class="cms-pie-dot" style="background:var(--cobalt)"></span> M2 — Trung bình · 30%</div>
+              <div class="cms-pie-legend-item"><span class="cms-pie-dot" style="background:#d4a020"></span> M3 — Cao · 17%</div>
+              <div class="cms-pie-legend-item"><span class="cms-pie-dot" style="background:var(--coral)"></span> M4 — Nghiêm trọng · 8%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cms-viz-grid">
+        <div class="cms-viz-card">
+          <h3>Nội dung công bố theo tháng — 2026</h3>
+          <div class="cms-bar-chart">
+            <div class="cms-bar-group"><div class="cms-bar" style="height:20%;background:var(--cobalt)"></div><div class="cms-bar-value">3</div><div class="cms-bar-label">T1</div></div>
+            <div class="cms-bar-group"><div class="cms-bar" style="height:33%;background:var(--cobalt)"></div><div class="cms-bar-value">5</div><div class="cms-bar-label">T2</div></div>
+            <div class="cms-bar-group"><div class="cms-bar" style="height:27%;background:var(--cobalt)"></div><div class="cms-bar-value">4</div><div class="cms-bar-label">T3</div></div>
+            <div class="cms-bar-group"><div class="cms-bar" style="height:40%;background:var(--cobalt)"></div><div class="cms-bar-value">6</div><div class="cms-bar-label">T4</div></div>
+            <div class="cms-bar-group"><div class="cms-bar" style="height:53%;background:var(--cobalt)"></div><div class="cms-bar-value">8</div><div class="cms-bar-label">T5</div></div>
+            <div class="cms-bar-group"><div class="cms-bar" style="height:60%;background:var(--cobalt)"></div><div class="cms-bar-value">9</div><div class="cms-bar-label">T6</div></div>
+            <div class="cms-bar-group"><div class="cms-bar" style="height:47%;background:var(--cobalt)"></div><div class="cms-bar-value">7</div><div class="cms-bar-label">T7</div></div>
+            <div class="cms-bar-group"><div class="cms-bar" style="height:33%;background:var(--cobalt);opacity:.5"></div><div class="cms-bar-value">6</div><div class="cms-bar-label">T8</div></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:10px;font-size:12px;color:var(--ink-3);">
+            <span>Tổng: 48 bài · Mục tiêu năm: 300</span>
+            <span style="font-weight:600;color:var(--cobalt);">Tiến độ 16%</span>
+          </div>
+        </div>
+
+        <div class="cms-viz-card">
+          <h3>Tuân thủ quy trình AI — 7 ngày gần nhất</h3>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span>Tỷ lệ tuân thủ</span><strong style="color:#2a9d5a;">100%</strong></div>
+              <div class="cms-spark">
+                <div class="cms-spark-bar" style="height:80%"></div>
+                <div class="cms-spark-bar" style="height:90%"></div>
+                <div class="cms-spark-bar" style="height:75%"></div>
+                <div class="cms-spark-bar" style="height:95%"></div>
+                <div class="cms-spark-bar peak" style="height:100%"></div>
+                <div class="cms-spark-bar" style="height:85%"></div>
+                <div class="cms-spark-bar" style="height:90%"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--ink-3);margin-top:4px;"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div>
+            </div>
+            <div style="border-top:1px solid var(--line);padding-top:12px;">
+              <div class="cms-progress-row">
+                <div class="cms-progress-label"><span>Hard-lock tự động</span><strong>2 lần</strong></div>
+                <div class="cms-progress-track"><div class="cms-progress-fill coral" style="width:8%"></div></div>
+              </div>
+              <div class="cms-progress-row">
+                <div class="cms-progress-label"><span>Cờ rủi ro AI</span><strong>14 / 48 bài</strong></div>
+                <div class="cms-progress-track"><div class="cms-progress-fill amber" style="width:29%"></div></div>
+              </div>
+              <div class="cms-progress-row">
+                <div class="cms-progress-label"><span>Người xác nhận</span><strong>100%</strong></div>
+                <div class="cms-progress-track"><div class="cms-progress-fill green" style="width:100%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-size:18px;font-weight:600;margin:0 0 14px;">Hàng đợi việc hôm nay</h2>
+      <div style="overflow-x:auto;">
+        <table class="cms-table">
+          <thead>
+            <tr><th>Việc</th><th>Risk tier</th><th>Responsible</th><th>Accountable</th><th>SLA</th><th>Trạng thái</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bài "Hiểu đúng chỉ số huyết áp"</td>
+              <td>M3</td>
+              <td>Medical Reviewer</td>
+              <td>Scientific Approver</td>
+              <td>Hôm nay</td>
+              <td><span class="status warn">Chờ phản biện</span></td>
+            </tr>
+            <tr>
+              <td>Đính chính CCHC-ART-0036</td>
+              <td>M4</td>
+              <td>Correction Lead</td>
+              <td>HĐ Y khoa</td>
+              <td>4 giờ</td>
+              <td><span class="status danger">Ưu tiên</span></td>
+            </tr>
+            <tr>
+              <td>Hồ sơ BS. Nguyễn Văn A</td>
+              <td>—</td>
+              <td>Verifier</td>
+              <td>Verification Owner</td>
+              <td>2 ngày</td>
+              <td><span class="status">Đang kiểm tra</span></td>
+            </tr>
+            <tr>
+              <td>Bài "Dinh dưỡng người cao tuổi"</td>
+              <td>M2</td>
+              <td>Editor</td>
+              <td>Medical Reviewer</td>
+              <td>3 ngày</td>
+              <td><span class="status warn">Chờ phản biện</span></td>
+            </tr>
+            <tr>
+              <td>Bài "Tế bào gốc: hiểu đúng"</td>
+              <td>M4</td>
+              <td>Editor</td>
+              <td>HĐ Y khoa (2 người)</td>
+              <td>5 ngày</td>
+              <td><span class="status danger">Hard-lock</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="font-size:18px;font-weight:600;margin:32px 0 14px;">Bảng theo dõi tác động — 6 nhóm chỉ tiêu</h2>
+      <p style="color:var(--ink-3);font-size:14px;margin:0 0 20px;">Khung đo lường không chỉ lượt xem mà còn thời gian đọc, tỷ lệ đọc hết, mức độ hiểu đúng, trích dẫn báo chí, chuyển đổi thành hành động an toàn và tuân thủ quy trình.</p>
+
+      <div class="grid grid-3 u-gap-20-mb-28">
+        <div class="panel-tint u-panel-p18">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div class="cms-donut" style="width:48px;height:48px;background:conic-gradient(#2a9d5a 0% 100%, #e8edf0 100%);"><span style="font-size:14px;">✓</span></div>
+            <h4 class="u-dashboard-h4" style="margin:0;">1. Nền tảng pháp lý &amp; tổ chức</h4>
+          </div>
+          <div class="u-dashboard-metrics">
+            <div>Điều lệ &amp; hồ sơ pháp lý: <strong>✓ Hoàn thiện</strong></div>
+            <div>Hội đồng khoa học: <strong>✓ Thành lập</strong></div>
+            <div>Quy chế nội dung &amp; phê duyệt: <strong>✓ Ban hành</strong></div>
+          </div>
+        </div>
+        <div class="panel-tint u-panel-p18">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div class="cms-donut" style="width:48px;height:48px;background:conic-gradient(var(--cobalt) 0% 16%, #e8edf0 16% 100%);"><span style="font-size:14px;">16%</span></div>
+            <h4 class="u-dashboard-h4" style="margin:0;">2. Nội dung, website &amp; kênh</h4>
+          </div>
+          <div class="u-dashboard-metrics">
+            <div>Bài công bố 2026: <strong>48</strong> / Mục tiêu 2027: <strong>300</strong></div>
+            <div>% bài có nguồn tham chiếu: <strong>100%</strong></div>
+            <div>% bài có phản biện chuyên gia: <strong>100%</strong></div>
+            <div>Bài được báo chí trích dẫn: <strong>12</strong></div>
+          </div>
+        </div>
+        <div class="panel-tint u-panel-p18">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div class="cms-donut" style="width:48px;height:48px;background:conic-gradient(var(--cobalt) 0% 67%, #e8edf0 67% 100%);"><span style="font-size:14px;">67%</span></div>
+            <h4 class="u-dashboard-h4" style="margin:0;">3. Chuyên môn &amp; chuyên gia</h4>
+          </div>
+          <div class="u-dashboard-metrics">
+            <div>Chuyên gia thường trực: <strong>6</strong> / Khách mời: <strong>14</strong></div>
+            <div>Chủ đề có hồ sơ nền: <strong>8</strong></div>
+            <div>Số chuyên môn đa dạng: <strong>7 khoa</strong></div>
+          </div>
+        </div>
+        <div class="panel-tint u-panel-p18">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div class="cms-donut" style="width:48px;height:48px;background:conic-gradient(#d4a020 0% 33%, #e8edf0 33% 100%);"><span style="font-size:14px;">33%</span></div>
+            <h4 class="u-dashboard-h4" style="margin:0;">4. Báo chí, sự kiện &amp; cộng đồng</h4>
+          </div>
+          <div class="u-dashboard-metrics">
+            <div>Sự kiện/hội thảo 2026: <strong>4</strong></div>
+            <div>Cơ quan báo chí tham gia: <strong>9</strong></div>
+            <div>Chiến dịch cộng đồng: <strong>2</strong></div>
+          </div>
+        </div>
+        <div class="panel-tint u-panel-p18">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div class="cms-donut" style="width:48px;height:48px;background:conic-gradient(#2a9d5a 0% 72%, #e8edf0 72% 100%);"><span style="font-size:14px;">72%</span></div>
+            <h4 class="u-dashboard-h4" style="margin:0;">5. Tài chính &amp; tự chủ</h4>
+          </div>
+          <div class="u-dashboard-metrics">
+            <div>Hợp đồng dịch vụ: <strong>3</strong></div>
+            <div>Tỷ trọng nguồn thu ngoài 1 nhà tài trợ: <strong>72%</strong></div>
+            <div>Mục tiêu giảm phụ thuộc: 65%→28% (2030)</div>
+          </div>
+        </div>
+        <div class="panel-tint u-panel-p18">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div class="cms-donut" style="width:48px;height:48px;background:conic-gradient(#2a9d5a 0% 100%, #e8edf0 100%);"><span style="font-size:14px;">✓</span></div>
+            <h4 class="u-dashboard-h4" style="margin:0;">6. Quản trị rủi ro</h4>
+          </div>
+          <div class="u-dashboard-metrics">
+            <div>Nội dung phân loại rủi ro: <strong>100%</strong></div>
+            <div>Phản biện/khiếu nại xử lý: <strong>14</strong></div>
+            <div>Lỗi chuyên môn nghiêm trọng: <strong>0</strong></div>
+            <div>Tuân thủ quy trình AI: <strong>100%</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-size:18px;font-weight:600;margin:8px 0 14px;">Mục tiêu chiến lược theo năm</h2>
+      <div class="u-overflow-x">
+        <table class="u-strategy-table">
+          <thead><tr class="u-th-border">
+            <th class="u-th-left">Chỉ tiêu</th>
+            <th class="u-th-center">2027</th>
+            <th class="u-th-center">2028</th>
+            <th class="u-th-center">2029</th>
+            <th class="u-th-center">2030</th>
+            <th class="u-th-center">Xu hướng</th>
+          </tr></thead>
+          <tbody>
+            <tr class="u-tr-border"><td class="u-td-p10">Đối tác hoạt động thực chất</td><td class="u-td-center-p10">12</td><td class="u-td-center-p10">18</td><td class="u-td-center-p10">~24</td><td class="u-td-center-p10">~30</td><td class="u-td-center-p10"><div class="cms-spark" style="height:24px;"><div class="cms-spark-bar" style="height:40%"></div><div class="cms-spark-bar" style="height:60%"></div><div class="cms-spark-bar" style="height:80%"></div><div class="cms-spark-bar" style="height:100%"></div></div></td></tr>
+            <tr class="u-tr-border"><td class="u-td-p10">Hợp đồng/thỏa thuận ký mới</td><td class="u-td-center-p10">20</td><td class="u-td-center-p10">32</td><td class="u-td-center-p10">~44</td><td class="u-td-center-p10">~56</td><td class="u-td-center-p10"><div class="cms-spark" style="height:24px;"><div class="cms-spark-bar" style="height:36%"></div><div class="cms-spark-bar" style="height:57%"></div><div class="cms-spark-bar" style="height:79%"></div><div class="cms-spark-bar" style="height:100%"></div></div></td></tr>
+            <tr class="u-tr-border"><td class="u-td-p10">Nội dung được công bố</td><td class="u-td-center-p10">300</td><td class="u-td-center-p10">520</td><td class="u-td-center-p10">~700</td><td class="u-td-center-p10">~900</td><td class="u-td-center-p10"><div class="cms-spark" style="height:24px;"><div class="cms-spark-bar" style="height:33%"></div><div class="cms-spark-bar" style="height:58%"></div><div class="cms-spark-bar" style="height:78%"></div><div class="cms-spark-bar" style="height:100%"></div></div></td></tr>
+            <tr class="u-tr-border"><td class="u-td-p10">Báo cáo nghiên cứu KAP</td><td class="u-td-center-p10">6</td><td class="u-td-center-p10">12</td><td class="u-td-center-p10">~18</td><td class="u-td-center-p10">~24</td><td class="u-td-center-p10"><div class="cms-spark" style="height:24px;"><div class="cms-spark-bar" style="height:25%"></div><div class="cms-spark-bar" style="height:50%"></div><div class="cms-spark-bar" style="height:75%"></div><div class="cms-spark-bar" style="height:100%"></div></div></td></tr>
+            <tr><td class="u-td-p10">Khóa đào tạo tổ chức</td><td class="u-td-center-p10">10</td><td class="u-td-center-p10">20</td><td class="u-td-center-p10">~30</td><td class="u-td-center-p10">~40</td><td class="u-td-center-p10"><div class="cms-spark" style="height:24px;"><div class="cms-spark-bar" style="height:25%"></div><div class="cms-spark-bar" style="height:50%"></div><div class="cms-spark-bar" style="height:75%"></div><div class="cms-spark-bar" style="height:100%"></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cms-alert cms-alert-warn" style="margin-top:28px;">
+        <strong>Prototype — không phải hệ thống thật</strong>
+        <p>Trang này mô phỏng giao diện CMS nội bộ. Quyền, dữ liệu và workflow được giả định cho mục đích thiết kế. Khi triển khai thật, truy cập yêu cầu đăng nhập và phân quyền RBAC.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

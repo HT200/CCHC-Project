@@ -10,24 +10,21 @@
     });
   }
 
-  // A11y toggle (F-UX-01) — có thể có nhiều nút trên cùng trang
-  var a11yBtns = document.querySelectorAll('.a11y-toggle');
-  if (a11yBtns.length) {
-    var isOn = localStorage.getItem('cchc-a11y') === '1';
-    if (isOn) document.documentElement.setAttribute('data-a11y', '1');
-    a11yBtns.forEach(function (btn) { btn.setAttribute('aria-pressed', String(isOn)); });
-
-    a11yBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var on = document.documentElement.getAttribute('data-a11y') === '1';
-        var next = !on;
-        document.documentElement.toggleAttribute('data-a11y', next);
-        if (next) document.documentElement.setAttribute('data-a11y', '1');
-        localStorage.setItem('cchc-a11y', next ? '1' : '0');
-        a11yBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(next)); });
-      });
+  // Mobile nav dropdown toggle
+  var navItems = document.querySelectorAll('.mainnav .nav-item');
+  navItems.forEach(function (item) {
+    var topLink = item.querySelector('a');
+    var dropdown = item.querySelector('.nav-dropdown');
+    if (!dropdown) return;
+    topLink.addEventListener('click', function (e) {
+      if (nav.classList.contains('open')) {
+        e.preventDefault();
+        var wasExpanded = item.classList.contains('expanded');
+        navItems.forEach(function (n) { n.classList.remove('expanded'); });
+        if (!wasExpanded) item.classList.add('expanded');
+      }
     });
-  }
+  });
 
   // Back to top
   var btt = document.querySelector('.back-top');
@@ -304,6 +301,37 @@
       }
     });
   }
+
+  // ─── Relative time for news brief items ───
+  var relTimeEls = document.querySelectorAll('.news-rel-time[data-time]');
+  var now = new Date();
+  relTimeEls.forEach(function (el) {
+    var ts = new Date(el.getAttribute('data-time'));
+    if (isNaN(ts.getTime())) return;
+    var diffMs = now - ts;
+    var diffMin = Math.floor(diffMs / 60000);
+    var diffHr = Math.floor(diffMin / 60);
+    var diffDay = Math.floor(diffHr / 24);
+    var label;
+    if (diffMin < 1) label = 'Vừa xong';
+    else if (diffMin < 60) label = diffMin + ' phút trước';
+    else if (diffHr < 24) label = diffHr + ' giờ trước';
+    else if (diffDay === 1) label = 'Hôm qua';
+    else if (diffDay < 7) label = diffDay + ' ngày trước';
+    else if (diffDay < 14) label = '1 tuần trước';
+    else label = Math.floor(diffDay / 7) + ' tuần trước';
+    el.textContent = label;
+    // Auto-show MỚI badge if within 48h
+    if (diffHr < 48) {
+      var meta = el.closest('.news-brief-meta');
+      if (meta && !meta.querySelector('.news-new-badge')) {
+        var badge = document.createElement('span');
+        badge.className = 'news-new-badge';
+        badge.textContent = 'MỚI';
+        meta.insertBefore(badge, el);
+      }
+    }
+  });
 
   // ─── Simplified UI Mode ───
   var simpleBtns = document.querySelectorAll('.simple-toggle');

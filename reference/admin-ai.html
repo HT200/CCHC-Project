@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhật ký AI | CCHC Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="cms-layout">
+  <aside class="cms-sidebar" aria-label="Menu CMS">
+    <strong>CCHC CMS</strong>
+    <a href="admin.html">Tổng quan</a>
+    <a href="admin-editor.html">Soạn &amp; kiểm nguồn</a>
+    <a href="admin-review.html">Phản biện &amp; phê duyệt</a>
+    <a href="admin-corrections.html">Đính chính</a>
+    <a href="admin-emergency.html">Công bố khẩn</a>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Quản trị</div>
+      <a href="admin-verification.html">Xác minh chuyên gia</a>
+      <a href="admin-ai.html" class="is-active">Nhật ký AI</a>
+    </div>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Công khai</div>
+      <a href="minh-bach.html#ai">← Chính sách AI (công khai)</a>
+      <a href="index.html">← Website công khai</a>
+    </div>
+  </aside>
+
+  <div class="cms-content">
+    <header class="cms-topbar">
+      <div>
+        <strong>AI Governance &amp; Audit</strong><br>
+        <span class="cms-role">FLOW-12 · DEC-018 · Prototype — dữ liệu minh họa</span>
+      </div>
+      <span class="cms-status">Quyền đề xuất — cần duyệt</span>
+    </header>
+
+    <div class="cms-body">
+      <a class="cms-back-link" href="admin.html">← Tổng quan CMS</a>
+      <h1 style="font-size:24px;font-weight:700;margin:0 0 6px;">Nhật ký sử dụng AI</h1>
+      <p style="color:var(--ink-3);font-size:14px;margin:0 0 24px;">Mọi nội dung có AI tham gia đều được ghi nhận: phiên bản AI, mức can thiệp, điểm cắm cờ rủi ro, người phê duyệt.</p>
+
+      <div class="cms-two-col" style="margin-bottom:24px;">
+        <div class="cms-alert cms-alert-safe">
+          <strong>Được phép — giả định tạm</strong>
+          <p>Gợi ý cấu trúc, tóm tắt nguồn, hỗ trợ metadata, bóc tách luận điểm, gán mức bằng chứng sơ bộ, phát hiện điểm rủi ro, viết bản công chúng, chuẩn bị nguồn, nêu câu hỏi cần bác sĩ xác nhận, tóm tắt &amp; định dạng đa kênh. Luôn có người kiểm tra.</p>
+        </div>
+        <div class="cms-alert cms-alert-danger">
+          <strong>Hard-lock — giả định tạm</strong>
+          <p>Không tự tạo red-flag copy, không chẩn đoán, không chỉ định điều trị, không đưa liều thuốc kê đơn, không tự công bố. Mọi đầu ra AI là bản nháp chờ bác sĩ thẩm định và ký duyệt.</p>
+        </div>
+      </div>
+
+      <h2 style="font-size:18px;font-weight:600;margin:0 0 14px;">Bảng nhật ký AI chi tiết</h2>
+      <div style="overflow-x:auto;margin-bottom:24px;">
+        <table class="cms-table">
+          <thead>
+            <tr><th>Thời gian</th><th>Content ID</th><th>Tác vụ AI</th><th>Người xác nhận</th><th>Cờ rủi ro</th><th>Kết quả</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>24/07/2026 15:42</td>
+              <td><code>CCHC-ART-0042</code></td>
+              <td>Tóm tắt 2 nguồn</td>
+              <td>Editor 01</td>
+              <td>0</td>
+              <td><span class="status safe">Chấp nhận có sửa</span></td>
+            </tr>
+            <tr>
+              <td>24/07/2026 15:38</td>
+              <td><code>CCHC-ART-0042</code></td>
+              <td>Gợi ý red-flag copy</td>
+              <td>System</td>
+              <td>1</td>
+              <td><span class="status danger">Hard-lock</span></td>
+            </tr>
+            <tr>
+              <td>12/07/2026 14:20</td>
+              <td><code>CCHC-ART-0042</code></td>
+              <td>Bóc tách luận điểm</td>
+              <td>Editor 01</td>
+              <td>3</td>
+              <td><span class="status safe">Đã duyệt — PGS.TS Lê Thu Hà</span></td>
+            </tr>
+            <tr>
+              <td>11/07/2026 16:00</td>
+              <td><code>CCHC-ART-0052</code></td>
+              <td>Gán mức bằng chứng sơ bộ</td>
+              <td>Editor 02</td>
+              <td>1</td>
+              <td><span class="status warn">Chỉnh sửa — hạ mức M3→M2</span></td>
+            </tr>
+            <tr>
+              <td>11/04/2026 10:20</td>
+              <td><code>CCHC-ART-0021</code></td>
+              <td>Bóc tách "Tế bào gốc"</td>
+              <td>HĐ Khoa học</td>
+              <td>5</td>
+              <td><span class="status danger">Hard-lock — tài trợ thương mại</span></td>
+            </tr>
+            <tr>
+              <td>05/07/2026 09:15</td>
+              <td><code>CCHC-ART-0048</code></td>
+              <td>Tóm tắt NĐ 13/2023</td>
+              <td>Ban Biên tập</td>
+              <td>1</td>
+              <td><span class="status safe">Đã duyệt</span></td>
+            </tr>
+            <tr>
+              <td>03/07/2026 11:30</td>
+              <td><code>CCHC-ART-0044</code></td>
+              <td>Viết bản công chúng</td>
+              <td>Editor 01</td>
+              <td>2</td>
+              <td><span class="status safe">Đã duyệt — sửa 2 đoạn</span></td>
+            </tr>
+            <tr>
+              <td>28/06/2026 13:45</td>
+              <td><code>CCHC-ART-0039</code></td>
+              <td>Phát hiện điểm rủi ro</td>
+              <td>System</td>
+              <td>4</td>
+              <td><span class="status warn">Chuyển HĐ Khoa học</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cms-alert cms-alert-warn">
+        <strong>Blocker build — DEC-018 chưa duyệt</strong>
+        <p>Cần chốt phạm vi dữ liệu, model/vendor, retention, logging, kiểm thử bias, incident response và quyền override trước khi triển khai thật. Chính sách AI công khai xem tại <a href="minh-bach.html#ai">trang Minh bạch</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
