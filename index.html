@@ -8,35 +8,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;subset=vietnamese,latin-ext&amp;display=swap" rel="stylesheet">
 <style>
   :root{
-    --blue:#037B96;      /* COBALT · hành động: CTA / link / tiêu đề tô màu (VIS-02) */
-    --blue-d:#012932;    /* cobalt đậm · hover / heading tô màu */
-    --navy:#012932;      /* NAVY · thẩm quyền: hero / footer / panel Minh bạch */
-    --navy-d:#011B21;    /* navy đậm */
-    --aqua:#037B96;      /* tín hiệu "đã kiểm chứng" · badge / viền trạng thái (không dùng cho chữ nhỏ) */
-    --blue-l:#82E6FD;    /* COBALT nhạt · nền tint / trust strip / chip */
-    --teal:#037B96;      /* đồng bộ về cobalt (hành động) */
-    --teal-l:#82E6FD;
-    --ink:#037B96;       /* thân bài */
-    --muted:#566B70;     /* meta · AA trên nền trắng */
-    --line:rgba(1,41,50,.14);
-    --bg:#CDF5FE;        /* paper · nền section xen kẽ */
+    --blue:#1D4ED8;      /* COBALT · hành động: CTA / link / tiêu đề tô màu (VIS-02) */
+    --blue-d:#0A1E42;    /* cobalt đậm · hover / heading tô màu */
+    --navy:#0A1E42;      /* NAVY · thẩm quyền: hero / footer / panel Minh bạch */
+    --navy-d:#06122C;    /* navy đậm */
+    --aqua:#1D4ED8;      /* tín hiệu "đã kiểm chứng" · badge / viền trạng thái (không dùng cho chữ nhỏ) */
+    --blue-l:#8FB4FF;    /* COBALT nhạt · nền tint / trust strip / chip */
+    --teal:#1D4ED8;      /* đồng bộ về cobalt (hành động) */
+    --teal-l:#8FB4FF;
+    --ink:#13223F;       /* thân bài */
+    --muted:#5A6478;     /* meta · AA trên nền trắng */
+    --line:rgba(10,30,66,.14);
+    --bg:#E6EDFB;        /* paper · nền section xen kẽ */
     --coral:#C0392B;     /* CHỈ nguy cơ/khẩn: emergency / red-flag / consent error */
     --white:#FFFFFF;
     --amber:#995100;
     --amber-l:#FFCF99;
     --radius:.375rem;
-    --shadow:0 1px 2px rgba(1,41,50,.06),0 4px 14px rgba(1,41,50,.05);
+    --shadow:0 1px 2px rgba(10,30,66,.06),0 4px 14px rgba(10,30,66,.05);
     --maxw:1140px;
     --read-fs:18px;      /* v19: cỡ chữ vùng đọc (người cao tuổi) · 18→20→22 · runtime */
-    --snap-header-h:0px; /* chiều cao header dính, đo bằng JS — bù trừ cho scroll-snap */
-    --snap-tabs-h:0px;   /* chiều cao thanh tab dính, đo bằng JS — bù trừ cho scroll-snap */
+    --snap-header-h:0px; /* chiều cao header dính, đo bằng JS — bù trừ khi cuộn tới mỏ neo dưới header dính */
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth;font-size:18px}
-  html.is-home{scroll-snap-type:y proximity}
-  @media(max-width:680px){
-    html.is-home{scroll-snap-type:none} /* di động: bỏ tab, cuộn dài bình thường — không snap */
-  }
   body{margin:0;font-family:'Roboto',system-ui,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;font-size:1rem}
   a{color:var(--blue);text-decoration:none;cursor:pointer}
   a:hover{text-decoration:underline}
@@ -48,15 +43,15 @@
   p{margin:0 0 1em}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
   .btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;background:var(--blue);color:#fff;padding:11px 20px;border-radius:var(--radius);font-family:inherit;font-size:.95rem;font-weight:500;transition:.15s;text-decoration:none}
-  .btn:hover{background:#012932;text-decoration:none;color:#fff}
+  .btn:hover{background:#0A1E42;text-decoration:none;color:#fff}
   .btn.sec{background:#fff;color:var(--blue);border:1.5px solid var(--blue)}
   .btn.sec:hover{background:var(--blue-l);border-color:var(--blue);color:var(--blue)}
   .btn.teal{background:var(--blue)}
-  .btn.teal:hover{background:#012932}
+  .btn.teal:hover{background:#0A1E42}
   .btn.tert{background:transparent;color:var(--blue);padding-left:2px;padding-right:2px}
   .btn.tert:hover{background:transparent;text-decoration:underline}
   .btn.white{background:#fff;color:var(--blue)}
-  .btn.white:hover{background:#82E6FD;color:var(--blue)}
+  .btn.white:hover{background:#8FB4FF;color:var(--blue)}
   .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.65)}
   .btn.ghost:hover{background:rgba(255,255,255,.12);color:#fff}
   .btn.sm{padding:7px 14px;font-size:.85rem}
@@ -65,15 +60,15 @@
   .demo-tag{font-size:.78rem;color:#995100;background:var(--amber-l);border:1px solid #FF9013;padding:1px 8px;border-radius:20px;display:inline-block;font-weight:500}
 
   /* ===== Demo banner ===== */
-  .demobar{background:var(--navy-d);color:#82E6FD;font-size:.82rem;text-align:center;padding:6px 12px;font-weight:400;letter-spacing:.2px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .demobar{background:var(--navy-d);color:#8FB4FF;font-size:.82rem;text-align:center;padding:6px 12px;font-weight:400;letter-spacing:.2px;border-bottom:1px solid rgba(255,255,255,.12)}
 
   /* ===== Header hai tầng (AMA) ===== */
-  header{position:sticky;top:0;z-index:60;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.06);scroll-snap-align:start}
+  header{position:sticky;top:0;z-index:60;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.06)}
   .topbar{background:var(--navy)}
   .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:4px 16px;flex-wrap:wrap;min-height:44px}
   .tb-left{display:flex;align-items:center;gap:2px 14px;flex-wrap:wrap}
   .tb-right{display:flex;align-items:center;gap:2px 14px;flex-wrap:wrap;margin-left:auto}
-  .topbar-inner a,.topbar-inner button{color:#82E6FD;font-weight:500;background:none;border:0;font-family:inherit;font-size:.9rem;cursor:pointer;padding:9px 2px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .topbar-inner a,.topbar-inner button{color:#8FB4FF;font-weight:500;background:none;border:0;font-family:inherit;font-size:.9rem;cursor:pointer;padding:9px 2px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
   .topbar-inner a:hover,.topbar-inner button:hover{color:#fff;text-decoration:none}
   .topbar-inner .sep{color:rgba(255,255,255,.28);padding:0}
   .topbar-inner .util-strong{color:#fff;font-weight:700}
@@ -118,7 +113,7 @@
   .badge-soon{font-size:.66rem;background:#eef0f4;color:var(--muted);border:1px solid var(--line);padding:1px 6px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;margin-left:6px;display:inline-block;vertical-align:middle}
   .menu-toggle{display:none;margin-left:auto;background:none;border:0;padding:8px 11px;cursor:pointer;color:var(--blue-d)}
   /* mega-menu */
-  .mega{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:0 0 var(--radius) var(--radius);box-shadow:0 12px 30px rgba(1,41,50,.14);padding:14px;min-width:360px;z-index:70}
+  .mega{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:0 0 var(--radius) var(--radius);box-shadow:0 12px 30px rgba(10,30,66,.14);padding:14px;min-width:360px;z-index:70}
   .mega-inner{display:grid;gap:2px}
   .mega-link{display:block;padding:10px 12px;border-radius:var(--radius);cursor:pointer}
   .mega-link:hover{background:var(--blue-l);text-decoration:none}
@@ -143,19 +138,28 @@
   .crumb a{color:var(--muted)}
 
   /* ===== Hero ===== */
-  .hero{background:linear-gradient(120deg,#012932 0%,#037B96 100%);color:#fff;padding:64px 0 56px}
-  .hero h1{color:#fff;font-size:2.8rem;font-weight:900;line-height:1.15;letter-spacing:-.02em;text-shadow:0 2px 12px rgba(0,0,0,.25)}
-  .hero .sub{font-size:1.25rem;color:#fff;max-width:56ch;margin-bottom:24px;font-weight:400;opacity:.92}
+  .hero{background:linear-gradient(120deg,#0A1E42 0%,#1D4ED8 100%);color:#fff;padding:64px 0 56px}
+  .hero h1{color:#fff;font-size:3.6rem;font-weight:900;line-height:1.12;letter-spacing:-.025em;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+  .hero .sub{font-size:1.05rem;color:#fff;max-width:72ch;margin-bottom:24px;font-weight:400;opacity:.85}
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin:6px 0 20px}
   .trust3{display:flex;flex-wrap:wrap;gap:8px 26px;margin:8px 0 4px}
-  .trust3 span{color:#82E6FD;font-size:.92rem;font-weight:400}
-  .hero .chip-official{display:inline-block;letter-spacing:.02em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#82E6FD;font-size:.78rem;padding:4px 12px;border-radius:20px;margin-bottom:16px;font-weight:500}
+  .trust3 span{color:#8FB4FF;font-size:.92rem;font-weight:400}
+  .hero .chip-official{display:inline-block;letter-spacing:.02em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#8FB4FF;font-size:.78rem;padding:4px 12px;border-radius:20px;margin-bottom:16px;font-weight:500}
 
   /* ===== Navy accent panel ===== */
   .navy-panel{background:var(--navy);color:#fff;padding:44px 0}
   .navy-panel h2{color:#fff}
-  .navy-panel .eyebrow{color:#82E6FD}
-  .navy-panel p{color:#82E6FD}
+  .navy-panel .eyebrow{color:#8FB4FF}
+  .navy-panel p{color:#8FB4FF}
+  /* Nguồn chính thống — thẻ tổ chức trên nền navy */
+  .tonghoi-intro{max-width:640px}
+  .tonghoi-cards{margin-top:28px}
+  .org-card{display:flex;flex-direction:column;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:22px 22px 20px;text-decoration:none;transition:.15s}
+  .org-card:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.32);transform:translateY(-2px)}
+  .org-card strong{color:#fff;font-size:1.04rem;font-weight:700;line-height:1.3}
+  .org-card span{color:#B9CDD4;font-size:.88rem;line-height:1.55}
+  .org-card .cta{display:inline-flex;align-items:center;padding:6px 14px;border-radius:999px;background:#fff;color:var(--navy);font-size:.83rem;font-weight:700;margin-top:10px;width:fit-content;transition:.15s}
+  .org-card:hover .cta{background:var(--blue-l);transform:translateX(2px)}
 
   /* ===== Cards / grids ===== */
   .grid{display:grid;gap:18px}
@@ -164,14 +168,63 @@
   .g4{grid-template-columns:repeat(4,1fr)}
   .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:.15s;display:flex;flex-direction:column}
   .card.click{cursor:pointer}
-  .card.click:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(1,41,50,.12)}
+  .card.click:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,30,66,.12)}
   .card h3{margin-bottom:6px}
   .card .desc{color:var(--muted);font-size:.9rem;flex:1}
   .card .cta{margin-top:14px;color:var(--blue);font-weight:500;font-size:.9rem;display:inline-flex;align-items:center;gap:6px}
 
+  /* Role cards (port từ reference) */
+  .res-card{background:#fff;border:2px solid var(--line);padding:28px 24px;display:flex;flex-direction:column;gap:12px;border-radius:12px;transition:transform .2s,border-color .2s,box-shadow .2s;cursor:pointer;text-decoration:none;color:inherit}
+  .res-card:hover{border-color:var(--blue);box-shadow:0 8px 24px rgba(29,78,216,.12);transform:translateY(-3px)}
+  .res-card .card-icon{color:var(--blue);margin-bottom:6px;width:40px;height:40px}
+  .res-card h3{font-size:1.1rem;color:var(--blue-d);margin:0;font-weight:700;line-height:1.3}
+  .res-card p{font-size:.9rem;color:var(--muted);margin:0;flex:1;line-height:1.6}
+  .res-card .cta-link{font-size:.85rem;font-weight:700;color:var(--blue);margin-top:8px;display:inline-flex;align-items:center}
+  .kicker{font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+  .u-sec-sub{font-size:.85rem;color:var(--muted);margin-top:6px}
+
   .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap}
   .sec-head p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
-  .sec-head>a{color:var(--blue);font-weight:500;font-size:.9rem;white-space:nowrap}
+  .sec-head .more{font-size:.9rem;font-weight:700;white-space:nowrap;color:var(--blue)}
+  .u-stat-num{font-size:1.9rem;color:var(--blue);font-weight:700}
+  .u-stat-num.coral{color:var(--coral)}
+  .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .flow-step{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;transition:transform .2s,border-color .2s,box-shadow .2s}
+  .flow-step:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 4px 14px rgba(29,78,216,.1)}
+  .flow-step .n{width:22px;height:22px;background:var(--blue-l);border:2px solid var(--blue);color:var(--blue);font-weight:700;display:grid;place-items:center;border-radius:50%;font-size:.72rem;margin-bottom:6px;transition:background .2s,color .2s}
+  .flow-step:hover .n{background:var(--blue);color:#fff}
+  .flow-step h4{font-size:.8rem;margin:0 0 2px;color:var(--blue-d)}
+  .flow-step p{font-size:.75rem;color:var(--muted);margin:0;line-height:1.5}
+  @media(max-width:920px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.flow{grid-template-columns:1fr}}
+
+  /* Panel & principles */
+  .panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px}
+  .u-border-coral{border-color:var(--coral)}
+  .u-principle-num{font-size:1.45rem;color:var(--blue);font-weight:700}
+  .u-principle-num.coral{color:var(--coral)}
+  .u-principle-h3{font-size:.9rem;margin:10px 0 8px;color:var(--blue-d)}
+  .u-principle-desc{font-size:.86rem;color:var(--muted);margin:0;line-height:1.6}
+  .u-sec-title{font-size:1rem;color:var(--blue-d);margin:0 0 8px;font-weight:700}
+  .u-mb-20{margin-bottom:20px!important}
+  .u-mb-28{margin-bottom:28px!important}
+  .u-pb-72{padding-bottom:72px}
+  .btn-outline{background:none;border:1.5px solid var(--line);color:var(--ink);display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:var(--radius);font-family:inherit;font-size:.95rem;font-weight:500;cursor:pointer;text-decoration:none}
+  .btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+
+  /* Chip list */
+  .chip-list{display:flex;flex-wrap:wrap;gap:10px}
+  .chip-tag{display:inline-flex;align-items:center;font-size:.84rem;font-weight:600;color:var(--blue-d);background:var(--blue-l);border:1px solid #2563EB;padding:8px 16px;border-radius:100px}
+
+  /* CTA cards */
+  .cta-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;gap:14px;text-decoration:none;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer;color:inherit}
+  .cta-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(29,78,216,.12);border-color:var(--blue)}
+  .cta-card .cta-icon{flex-shrink:0;color:var(--blue);margin-top:2px}
+  .cta-card .cta-text{display:flex;flex-direction:column;gap:4px}
+  .cta-card h3{font-size:.9rem;font-weight:700;color:var(--blue);margin:0;line-height:1.3}
+  .cta-card p{font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
+  .cta-card .cta-link-sm{font-size:.8rem;font-weight:700;color:var(--blue);margin-top:2px;display:inline-flex;align-items:center}
+  .badge-live{display:inline-block;background:#e4f3ec;color:#1d6b4e;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:100px;margin-top:2px}
   .eyebrow{text-transform:uppercase;letter-spacing:1.2px;font-size:.9rem;font-weight:700;color:var(--blue);margin-bottom:6px}
   /* ===== v18: ModuleBox header (đồng dạng: tiêu đề trái + Xem tất cả phải) ===== */
   .mbox-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 22px;margin-bottom:20px;flex-wrap:wrap}
@@ -200,14 +253,14 @@
   .live-note{font-size:.82rem;color:var(--muted);margin:12px 0 0}
 
   .fn-sec{scroll-margin-top:120px}
-  #sec-hoptac{scroll-snap-align:start;scroll-margin-top:calc(var(--snap-header-h) + var(--snap-tabs-h))}
+  #sec-hoptac{scroll-margin-top:var(--snap-header-h)}
 
   /* ===== Banner carousel (AMA-style) ===== */
-  .banner-carousel{position:relative;width:100%;overflow:hidden;background:var(--navy);scroll-snap-align:start;scroll-margin-top:var(--snap-header-h)}
+  .banner-carousel{position:relative;width:100%;overflow:hidden;background:var(--navy);scroll-margin-top:var(--snap-header-h)}
   .banner-carousel .bc-track{display:flex;transition:transform .5s ease}
   .banner-carousel .bc-slide{flex:0 0 100%;position:relative;min-height:440px;display:flex;align-items:center}
   .banner-carousel .bc-slide .bc-img{position:absolute;inset:0;background-size:cover;background-position:center}
-  .banner-carousel .bc-slide .bc-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,41,50,.88) 35%,rgba(1,41,50,.35) 70%,rgba(1,41,50,.1) 100%)}
+  .banner-carousel .bc-slide .bc-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,30,66,.88) 35%,rgba(10,30,66,.35) 70%,rgba(10,30,66,.1) 100%)}
   .banner-carousel .bc-slide .bc-text{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:60px 28px;color:#fff;width:100%}
   .banner-carousel .bc-slide .bc-text .bc-tag{display:inline-block;background:var(--blue);color:#fff;font-size:.72rem;padding:3px 10px;border-radius:3px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
   .banner-carousel .bc-slide .bc-text h2{color:#fff;font-size:2.2rem;max-width:16ch;margin-bottom:10px;line-height:1.2}
@@ -221,45 +274,30 @@
   .banner-carousel .bc-arr.next{right:20px}
   @media(max-width:720px){
     .banner-carousel .bc-slide{min-height:320px}
-    .banner-carousel .bc-slide .bc-overlay{background:linear-gradient(90deg,rgba(1,41,50,.88) 0%,rgba(1,41,50,.5) 100%)}
+    .banner-carousel .bc-slide .bc-overlay{background:linear-gradient(90deg,rgba(10,30,66,.88) 0%,rgba(10,30,66,.5) 100%)}
     .banner-carousel .bc-slide .bc-text h2{font-size:1.5rem}
     .banner-carousel .bc-slide .bc-text p{font-size:.9rem}
   }
 
-  /* ===== Home tabs — chuyển các khối dưới hero thành tab, không cần cuộn ===== */
-  .hometabs-wrap{background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(1,41,50,.08);position:sticky;top:108px;z-index:50;scroll-snap-align:start;scroll-margin-top:var(--snap-header-h)}
-  .hometabs{display:flex;gap:6px;overflow-x:auto;padding:14px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .hometabs::-webkit-scrollbar{display:none}
-  .htab{flex:0 0 auto;border:1.5px solid var(--line);background:#fff;color:var(--blue-d);font-family:inherit;font-size:.9rem;font-weight:600;padding:10px 20px;border-radius:24px;cursor:pointer;white-space:nowrap;transition:all .2s;box-shadow:0 1px 2px rgba(1,41,50,.04)}
-  .htab:hover{background:var(--blue-l);border-color:var(--blue);color:var(--blue);transform:translateY(-1px);box-shadow:0 4px 12px rgba(1,41,50,.1)}
-  .htab.on{background:var(--blue);color:#fff;font-weight:700;border-color:var(--blue);box-shadow:0 4px 16px rgba(3,123,150,.3)}
-  .hometab-panel{display:none}
-  .hometab-panel.on{display:block;animation:fade .2s ease}
-  /* Di động: bỏ hệ thống tab, hiện tất cả khối theo thứ tự — cuộn bình thường */
-  @media(max-width:680px){
-    .hometabs-wrap{display:none}
-    .hometab-panel{display:block!important}
-  }
-
   /* Entry card big */
   .entry-hero{background:#fff;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);cursor:pointer}
-  .entry-hero:hover{border-color:var(--blue);box-shadow:0 8px 24px rgba(1,41,50,.12)}
+  .entry-hero:hover{border-color:var(--blue);box-shadow:0 8px 24px rgba(10,30,66,.12)}
   .searchbox{display:flex;gap:8px;margin:14px 0 10px;max-width:520px}
   .searchbox input{flex:1;padding:11px 14px;border:1.5px solid var(--line);border-radius:var(--radius);font-family:inherit;font-size:.95rem}
   .searchbox input:focus{outline:none;border-color:var(--blue)}
-  .searchbox .btn{font-weight:700;box-shadow:0 6px 18px rgba(1,41,50,.35);transition:transform .15s,box-shadow .15s}
-  .searchbox .btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(1,41,50,.4)}
+  .searchbox .btn{font-weight:700;box-shadow:0 6px 18px rgba(10,30,66,.35);transition:transform .15s,box-shadow .15s}
+  .searchbox .btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,30,66,.4)}
   .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-  .chip{background:var(--blue-l);color:var(--navy);border:1px solid #04B2D9;font-size:.84rem;padding:4px 12px;border-radius:20px;cursor:pointer;font-weight:500}
-  .chip:hover{background:#6EC3D7}
+  .chip{background:var(--blue-l);color:var(--navy);border:1px solid #2563EB;font-size:.84rem;padding:4px 12px;border-radius:20px;cursor:pointer;font-weight:500}
+  .chip:hover{background:#8FB4FF}
 
   /* ===== Trust strip / M labels ===== */
   .mlabel{display:inline-flex;align-items:center;gap:5px;font-size:.84rem;font-weight:700;padding:3px 10px;border-radius:var(--radius);border:1.5px solid}
   .m1{background:#e4f3ec;color:#1d6b4e;border-color:#bfe3d1}
-  .m2{background:#CDF5FE;color:#037B96;border-color:#04B2D9}
+  .m2{background:#E6EDFB;color:#1D4ED8;border-color:#2563EB}
   .m3{background:#FFCF99;color:#995100;border-color:#FF9013}
-  .m4{background:#eef0f2;color:#5a6b74;border-color:#d3dbdf}
-  .trust-strip{background:var(--blue-l);border:1px solid #04B2D9;border-radius:var(--radius);padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:14px 0 24px}
+  .m4{background:#eef0f2;color:#5A6478;border-color:#DCE6F5}
+  .trust-strip{background:var(--blue-l);border:1px solid #2563EB;border-radius:var(--radius);padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:14px 0 24px}
   .trust-strip .meta{font-size:.9rem;color:var(--blue-d)}
   .trust-strip .meta b{font-weight:700}
   .tip{position:relative;cursor:help;border-bottom:1px dotted var(--muted)}
@@ -270,7 +308,7 @@
   /* v19: vùng đọc — cỡ chữ điều chỉnh được (chuẩn người cao tuổi) */
   .article li{font-size:var(--read-fs);line-height:1.65}
   #chdSum{font-size:var(--read-fs);line-height:1.7}
-  .next-safe{background:var(--blue-l);border:1px solid #04B2D9;border-radius:var(--radius);padding:18px 20px;margin:26px 0}
+  .next-safe{background:var(--blue-l);border:1px solid #2563EB;border-radius:var(--radius);padding:18px 20px;margin:26px 0}
   .next-safe h3{color:var(--blue-d);margin-bottom:8px}
   .next-safe ul{margin:0;padding-left:18px}
   .disclosure{border:1.5px solid #FF9013;background:var(--amber-l);border-radius:var(--radius);padding:16px 18px;margin:26px 0}
@@ -305,7 +343,7 @@
   .toggle{display:inline-flex;border:1.5px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:18px}
   .toggle button{border:0;background:#fff;padding:9px 20px;cursor:pointer;font-family:inherit;font-weight:500;font-size:.9rem;color:var(--muted)}
   .toggle button.on{background:var(--blue);color:#fff}
-  .consent{background:#CDF5FE;border:1px solid var(--line);border-radius:var(--radius);padding:14px;display:flex;gap:10px;margin:18px 0;font-size:.86rem}
+  .consent{background:#E6EDFB;border:1px solid var(--line);border-radius:var(--radius);padding:14px;display:flex;gap:10px;margin:18px 0;font-size:.86rem}
   .consent input{margin-top:3px;flex-shrink:0;width:18px;height:18px}
   .err{color:#C0392B;font-size:.83rem;margin-top:6px;display:none}
 
@@ -330,7 +368,7 @@
 
   /* expert card */
   .avatar{width:56px;height:56px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;flex-shrink:0}
-  .coi-box{background:#CDF5FE;border-radius:var(--radius);padding:12px 14px;font-size:.88rem;margin:12px 0}
+  .coi-box{background:#E6EDFB;border-radius:var(--radius);padding:12px 14px;font-size:.88rem;margin:12px 0}
 
   /* two-col funding table */
   table.fund{width:100%;border-collapse:collapse;margin:16px 0}
@@ -340,7 +378,6 @@
   /* ===== v15: bảng 4 cột (vai trò/đóng góp/kết quả/giới hạn) + khối hợp tác rút gọn ===== */
   table.fund.fund4 td{width:25%}
   table.fund.fund4 th{font-size:.86rem}
-  .r8-invite{margin:0 0 8px;color:var(--blue-d);font-weight:700;font-size:1.05rem}
   .hoptac-compact{display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:var(--radius);padding:28px 30px;box-shadow:var(--shadow)}
   .hoptac-compact .hc-tx{flex:1;min-width:280px}
   .hoptac-compact .hc-mini{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
@@ -349,17 +386,17 @@
   @media(max-width:720px){.hoptac-compact{padding:18px 18px}.hoptac-compact .hc-cta .btn{width:100%;justify-content:center}}
 
   /* footer */
-  footer{background:var(--navy);color:#82E6FD;padding:44px 0 26px;margin-top:0}
-  footer a{color:#82E6FD}
+  footer{background:var(--navy);color:#8FB4FF;padding:44px 0 26px;margin-top:0}
+  footer a{color:#8FB4FF}
   footer a:hover{color:#fff}
-  footer .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:26px}
+  footer .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
   footer h4{color:#fff;font-size:.95rem;margin-bottom:10px}
   footer ul{list-style:none;padding:0;margin:0}
   footer li{margin-bottom:6px;font-size:.86rem}
-  footer .fbot{border-top:1px solid rgba(255,255,255,.15);margin-top:26px;padding-top:16px;font-size:.8rem;color:#82E6FD;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  footer .fbot{border-top:1px solid rgba(255,255,255,.15);margin-top:26px;padding-top:16px;font-size:.8rem;color:#8FB4FF;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
   /* back-to-top */
-  .back-to-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);box-shadow:0 4px 14px rgba(1,41,50,.18);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--blue-d);z-index:55;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,visibility .3s,transform .3s}
+  .back-to-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);box-shadow:0 4px 14px rgba(10,30,66,.18);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--blue-d);z-index:55;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,visibility .3s,transform .3s}
   .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
   .back-to-top:hover{border-color:var(--blue);color:var(--blue)}
 
@@ -368,28 +405,28 @@
   .empty{background:#fff;border:1px dashed var(--line);border-radius:var(--radius);padding:26px;text-align:center;margin-top:14px}
 
   /* ===== v5: ảnh Unsplash & nhịp module AMA ===== */
-  .img-fallback{background:linear-gradient(135deg,#04B2D9,#012932)!important}
+  .img-fallback{background:linear-gradient(135deg,#2563EB,#0A1E42)!important}
   .imgcap{font-size:.72rem;color:var(--muted);margin:6px 0 0}
-  .imgcap.on-dark{color:#82E6FD}
+  .imgcap.on-dark{color:#8FB4FF}
   /* hero có ảnh */
-  .hero{position:relative;overflow:hidden;display:flex;align-items:center;min-height:100vh;padding:80px 0;background:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&h=1000&fit=crop&auto=format') center/cover no-repeat}
-  .hero::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,rgba(1,41,50,.94) 0%,rgba(3,123,150,.88) 100%)}
-  .hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,#012932 0%,#037B96 100%)}
+  .hero{position:relative;overflow:hidden;display:flex;align-items:center;min-height:clamp(480px,80vh,960px);padding:80px 0;background:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&h=1000&fit=crop&auto=format') center/cover no-repeat}
+  .hero::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,rgba(10,30,66,.94) 0%,rgba(29,78,216,.88) 100%)}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,#0A1E42 0%,#1D4ED8 100%)}
   .hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
-  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(95deg,rgba(1,41,50,.96) 0%,rgba(1,41,50,.92) 46%,rgba(1,41,50,.62) 74%,rgba(1,41,50,.38) 100%)}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(95deg,rgba(10,30,66,.96) 0%,rgba(10,30,66,.92) 46%,rgba(10,30,66,.62) 74%,rgba(10,30,66,.38) 100%)}
   .hero .wrap{position:relative;z-index:1;width:100%}
   .hero-inner{max-width:660px}
   .hero .searchbox input{border-color:transparent}
-  .hero .chip{background:rgba(255,255,255,.13);color:#82E6FD;border-color:rgba(255,255,255,.35)}
+  .hero .chip{background:rgba(255,255,255,.13);color:#8FB4FF;border-color:rgba(255,255,255,.35)}
   .hero .chip:hover{background:rgba(255,255,255,.24)}
   /* thẻ tin có thumbnail */
-  .thumb-img{position:relative;aspect-ratio:16/9;overflow:hidden;background:linear-gradient(135deg,#04B2D9,#012932)}
+  .thumb-img{position:relative;aspect-ratio:16/9;overflow:hidden;background:linear-gradient(135deg,#2563EB,#0A1E42)}
   .thumb-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:.25s}
   .card.media{padding:0;overflow:hidden}
   .card.media .card-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
   .card.media.click:hover .thumb-img img{transform:scale(1.04)}
   .card.media .meta-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;font-size:.8rem;color:var(--muted)}
-  .card .thumb-flush{margin:-20px -20px 14px;aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:var(--radius) var(--radius) 0 0;background:linear-gradient(135deg,#04B2D9,#012932)}
+  .card .thumb-flush{margin:-20px -20px 14px;aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:var(--radius) var(--radius) 0 0;background:linear-gradient(135deg,#2563EB,#0A1E42)}
   .card .thumb-flush img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
   /* băng sứ mệnh 1 dòng (v6 — đặt ngay trên footer) */
   .vision-band{background:#fff;border-top:1px solid var(--line);padding:22px 0;text-align:center}
@@ -397,19 +434,34 @@
   .vision-band .vision-line a{font-weight:500;font-size:.9rem;margin-left:10px;white-space:nowrap}
   /* feature bất đối xứng 7/5 */
   .feat75{display:grid;grid-template-columns:7fr 5fr;gap:40px;align-items:center}
-  .feat-img{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;background:linear-gradient(135deg,#04B2D9,#012932);box-shadow:var(--shadow)}
+  .feat-img{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;background:linear-gradient(135deg,#2563EB,#0A1E42);box-shadow:var(--shadow)}
   .feat-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
   /* lưới 6 icon lối vào nhanh */
   .quick6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .qlink{display:flex;gap:13px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 17px;cursor:pointer;transition:.15s;font-weight:500;color:var(--blue-d);box-shadow:var(--shadow)}
-  .qlink:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(1,41,50,.12);text-decoration:none}
+  .qlink:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,30,66,.12);text-decoration:none}
   .qlink svg{flex-shrink:0;color:var(--blue)}
   .qlink b{display:block;font-size:.93rem}
   .qlink small{display:block;color:var(--muted);font-weight:400;font-size:.78rem}
   /* Mạng lưới chuyên gia — checklist minh bạch */
-  .member-checklist{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:11px}
+  .member-checklist{list-style:none;padding:0;margin:0;display:grid;gap:11px}
   .member-checklist li{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:.95rem}
   .member-checklist .mc-ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--blue-l);color:var(--blue-d);display:flex;align-items:center;justify-content:center}
+  .coi-badge{display:inline-block;background:#e4f3ec;color:#1d6b4e;font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:100px}
+  /* Mạng lưới chuyên gia — thẻ chuyên gia ảnh thật */
+  .expert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}
+  .expert-mini{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 16px 20px;box-shadow:var(--shadow);transition:.15s}
+  .expert-mini:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,30,66,.12)}
+  .expert-mini .avatar{margin-bottom:12px}
+  .expert-mini h3{font-size:.96rem;margin:0 0 4px;color:var(--blue-d)}
+  .expert-mini:hover h3{color:var(--blue)}
+  .expert-mini .desc{font-size:.82rem;color:var(--muted);margin:0 0 12px;line-height:1.4}
+  .expert-mini .coi-badge{margin-top:auto}
+  .thamgia-foot{display:flex;align-items:center;justify-content:space-between;gap:20px 30px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+  @media(max-width:600px){
+    .expert-grid{grid-template-columns:1fr 1fr;gap:12px}
+    .thamgia-foot{flex-direction:column;align-items:stretch}
+  }
   /* avatar ảnh chân dung */
   .avatar{position:relative;overflow:hidden}
   .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
@@ -417,22 +469,61 @@
   .newsitem .thumb{overflow:hidden;position:relative}
   .newsitem .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
   /* ảnh đầu bài viết */
-  .article-figure{margin:16px 0 6px;border-radius:var(--radius);overflow:hidden;position:relative;aspect-ratio:16/7;background:linear-gradient(135deg,#04B2D9,#012932)}
+  .article-figure{margin:16px 0 6px;border-radius:var(--radius);overflow:hidden;position:relative;aspect-ratio:16/7;background:linear-gradient(135deg,#2563EB,#0A1E42)}
   .article-figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 
   /* ===== v6: lớp mới + header mobile + trust strip mobile ===== */
-  .topics-grid{grid-template-columns:repeat(4,1fr);gap:14px}
-  .topics-grid .card-body{padding:14px 16px 16px}
-  .topics-grid h3{font-size:1rem;margin:8px 0 4px}
-  .topics-grid .desc{font-size:.84rem}
-  .topics-grid .mlabel{align-self:flex-start}
-  .ne-grid{display:grid;grid-template-columns:7fr 5fr;gap:36px;align-items:start}
+  .topics-grid{grid-template-columns:repeat(3,1fr);gap:16px}
+  .topics-grid .card-body{padding:16px 18px 18px;flex:1}
+  .topics-grid h3{font-size:1.05rem;margin:0 0 5px}
+  .topics-grid .desc{font-size:.86rem;flex:1}
+  .topics-grid .thumb-img .mlabel{position:absolute;top:10px;left:10px;z-index:1;padding:2px 9px;font-size:.72rem;font-weight:700;border-width:0;border-radius:20px;box-shadow:0 1px 5px rgba(10,30,66,.18)}
+  .topics-grid .cta{margin-top:12px}
+  /* Chủ đề sức khỏe nổi bật — sidebar bộ lọc (minh hoạ, không xử lý lọc thật) */
+  .chude-layout{display:grid;grid-template-columns:250px 1fr;gap:26px;align-items:start}
+  .chude-filters{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);position:sticky;top:130px}
+  .chude-filters h4{margin:0 0 16px;font-size:1rem;color:var(--blue-d);display:flex;align-items:center;gap:8px}
+  .cf-group{margin-bottom:20px}
+  .cf-group:last-of-type{margin-bottom:0}
+  .cf-group b{display:block;font-size:.76rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+  .cf-opt{display:flex;align-items:center;gap:9px;font-size:.9rem;color:var(--ink);padding:6px 0;cursor:pointer;user-select:none}
+  .cf-opt input{width:16px;height:16px;accent-color:var(--blue);cursor:pointer;flex-shrink:0}
+  .cf-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+  .cf-reset{display:inline-block;margin-top:4px;font-size:.85rem;color:var(--blue);cursor:pointer;font-weight:500}
+  .cf-reset:hover{text-decoration:underline}
+  @media(max-width:920px){
+    .chude-layout{grid-template-columns:1fr}
+    .chude-filters{position:static}
+  }
+  .ne-grid{display:grid;grid-template-columns:70fr 30fr;gap:36px;align-items:start}
   .ne-h{font-size:1.1rem;font-weight:700;margin-bottom:2px}
+  .ne-hero{display:block;cursor:pointer;margin-bottom:18px;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.15s}
+  .ne-hero:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,30,66,.12)}
+  .ne-hero-img{position:relative;aspect-ratio:16/9;overflow:hidden;background:linear-gradient(135deg,#2563EB,#0A1E42)}
+  .ne-hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .ne-hero-body{padding:14px 18px 18px}
+  .ne-hero-body h3{margin:8px 0 6px;font-size:1.35rem}
+  .ne-hero:hover .ne-hero-body h3{color:var(--blue)}
+  .ne-small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .ne-small{display:block;cursor:pointer;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.15s}
+  .ne-small:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,30,66,.12)}
+  .ne-small-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--blue-l)}
+  .ne-small-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .ne-small h4{margin:0;padding:12px 14px 14px;font-size:.92rem;font-weight:500;line-height:1.35;color:var(--ink)}
+  .ne-small:hover h4{color:var(--blue)}
+  .ne-more-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+  .ne-events .event-row{gap:10px;padding:10px 0}
+  .ne-events .event-date{width:46px;height:46px}
+  .ne-events .event-date b{font-size:1.05rem}
+  .ne-events .event-date span{font-size:.66rem}
+  .ne-events .event-row h3{font-size:.88rem}
+  .ne-events .event-row .muted{font-size:.74rem}
+  .ne-events .btn.sm{padding:5px 10px;font-size:.76rem;gap:4px}
   .m-search-btn{display:none;background:none;border:0;cursor:pointer;color:var(--blue-d);width:44px;height:44px;align-items:center;justify-content:center;flex-shrink:0}
   .m-search-btn:hover{color:var(--blue)}
-  .search-overlay{display:none;position:fixed;inset:0;background:rgba(1,41,50,.55);z-index:90}
+  .search-overlay{display:none;position:fixed;inset:0;background:rgba(10,30,66,.55);z-index:90}
   .search-overlay.open{display:block}
-  .so-box{background:#fff;padding:16px 20px 24px;box-shadow:0 10px 30px rgba(1,41,50,.25)}
+  .so-box{background:#fff;padding:16px 20px 24px;box-shadow:0 10px 30px rgba(10,30,66,.25)}
   .so-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
   .so-head b{color:var(--blue-d);font-size:1.05rem}
   .so-close{background:none;border:1.5px solid var(--line);border-radius:var(--radius);width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--blue-d)}
@@ -442,7 +533,7 @@
   .nav-m-search{display:none}
   .m-only{display:none}
   .nav-head{display:none}
-  .nav-backdrop{display:none;position:fixed;inset:0;background:rgba(1,41,50,.55);z-index:79}
+  .nav-backdrop{display:none;position:fixed;inset:0;background:rgba(10,30,66,.55);z-index:79}
   .nav-explore{display:none}
   .ts-article .ts-line1,.ts-article .ts-line2{display:contents}
   .ts-article .mlabel{order:1}
@@ -460,6 +551,8 @@
     .quick6{grid-template-columns:repeat(2,1fr)}
     .topics-grid{grid-template-columns:repeat(2,1fr)}
     .ne-grid{grid-template-columns:1fr;gap:26px}
+    .ne-more-grid{grid-template-columns:repeat(2,1fr)}
+    .expert-grid{grid-template-columns:repeat(2,1fr)}
   }
   @media(max-width:1000px){
     header{z-index:85} /* phải cao hơn nav.main.open (80) để nút burger luôn bấm được để đóng */
@@ -505,8 +598,8 @@
     .topics-grid .card-body{padding:10px 12px 12px}
     .topics-grid h3{font-size:.9rem}
     .topics-grid .desc{font-size:.78rem}
-    .hero h1{font-size:2rem}
-    .hero .sub{font-size:1rem}
+    .hero h1{font-size:2.2rem}
+    .hero .sub{font-size:.92rem}
     .trust-strip{flex-direction:column;align-items:flex-start;gap:8px}
     .ts-article{display:block}
     .ts-article .ts-line1{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
@@ -520,18 +613,19 @@
     .org-hide-m{display:block;font-size:.78rem;margin:6px 0}
     footer .fgrid{grid-template-columns:1fr}
     .newsitem .thumb{width:88px;height:66px}
+    .ne-small-grid{grid-template-columns:1fr 1fr}
   }
   /* focus-visible */
   a:focus-visible,button:focus-visible,.card:focus-visible,.fchip:focus-visible,.chip:focus-visible,.navlink:focus-visible,.mega-link:focus-visible,nav.main a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
   /* status pills nhật ký đính chính */
-  .status{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:var(--radius);border:1.5px solid #d3dbdf;background:#f0f3f5;color:#455760;white-space:nowrap}
+  .status{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:var(--radius);border:1.5px solid #DCE6F5;background:#f0f3f5;color:#455760;white-space:nowrap}
   .status .dotmark{width:8px;height:8px;border-radius:50%;display:inline-block}
   .status-done .dotmark{background:#3a8f6f}
   .status-doing .dotmark{background:#FF9013}
-  .status-received .dotmark{background:#5a6b74}
+  .status-received .dotmark{background:#5A6478}
   .status-nochange .dotmark{background:#9aa5ab}
   /* org badge */
-  .org-badge{display:inline-flex;gap:6px;align-items:center;background:var(--blue-l);color:var(--blue-d);border:1px solid #04B2D9;font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:20px;margin:2px 0 12px}
+  .org-badge{display:inline-flex;gap:6px;align-items:center;background:var(--blue-l);color:var(--blue-d);border:1px solid #2563EB;font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:20px;margin:2px 0 12px}
   /* câu miễn trừ ngắn */
   .safety-note{background:#FFCF99;border:1.5px solid #FF9013;border-left:4px solid #995100;border-radius:var(--radius);padding:12px 16px;margin:0 0 20px;font-weight:600;color:#995100;font-size:.95rem}
   /* trang Khi nào cần đi khám - sắc thái cảnh báo */
@@ -565,19 +659,19 @@
   }
 
   /* ===== v7: Cổng vào 8 nhóm (nhấn #6) ===== */
-  .quick-answer{background:#CDF5FE;border-left:4px solid var(--blue);border-radius:6px;padding:14px 18px;margin:18px 0}
+  .quick-answer{background:#E6EDFB;border-left:4px solid var(--blue);border-radius:6px;padding:14px 18px;margin:18px 0}
   .quick-answer h3{margin:0 0 8px;font-size:1.05rem;color:var(--blue-d)}
   .quick-answer p{margin:0 0 8px}
   .quick-answer p:last-child{margin:0}
   .rf-more{margin:-4px 0 18px;font-size:.92rem}
-  .router8{background:var(--blue-l);border:1.5px solid #04B2D9;border-radius:var(--radius);padding:24px 24px 26px;box-shadow:var(--shadow)}
+  .router8{background:var(--blue-l);border:1.5px solid #2563EB;border-radius:var(--radius);padding:24px 24px 26px;box-shadow:var(--shadow)}
   .router8 .r8-head{margin-bottom:18px}
   .router8 .r8-head .eyebrow{margin-bottom:6px}
   .router8 .r8-head h2{font-size:1.6rem;margin-bottom:6px}
   .router8 .r8-head p{margin:0;color:var(--blue-d);font-size:.96rem;max-width:74ch}
   /* ô người dân nổi bật — ưu tiên người dân */
   .r8-lead{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow);cursor:pointer;transition:.15s;margin-bottom:16px}
-  .r8-lead:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(1,41,50,.12);text-decoration:none}
+  .r8-lead:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,30,66,.12);text-decoration:none}
   .r8-lead .r8-ic{width:56px;height:56px;border-radius:var(--radius);background:var(--blue-l);color:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .r8-lead-body{flex:1;min-width:0}
   .r8-lead-body .r8-tag{display:inline-block;background:var(--blue);color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:2px 9px;border-radius:20px;margin-bottom:6px}
@@ -602,47 +696,16 @@
     .r8-lead-hint{display:block}
   }
 
-  /* ===== v14: "Top resources" style — router 8 nhóm (lưới icon-card sạch) ===== */
-  .res-head{margin-bottom:22px}
-  .res-head .eyebrow{margin-bottom:6px}
-  .res-head h2{font-size:1.6rem;margin-bottom:6px}
-  .res-head p{margin:0;color:var(--muted);font-size:.95rem;max-width:80ch}
-  .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-  .res-card{display:flex;gap:13px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 17px;cursor:pointer;transition:.15s;box-shadow:var(--shadow);text-decoration:none}
-  .res-card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(1,41,50,.12);text-decoration:none}
-  .res-card .res-ic{width:42px;height:42px;border-radius:8px;background:var(--blue-l);color:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .res-card .res-tx{min-width:0;flex:1}
-  .res-card b{display:block;color:var(--blue-d);font-size:.96rem;font-weight:700;line-height:1.25}
-  .res-card small{display:block;color:var(--muted);font-size:.81rem;line-height:1.4;margin-top:3px}
-  .res-card .res-tag{display:inline-block;background:var(--blue);color:#fff;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:20px;margin-bottom:4px}
-  /* Ưu tiên người dân TINH TẾ — cùng họ card, nhấn nhẹ */
-  .res-card.res-lead{background:var(--blue-l);border-color:#04B2D9;border-left:4px solid var(--blue)}
-  .res-card.res-lead:hover{border-color:var(--blue)}
-  .res-note{color:var(--muted);font-size:.9rem;margin:18px 0 0}
-  @media(max-width:920px){.res-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){
-    .res-grid{grid-template-columns:1fr;gap:10px}
-    .res-card{padding:15px 16px}
-    .res-card .res-ic{width:40px;height:40px}
-  }
-
-  /* ===== Mini-card hội chuyên khoa (dưới ảnh feature Tổng hội) ===== */
-  .org-mini{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px;cursor:pointer;transition:.15s;box-shadow:var(--shadow);text-decoration:none;min-width:0}
-  .org-mini:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(1,41,50,.12);text-decoration:none}
-  .org-mini-av{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.72rem;flex-shrink:0}
-  .org-mini-tx{min-width:0}
-  .org-mini-tx b{display:block;color:var(--blue-d);font-size:.86rem;font-weight:700;line-height:1.25}
-  .org-mini-tx small{display:block;color:var(--muted);font-size:.74rem;line-height:1.35;margin-top:2px}
 
   /* ===== v7: Xem trên điện thoại (nhấn #7) ===== */
-  .phone-fab{position:fixed;right:20px;bottom:78px;z-index:56;display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:0;border-radius:24px;padding:11px 18px;font-family:inherit;font-size:.9rem;font-weight:500;cursor:pointer;box-shadow:0 6px 18px rgba(1,41,50,.28)}
-  .phone-fab:hover{background:#012932}
-  .phone-overlay{display:none;position:fixed;inset:0;background:rgba(1,41,50,.62);z-index:100;padding:20px;overflow:auto}
+  .phone-fab{position:fixed;right:20px;bottom:78px;z-index:56;display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:0;border-radius:24px;padding:11px 18px;font-family:inherit;font-size:.9rem;font-weight:500;cursor:pointer;box-shadow:0 6px 18px rgba(10,30,66,.28)}
+  .phone-fab:hover{background:#0A1E42}
+  .phone-overlay{display:none;position:fixed;inset:0;background:rgba(10,30,66,.62);z-index:100;padding:20px;overflow:auto}
   .phone-overlay.open{display:flex;align-items:center;justify-content:center}
   .phone-shell{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:100%}
-  .phone-topbar{display:flex;align-items:center;gap:14px;color:#82E6FD;font-size:.9rem}
+  .phone-topbar{display:flex;align-items:center;gap:14px;color:#8FB4FF;font-size:.9rem}
   .phone-topbar .phone-close{background:#fff;color:var(--blue-d);border:0;border-radius:20px;padding:8px 16px;font-family:inherit;font-size:.86rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-  .phone-topbar .phone-close:hover{background:#82E6FD;color:var(--blue)}
+  .phone-topbar .phone-close:hover{background:#8FB4FF;color:var(--blue)}
   .phone-device{width:414px;max-width:calc(100vw - 40px);background:#0b1533;border-radius:44px;padding:14px;box-shadow:0 20px 60px rgba(0,0,0,.45);position:relative}
   .phone-notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:150px;height:26px;background:#0b1533;border-radius:0 0 16px 16px;z-index:2}
   .phone-screen{position:relative;width:390px;max-width:calc(100vw - 68px);height:800px;max-height:calc(100vh - 150px);background:#fff;border-radius:32px;overflow:hidden}
@@ -655,7 +718,7 @@
   /* ===== v8: Chuỗi giá trị (trang chủ) ===== */
   .chain{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin-top:10px}
   .chain-link{flex:1 1 0;min-width:150px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;box-shadow:var(--shadow)}
-  .chain-link:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(1,41,50,.12);text-decoration:none}
+  .chain-link:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,30,66,.12);text-decoration:none}
   .chain-link .cn{font-size:.72rem;font-weight:700;color:var(--blue);letter-spacing:.6px}
   .chain-link b{display:block;color:var(--blue-d);font-size:.9rem;margin:5px 0 3px;font-weight:700}
   .chain-link small{color:var(--muted);font-size:.78rem;line-height:1.35}
@@ -666,7 +729,7 @@
   /* ===== v8: Mạch liên kết (trang Tin) ===== */
   .linkweb{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
   .linkweb-cell{display:block;background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:var(--radius);padding:14px 16px;cursor:pointer;box-shadow:var(--shadow);transition:.15s}
-  .linkweb-cell:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(1,41,50,.12);text-decoration:none}
+  .linkweb-cell:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,30,66,.12);text-decoration:none}
   .linkweb-cell b{display:block;color:var(--blue-d);font-size:.9rem}
   .linkweb-cell span{display:block;color:var(--muted);font-size:.8rem;margin-top:3px}
   @media(max-width:920px){.linkweb{grid-template-columns:repeat(2,1fr)}}
@@ -678,32 +741,27 @@
   /* ===== v11: Khung chính danh đỉnh hero (đi trước hành động) ===== */
   .cred-frame{margin-bottom:0}
   .cred-frame .chip-official{margin-bottom:10px}
-  .cred-lead{color:#82E6FD;font-size:1.02rem;font-weight:600;margin:0 0 12px;max-width:54ch;line-height:1.45}
+  .cred-lead{color:#8FB4FF;font-size:1.02rem;font-weight:600;margin:0 0 12px;max-width:54ch;line-height:1.45}
   .cred-proof{display:flex;flex-wrap:wrap;gap:10px 12px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16)}
   .cred-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.24);border-radius:var(--radius);padding:9px 13px;cursor:pointer;transition:.15s;text-decoration:none;flex:1 1 210px;min-width:0}
   .cred-item:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.55);text-decoration:none}
-  .cred-item .ck{width:26px;height:26px;border-radius:50%;background:rgba(3,123,150,.92);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .cred-item .ck{width:26px;height:26px;border-radius:50%;background:rgba(29,78,216,.92);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .cred-item .cred-t{min-width:0}
   .cred-item b{display:block;color:#fff;font-size:.9rem;font-weight:700;line-height:1.2}
 
-  /* ═══ HERO CĂN GIỮA — xoá nguyên khối này để quay lại căn trái ═══ */
-  .hero-inner{max-width:960px;margin-left:auto;margin-right:auto;text-align:center}
-  .hero-inner h1{margin-left:auto;margin-right:auto}
-  .hero-inner .sub{max-width:62ch;margin-left:auto;margin-right:auto}
-  .hero-inner .searchbox{max-width:620px;margin-left:auto;margin-right:auto}
+  /* ═══ HERO CĂN TRÁI ═══ */
+  .hero-inner{max-width:960px;text-align:left}
+  .hero-inner .sub{max-width:72ch}
+  .hero-inner .searchbox{max-width:620px}
   .hero-inner .searchbox input{padding:14px 16px;font-size:1.02rem}
-  .hero-inner .chips{justify-content:center}
-  .hero-inner .cred-proof{justify-content:center}
-  .hero-inner .cred-item{text-align:left;flex:0 1 240px}
-  .hero-inner .hero-cta{justify-content:center}
-  .hero-inner .imgcap{text-align:center}
+  .hero-inner .cred-item{flex:0 1 240px}
   @media(max-width:640px){
     .hero-inner .cred-item{flex:1 1 100%}
     .hero-inner .searchbox{flex-direction:column;gap:10px}
-    .hero-inner .searchbox .btn{align-self:center;justify-content:center}
+    .hero-inner .searchbox .btn{align-self:flex-start}
   }
-  .cred-item small{display:block;color:#82E6FD;font-size:.78rem;line-height:1.3;margin-top:1px}
-  .cred-item .cred-arr{margin-left:auto;color:#82E6FD;opacity:.7;flex-shrink:0}
+  .cred-item small{display:block;color:#8FB4FF;font-size:.78rem;line-height:1.3;margin-top:1px}
+  .cred-item .cred-arr{margin-left:auto;color:#8FB4FF;opacity:.7;flex-shrink:0}
   .cred-item:hover .cred-arr{opacity:1}
   /* VIS-04 mobile: khung chính danh RÚT GỌN để search + CTA giữ above the fold */
   @media(max-width:720px){
@@ -736,11 +794,11 @@
   /* v17: thẻ video */
   .vid-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;cursor:pointer}
   .vid-card:hover{border-color:var(--blue)}
-  .vid-thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#04B2D9,#012932);overflow:hidden}
+  .vid-thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#2563EB,#0A1E42);overflow:hidden}
   .vid-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
   .vid-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
   .vid-play span{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--blue);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3)}
-  .vid-dur{position:absolute;right:8px;bottom:8px;background:rgba(1,41,50,.85);color:#fff;font-size:.74rem;font-weight:600;padding:2px 7px;border-radius:4px}
+  .vid-dur{position:absolute;right:8px;bottom:8px;background:rgba(10,30,66,.85);color:#fff;font-size:.74rem;font-weight:600;padding:2px 7px;border-radius:4px}
   .vid-card .vid-body{padding:12px 14px 14px}
   .vid-card .vid-body b{display:block;color:var(--blue-d);font-size:.92rem;line-height:1.3}
   .vid-card .vid-body small{color:var(--muted);font-size:.8rem}
@@ -757,7 +815,7 @@
   .dl-row .dl-tx b{display:block;color:var(--blue-d);font-size:.92rem}
   .dl-row .dl-tx small{color:var(--muted);font-size:.8rem}
   /* v17: khối Nguồn tham khảo trong bài */
-  .refbox{background:#CDF5FE;border:1px solid var(--line);border-left:4px solid var(--aqua);border-radius:var(--radius);padding:14px 18px;margin:26px 0}
+  .refbox{background:#E6EDFB;border:1px solid var(--line);border-left:4px solid var(--aqua);border-radius:var(--radius);padding:14px 18px;margin:26px 0}
   .refbox h4{color:var(--blue-d);margin-bottom:8px;font-size:1rem}
   .refbox ul{margin:0;padding-left:18px}
   .refbox li{font-size:.9rem;margin-bottom:5px}
@@ -766,9 +824,9 @@
   .util-explore{color:#fff!important;font-weight:700!important;border:1px solid rgba(255,255,255,.35)!important;border-radius:6px!important;padding:6px 12px!important;background:rgba(255,255,255,.06)!important}
   .util-explore:hover{background:rgba(255,255,255,.16)!important}
   .util-explore .ux-ic{display:inline-block;width:14px;height:14px;line-height:1}
-  .map-overlay{display:none;position:fixed;inset:0;background:rgba(1,41,50,.62);z-index:95;overflow-y:auto}
+  .map-overlay{display:none;position:fixed;inset:0;background:rgba(10,30,66,.62);z-index:95;overflow-y:auto}
   .map-overlay.open{display:block}
-  .map-panel{background:var(--white);width:100%;box-shadow:0 12px 40px rgba(1,41,50,.35);border-bottom:4px solid var(--navy)}
+  .map-panel{background:var(--white);width:100%;box-shadow:0 12px 40px rgba(10,30,66,.35);border-bottom:4px solid var(--navy)}
   .map-panel .wrap{padding-top:22px;padding-bottom:28px}
   .map-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:20px}
   .map-head b{display:block;color:var(--navy);font-size:1.35rem;font-weight:700}
@@ -780,7 +838,7 @@
   .map-col-h .map-num{background:var(--navy);color:#fff;font-size:.72rem;font-weight:700;border-radius:5px;padding:3px 6px;letter-spacing:.5px}
   .map-col-h small{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0;font-size:.78rem}
   .map-link{display:block;padding:8px 10px;border-radius:7px;color:var(--blue-d);font-size:.92rem;font-weight:500;line-height:1.35;cursor:pointer;border:1px solid transparent}
-  .map-link:hover{background:var(--blue-l);border-color:#04B2D9;text-decoration:none;color:var(--blue)}
+  .map-link:hover{background:var(--blue-l);border-color:#2563EB;text-decoration:none;color:var(--blue)}
   .map-foot{border-top:1px solid var(--line);margin-top:22px;padding-top:14px;color:var(--muted);font-size:.84rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   @media(max-width:900px){ .map-grid{grid-template-columns:repeat(2,1fr)} }
   @media(max-width:560px){ .map-grid{grid-template-columns:1fr} .map-head b{font-size:1.15rem} }
@@ -808,10 +866,17 @@
   @media(max-width:760px){ footer .fmap{grid-template-columns:1fr 1fr} }
   @media(max-width:460px){ footer .fmap{grid-template-columns:1fr} }
 
+  /* ===== Trust bar (hero) ===== */
+  .trustbar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 32px;margin-top:40px;padding:28px 0;border-top:2px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.12)}
+  .cred-item{display:flex;align-items:center;gap:12px;font-size:.9rem;color:#E8F4FB;font-weight:500;line-height:1.5}
+  .cred-item::before{content:'✓';width:24px;height:24px;background:rgba(130,230,253,.2);color:#82E6FD;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0}
+  @media(max-width:800px){.trustbar{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.trustbar{grid-template-columns:1fr}}
+
   /* ===== Hero logo strips — cuộn liên tục (marquee) ===== */
   @keyframes hlb-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
   @keyframes hls-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-  .hero-logos-big{margin-top:36px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14)}
+  .hero-logos-big{margin-top:0;padding-top:0}
   .hero-logos-big .hlb-label{font-size:.72rem;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.5);font-weight:700;margin-bottom:16px;text-align:center}
   .hero-logos-big .hlb-viewport{overflow:hidden}
   .hero-logos-big .hlb-track{display:flex;gap:32px;width:max-content;animation:hlb-scroll 60s linear infinite}
@@ -819,7 +884,7 @@
   .hero-logos-big .hlb-mark{width:100%;height:80px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,.18)}
   .hero-logos-big .hlb-mark img{max-width:100%;max-height:100%;object-fit:contain}
   .hero-logos-big .hlb-name{font-size:.72rem;font-weight:600;color:rgba(255,255,255,.7);text-align:center;line-height:1.25}
-  .hero-logos-small{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1)}
+  .hero-logos-small{margin-top:28px;padding-top:0}
   .hero-logos-small .hls-label{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:12px;text-align:center}
   .hero-logos-small .hls-viewport{overflow:hidden}
   .hero-logos-small .hls-track{display:flex;gap:18px;width:max-content;animation:hls-scroll 80s linear infinite}
@@ -1052,79 +1117,25 @@
   <section class="hero">
         <div class="wrap">
       <div class="hero-inner">
-        <h1>Nền tảng truyền thông – tri thức<br>Kết nối chuyên gia vì sức khỏe cộng đồng</h1>
-        <p class="sub">Nhận thông tin chính xác, cập nhật từ các chuyên gia y tế.</p>
+        <h1>Thông tin đúng, chuyên gia đúng, thông điệp đúng</h1>
+        <p class="sub">Bảo chứng chuyên môn với quy trình kiểm soát có trách nhiệm. Không bán hàng, không chẩn đoán, không kê đơn, không thay thế bác sĩ, không có lợi ích ẩn.</p>
         <form onsubmit="event.preventDefault();go('tri-thuc')">
           <div class="searchbox">
             <input type="text" placeholder="Tìm chủ đề: tiểu đường, huyết áp, tiêm chủng…" id="homesearch">
             <button class="btn" type="submit" style="background:#fff;color:var(--blue)">Tra cứu chủ đề</button>
           </div>
         </form>
-        <p style="font-size:.85rem;color:#82E6FD;margin:12px 0 10px">Không thay thế thăm khám — nhưng giúp bạn biết khi nào cần đi khám.</p>
+        <p style="font-size:.85rem;color:#8FB4FF;margin:12px 0 10px">Không thay thế thăm khám — nhưng giúp bạn biết khi nào cần đi khám.</p>
         <div class="hero-cta" style="margin:0 0 12px">
           <a class="btn ghost" onclick="go('khi-nao')">Khi nào cần đi khám</a>
         </div>
       </div>
 
-      <!-- Logo strips merged into hero — cuộn liên tục -->
-      <div class="hero-logos-big">
-        <div class="hlb-label">Đối tác chiến lược</div>
-        <div class="hlb-viewport">
-          <div class="hlb-track">
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
-            <!-- duplicate for seamless loop -->
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
-            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-logos-small">
-        <div class="hls-label">Đối tác truyền thông</div>
-        <div class="hls-viewport">
-          <div class="hls-track">
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vnexpress.webp" alt="VnExpress" loading="lazy"></span><span class="hls-name">VnExpress</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/tuoitre.svg" alt="Tuổi Trẻ" loading="lazy"></span><span class="hls-name">Tuổi Trẻ</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/thanhnien.webp" alt="Thanh Niên" loading="lazy"></span><span class="hls-name">Thanh Niên</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/dantri.webp" alt="Dân Trí" loading="lazy"></span><span class="hls-name">Dân Trí</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamnet.svg" alt="VietNamNet" loading="lazy"></span><span class="hls-name">VietNamNet</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/laodong.webp" alt="Lao Động" loading="lazy"></span><span class="hls-name">Lao Động</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/nguoilaodong.webp" alt="Người Lao Động" loading="lazy"></span><span class="hls-name">Người Lao Động</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/suckhoedoisong.webp" alt="Sức Khỏe &amp; Đời Sống" loading="lazy"></span><span class="hls-name">Sức Khỏe &amp; Đời Sống</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamplus.png" alt="VietnamPlus" loading="lazy"></span><span class="hls-name">VietnamPlus</span></div>
-            <!-- duplicate for seamless loop -->
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vnexpress.webp" alt="VnExpress" loading="lazy"></span><span class="hls-name">VnExpress</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/tuoitre.svg" alt="Tuổi Trẻ" loading="lazy"></span><span class="hls-name">Tuổi Trẻ</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/thanhnien.webp" alt="Thanh Niên" loading="lazy"></span><span class="hls-name">Thanh Niên</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/dantri.webp" alt="Dân Trí" loading="lazy"></span><span class="hls-name">Dân Trí</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamnet.svg" alt="VietNamNet" loading="lazy"></span><span class="hls-name">VietNamNet</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/laodong.webp" alt="Lao Động" loading="lazy"></span><span class="hls-name">Lao Động</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/nguoilaodong.webp" alt="Người Lao Động" loading="lazy"></span><span class="hls-name">Người Lao Động</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/suckhoedoisong.webp" alt="Sức Khỏe &amp; Đời Sống" loading="lazy"></span><span class="hls-name">Sức Khỏe &amp; Đời Sống</span></div>
-            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamplus.png" alt="VietnamPlus" loading="lazy"></span><span class="hls-name">VietnamPlus</span></div>
-          </div>
-        </div>
+      <div class="trustbar" role="complementary" aria-label="Cam kết minh bạch và đáng tin cậy">
+        <span class="cred-item">Hội đồng Y khoa thẩm định từng bài</span>
+        <span class="cred-item">Mức bằng chứng công khai</span>
+        <span class="cred-item">Bản khai xung đột lợi ích minh bạch</span>
+        <span class="cred-item">Nhật ký đính chính không xóa</span>
       </div>
     </div>
   </section>
@@ -1194,130 +1205,71 @@
     </div>
   </section>
 
-  <!-- Home tabs — thay cho cuộn tuần tự: bấm tab để đổi nội dung ngay, không cần cuộn -->
-  <div class="hometabs-wrap">
+  <!-- Mạng lưới kết nối — port từ reference -->
+  <section class="blk fn-sec" id="sec-mangluoi">
     <div class="wrap">
-      <div class="hometabs" id="homeTabs" role="tablist" aria-label="Nội dung trang chủ">
-        <button type="button" class="htab" data-hometab="mangluoi" onclick="homeTab('mangluoi')" role="tab" aria-selected="false">Mạng lưới</button>
-        <button type="button" class="htab" data-hometab="tonghoi" onclick="homeTab('tonghoi')" role="tab" aria-selected="false">Tổng hội &amp; Chính sách</button>
-        <button type="button" class="htab" data-hometab="thamgia" onclick="homeTab('thamgia')" role="tab" aria-selected="false">Mạng lưới chuyên gia</button>
-        <button type="button" class="htab" data-hometab="tintuc" onclick="homeTab('tintuc')" role="tab" aria-selected="false">Tin tức &amp; Sự kiện</button>
-        <button type="button" class="htab on" data-hometab="chude" onclick="homeTab('chude')" role="tab" aria-selected="true">Chủ đề</button>
-        <button type="button" class="htab" data-hometab="tuvan" onclick="homeTab('tuvan')" role="tab" aria-selected="false">Tư vấn &amp; Chuyển giao KHCN</button>
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Mạng lưới kết nối</div>
+          <h2>Hôm nay bạn cần gì?</h2>
+          <p class="u-sec-sub">Chọn vai trò của bạn để tìm thông tin phù hợp</p>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Khối nội dung bên dưới tab -->
-  <div class="below-tabs">
-  <!-- Lớp 3 (v12): MẠNG LƯỚI đứng sau độ tin cậy — router 8 nhóm (dời lên ngay sau hero để nối chuỗi tin cậy) -->
-  <section class="blk fn-sec hometab-panel" id="sec-mangluoi">
-    <div class="wrap">
-      <div class="res-head">
-        <div class="eyebrow">8 cổng vào theo vai trò</div>
-        <h2>Bạn đang cần gì hôm nay?</h2>
-        <p class="r8-invite">Chọn đúng vai trò của bạn để đi thẳng tới nơi cần đến.</p>
-      </div>
-
-      <div class="res-grid">
-        <!-- 1. Người dân & cộng đồng — nhấn nhẹ, đứng đầu -->
-        <a class="res-card res-lead" onclick="go('tri-thuc')">
-          <span class="res-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-3-3.87"></path><path d="M4 21v-2a4 4 0 0 1 3-3.87"></path><circle cx="12" cy="7" r="4"></circle><path d="M16 3.13a4 4 0 0 1 0 7.75"></path><path d="M8 3.13a4 4 0 0 0 0 7.75"></path></svg></span>
-          <span class="res-tx"><b>Tra cứu tri thức sức khỏe đã thẩm định</b><small>Người dân &amp; cộng đồng</small></span>
+      <div class="grid g4">
+        <a class="res-card" onclick="go('tri-thuc')">
+          <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <h3>Người dân / cộng đồng</h3>
+          <p>Tìm thông tin dễ hiểu, video, sự kiện cộng đồng, nhận bản tin.</p>
+          <span class="cta-link">Tìm thông tin sức khỏe →</span>
         </a>
-        <!-- 2. Báo chí -->
+        <a class="res-card" onclick="go('chuyen-gia')">
+          <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg>
+          <h3>Chuyên gia y tế</h3>
+          <p>Tham gia phản biện, diễn đàn, đào tạo, hội đồng khoa học.</p>
+          <span class="cta-link">Cộng tác cùng CCHC →</span>
+        </a>
         <a class="res-card" onclick="go('bao-chi')">
-          <span class="res-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l7 4V6L7 10H4a1 1 0 0 0-1 1Z"></path><path d="M18 9a3 3 0 0 1 0 6"></path></svg></span>
-          <span class="res-tx"><b>Tìm chuyên gia · xin phỏng vấn</b><small>Báo chí</small></span>
+          <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6z"></path></svg>
+          <h3>Báo chí / truyền thông</h3>
+          <p>Nguồn phát ngôn chính thống, thông cáo, chuyên gia, bộ tài liệu báo chí.</p>
+          <span class="cta-link">Xem trung tâm báo chí →</span>
         </a>
-        <!-- 3. Chuyên gia y tế -->
-        <a class="res-card" onclick="go('form','Tham gia mạng lưới chuyên gia','ca-nhan')">
-          <span class="res-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5V15a5.5 5.5 0 0 0 11 0v-3"></path><path d="M4.5 5v4a3 3 0 0 0 3 3M15.5 5v4a3 3 0 0 1-1.5 2.6"></path><path d="M3 5h3M14 5h3"></path><circle cx="18" cy="15" r="2.2"></circle></svg></span>
-          <span class="res-tx"><b>Tham gia mạng lưới phản biện</b><small>Chuyên gia y tế</small></span>
-        </a>
-        <!-- 4. Tổng hội & hội chuyên khoa -->
-        <a class="res-card" onclick="go('form','Đề xuất phối hợp (Tổng hội / hội chuyên khoa)','to-chuc')">
-          <span class="res-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l7-4 7 4v14"></path><path d="M9 21v-4h6v4"></path><line x1="9" y1="11" x2="9" y2="11.01"></line><line x1="15" y1="11" x2="15" y2="11.01"></line></svg></span>
-          <span class="res-tx"><b>Đề xuất phối hợp</b><small>Tổng hội &amp; hội chuyên khoa</small></span>
-        </a>
-        <!-- 5. Viện – trường – cơ sở y tế -->
-        <a class="res-card" onclick="go('form','Đề xuất hợp tác nghiên cứu / đào tạo','to-chuc')">
-          <span class="res-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5 10-5Z"></path><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"></path></svg></span>
-          <span class="res-tx"><b>Hợp tác nghiên cứu / đào tạo</b><small>Viện – trường – cơ sở y tế</small></span>
-        </a>
-        <!-- 6. Doanh nghiệp / nhà tài trợ -->
-        <a class="res-card" onclick="go('chinh-sach-tai-tro')">
-          <span class="res-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="2" y1="13" x2="22" y2="13"></line></svg></span>
-          <span class="res-tx"><b>Xem chính sách tài trợ</b><small>Doanh nghiệp / nhà tài trợ</small></span>
-        </a>
-        <!-- 7. Cơ quan chính sách -->
-        <a class="res-card" onclick="go('tong-hoi-chinh-sach','#chinh-sach')">
-          <span class="res-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M3 10h18"></path><path d="M5 6l7-3 7 3"></path><path d="M5 10v11M9 10v11M15 10v11M19 10v11"></path></svg></span>
-          <span class="res-tx"><b>Giải mã chính sách y tế</b><small>Cơ quan chính sách</small></span>
-        </a>
-        <!-- 8. Đối tác nền tảng -->
         <a class="res-card" onclick="go('lien-he')">
-          <span class="res-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.7" y1="10.6" x2="15.3" y2="6.4"></line><line x1="8.7" y1="13.4" x2="15.3" y2="17.6"></line></svg></span>
-          <span class="res-tx"><b>Kết nối tri thức, tách quyền công bố</b><small>Đối tác nền tảng</small></span>
+          <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><path d="M9 9v.01"></path><path d="M9 12v.01"></path><path d="M9 15v.01"></path><path d="M9 18v.01"></path></svg>
+          <h3>Tổng hội / hội chuyên khoa</h3>
+          <p>Công bố hoạt động, chuyển tải khuyến cáo, phối hợp chương trình.</p>
+          <span class="cta-link">Hợp tác cùng CCHC →</span>
         </a>
-      </div>
-      <p class="res-note">Mọi cổng vào đều dẫn về cùng một chuẩn: <a onclick="go('minh-bach')">quy trình biên soạn công khai</a> — CCHC giữ trách nhiệm nội dung, đối tác không can thiệp chuyên môn.</p>
-    </div>
-  </section>
-
-  <!-- Lớp 5 (v6): Feature 7/5 — Tổng hội & Chính sách -->
-  <section class="blk alt fn-sec hometab-panel" id="sec-tonghoi">
-    <div class="wrap">
-      <div class="feat75">
-        <div>
-          <div class="eyebrow">Nguồn chính thống</div>
-          <h2 style="font-size:1.8rem">Tổng hội &amp; Chính sách y tế</h2>
-          <p class="muted" style="max-width:58ch">Chuyển tải khuyến cáo của Tổng hội Y học Việt Nam và các hội chuyên khoa thành viên; giải mã văn bản chính sách thành nội dung dân hiểu — trung lập, trích đúng số hiệu, kèm link văn bản gốc.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-            <a class="btn" onclick="go('tong-hoi-chinh-sach')">Xem Tổng hội &amp; Chính sách</a>
-            <a class="btn sec" onclick="go('chuyen-gia')">Mạng lưới chuyên gia</a>
-          </div>
-        </div>
-        <div>
-          <div class="feat-img"><img src="https://images.unsplash.com/photo-1516841273335-e39b37888115?w=800&amp;h=520&amp;fit=crop&amp;auto=format" alt="Đội ngũ y bác sĩ (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-          <p class="imgcap">Ảnh minh hoạ (Unsplash)</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
-            <a class="org-mini" onclick="go('hoi-ck','Hội Tim mạch học Việt Nam','Hội thành viên Tổng hội Y học Việt Nam · nội dung minh hoạ')"><span class="org-mini-av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg></span><span class="org-mini-tx"><b>Hội Tim mạch học VN</b><small>Hội thành viên · Xem →</small></span></a>
-            <a class="org-mini" onclick="go('hoi-ck','Hội Nội tiết – Đái tháo đường Việt Nam','Hội thành viên Tổng hội Y học Việt Nam · nội dung minh hoạ')"><span class="org-mini-av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7s6.5 7 6.5 11.8a6.5 6.5 0 1 1-13 0C5.5 9.7 12 2.7 12 2.7Z"></path></svg></span><span class="org-mini-tx"><b>Hội Nội tiết – ĐTĐ VN</b><small>Hội thành viên · Xem →</small></span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lớp 8 (v6): Băng Tham gia mạng lưới — hạ tông nền sáng -->
-  <section class="blk fn-sec hometab-panel" id="sec-thamgia">
-    <div class="wrap">
-      <div class="feat75">
-        <div>
-          <div class="eyebrow">Mạng lưới chuyên gia</div>
-          <h2 style="font-size:1.8rem">Cùng đưa tri thức y học chính thống tới cộng đồng</h2>
-          <p class="muted" style="max-width:56ch">Mỗi bài viết trên CCHC đều qua phản biện của chuyên gia thuộc mạng lưới Tổng hội Y học Việt Nam — công khai danh tính, công khai xung đột lợi ích.</p>
-          <ul class="member-checklist">
-            <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Phản biện có ghi nhận tên trên từng bài viết</li>
-            <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Công khai xung đột lợi ích (COI) minh bạch</li>
-            <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Không thương mại hóa quan điểm chuyên môn</li>
-          </ul>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
-            <a class="btn" onclick="go('form','Tham gia mạng lưới chuyên gia','ca-nhan')">Tham gia mạng lưới</a>
-            <a class="btn sec" onclick="go('lien-he')">Liên hệ</a>
-          </div>
-        </div>
-        <div>
-          <div class="feat-img"><img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=800&amp;h=520&amp;fit=crop&amp;auto=format" alt="Hai chuyên gia y tế cùng xem kết quả chẩn đoán hình ảnh (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-          <p class="imgcap">Ảnh minh hoạ (Unsplash)</p>
-        </div>
+        <a class="res-card" onclick="go('dao-tao')">
+          <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          <h3>Viện / trường / bệnh viện</h3>
+          <p>Hợp tác nghiên cứu, đào tạo, truyền thông sức khỏe.</p>
+          <span class="cta-link">Xem chương trình đào tạo →</span>
+        </a>
+        <a class="res-card" onclick="go('lien-he')">
+          <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4M9 9h.01M15 9h.01M9 13h.01M15 13h.01"></path></svg>
+          <h3>Cơ quan chính sách</h3>
+          <p>Báo cáo, dữ liệu tổng hợp, tóm tắt chính sách, diễn đàn.</p>
+          <span class="cta-link">Kết nối cơ quan →</span>
+        </a>
+        <a class="res-card" onclick="go('doi-tac')">
+          <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <h3>Doanh nghiệp / nhà tài trợ</h3>
+          <p>Tài trợ minh bạch, dự án cộng đồng, nguyên tắc xung đột lợi ích.</p>
+          <span class="cta-link">Xem điều kiện hợp tác →</span>
+        </a>
+        <a class="res-card" onclick="go('doi-tac')">
+          <svg class="card-icon" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg>
+          <h3>Đối tác nền tảng</h3>
+          <p>Kết nối tri thức nguồn, nhưng tách bạch quyền công bố.</p>
+          <span class="cta-link">Xem điều kiện đối tác →</span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Tin tức & Sự kiện -->
-  <section class="blk fn-sec hometab-panel" id="sec-tintuc">
+  <section class="blk fn-sec" id="sec-tintuc">
     <div class="wrap">
       <div class="mbox-head">
         <div class="mbox-l"><div class="eyebrow">Cập nhật</div><h2>Tin tức &amp; Sự kiện</h2><p>Tin hoạt động, nội dung mới và lịch sự kiện có thể đăng ký. </p></div>
@@ -1326,20 +1278,30 @@
       <div class="ne-grid">
         <div>
           <h3 class="ne-h">Tin mới</h3>
-          <div class="newsitem" onclick="go('tin','tha-nguoi-tre')">
-            <div class="thumb"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=240&amp;h=160&amp;fit=crop&amp;auto=format" alt="Ống nghe y tế (ảnh minh hoạ)" onerror="this.style.display='none'"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13v16H4z"></path><line x1="7" y1="8" x2="14" y2="8"></line><line x1="7" y1="12" x2="14" y2="12"></line><line x1="7" y1="16" x2="11" y2="16"></line></svg></div>
-            <div><span class="pill tag-topic">Tim mạch</span><h3 style="margin:6px 0 4px">Tăng huyết áp ở người trẻ: những dấu hiệu dễ bỏ qua</h3><span class="muted" style="font-size:.84rem">18/07/2026 · Chuyên gia Hội Tim mạch học Việt Nam phản biện</span></div>
-          </div>
-          <div class="newsitem" onclick="go('tin','toa-dam-dot-quy')">
-            <div class="thumb"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=240&amp;h=160&amp;fit=crop&amp;auto=format" alt="Hội nghị chuyên môn (ảnh minh hoạ)" onerror="this.style.display='none'"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5l3 2"></path></svg></div>
-            <div><span class="pill tag-topic">Hoạt động</span><h3 style="margin:6px 0 4px">CCHC phối hợp Tổng hội tổ chức tọa đàm phòng chống đột quỵ</h3><span class="muted" style="font-size:.84rem">20/07/2026 · Tóm tắt và tài liệu đã được đăng tải</span></div>
-          </div>
-          <div class="newsitem" onclick="go('tin','kham-suc-khoe-dinh-ky')">
-            <div class="thumb"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=240&amp;h=160&amp;fit=crop&amp;auto=format" alt="Văn bản chính sách (ảnh minh hoạ)" onerror="this.style.display='none'"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"></rect><path d="M9 4a3 3 0 0 1 6 0"></path><line x1="9" y1="11" x2="15" y2="11"></line><line x1="9" y1="15" x2="13" y2="15"></line></svg></div>
-            <div><span class="pill tag-topic">Chính sách</span><h3 style="margin:6px 0 4px">Giải mã quy định mới về khám sức khỏe định kỳ</h3><span class="muted" style="font-size:.84rem">12/07/2026 · Trích số hiệu văn bản, link gốc, giọng trung lập</span></div>
+          <a class="ne-hero" onclick="go('tin','tha-nguoi-tre')">
+            <div class="ne-hero-img"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Ống nghe y tế (ảnh minh hoạ)" onerror="this.style.display='none'"></div>
+            <div class="ne-hero-body">
+              <span class="pill tag-topic">Tim mạch</span>
+              <h3>Tăng huyết áp ở người trẻ: những dấu hiệu dễ bỏ qua</h3>
+              <span class="muted" style="font-size:.84rem">18/07/2026 · Chuyên gia Hội Tim mạch học Việt Nam phản biện</span>
+            </div>
+          </a>
+          <div class="ne-small-grid">
+            <a class="ne-small" onclick="go('tin','toa-dam-dot-quy')">
+              <div class="ne-small-img"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&amp;h=250&amp;fit=crop&amp;auto=format" alt="Hội nghị chuyên môn (ảnh minh hoạ)" onerror="this.style.display='none'"></div>
+              <h4>CCHC phối hợp Tổng hội tổ chức tọa đàm phòng chống đột quỵ</h4>
+            </a>
+            <a class="ne-small" onclick="go('tin','kham-suc-khoe-dinh-ky')">
+              <div class="ne-small-img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&amp;h=250&amp;fit=crop&amp;auto=format" alt="Văn bản chính sách (ảnh minh hoạ)" onerror="this.style.display='none'"></div>
+              <h4>Giải mã quy định mới về khám sức khỏe định kỳ</h4>
+            </a>
+            <a class="ne-small" onclick="go('tin','tam-soat-dtd')">
+              <div class="ne-small-img"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&amp;h=250&amp;fit=crop&amp;auto=format" alt="Xét nghiệm tầm soát (ảnh minh hoạ)" onerror="this.style.display='none'"></div>
+              <h4>Phối hợp Hội Nội tiết – ĐTĐ Việt Nam chuyển tải nội dung tầm soát đái tháo đường</h4>
+            </a>
           </div>
         </div>
-        <div>
+        <div class="ne-events">
           <h3 class="ne-h">Sự kiện sắp tới</h3>
           <div class="event-row">
             <div class="event-date"><b>12</b><span>Th8</span></div>
@@ -1358,55 +1320,323 @@
           </div>
         </div>
       </div>
+      <div class="ne-more-grid">
+        <a class="ne-small" onclick="go('tin','tiem-chung-he')">
+          <div class="ne-small-img"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=400&amp;h=250&amp;fit=crop&amp;auto=format" alt="Tiêm chủng (ảnh minh hoạ)" onerror="this.style.display='none'"></div>
+          <h4>Thông cáo: Chiến dịch truyền thông tiêm chủng mùa hè 2026</h4>
+        </a>
+        <a class="ne-small" onclick="go('tin','bknly')">
+          <div class="ne-small-img"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&amp;h=250&amp;fit=crop&amp;auto=format" alt="Khám sức khỏe cộng đồng (ảnh minh hoạ)" onerror="this.style.display='none'"></div>
+          <h4>CCHC phối hợp truyền thông phòng chống bệnh không lây nhiễm</h4>
+        </a>
+        <a class="ne-small" onclick="go('tin','tam-than')">
+          <div class="ne-small-img"><img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2?w=400&amp;h=250&amp;fit=crop&amp;auto=format" alt="Chăm sóc sức khỏe tâm thần (ảnh minh hoạ)" onerror="this.style.display='none'"></div>
+          <h4>Chuỗi nội dung chăm sóc sức khỏe tâm thần cộng đồng</h4>
+        </a>
+        <a class="ne-small" onclick="alert('Demo: nội dung minh hoạ, chưa có trang chi tiết')">
+          <div class="ne-small-img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&amp;h=250&amp;fit=crop&amp;auto=format" alt="Tư vấn sức khỏe (ảnh minh hoạ)" onerror="this.style.display='none'"></div>
+          <h4>Đau lưng mãn tính: khi nào cần gặp bác sĩ chuyên khoa?</h4>
+        </a>
+        <a class="ne-small" onclick="alert('Demo: nội dung minh hoạ, chưa có trang chi tiết')">
+          <div class="ne-small-img"><img src="https://images.unsplash.com/photo-1571772805064-207c8435df79?w=400&amp;h=250&amp;fit=crop&amp;auto=format" alt="Vận động thể chất (ảnh minh hoạ)" onerror="this.style.display='none'"></div>
+          <h4>Vận động bao nhiêu là đủ mỗi tuần theo khuyến cáo mới nhất?</h4>
+        </a>
+      </div>
       <p class="imgcap" style="margin-top:12px">Ảnh trong trang là ảnh minh hoạ (Unsplash)</p>
     </div>
   </section>
 
   <!-- Lớp 3b (v12): Chủ đề sức khỏe nổi bật -->
-  <section class="blk alt fn-sec hometab-panel on" id="sec-chude">
+  <section class="blk alt fn-sec" id="sec-chude">
     <div class="wrap">
       <div class="mbox-head">
         <div class="mbox-l"><div class="eyebrow">Tri thức đã thẩm định</div><h2>Chủ đề sức khỏe nổi bật</h2><p>Hồ sơ chủ đề đã thẩm định, gắn nhãn mức bằng chứng M1–M4. </p></div>
         <a class="mbox-all" onclick="go('tri-thuc')">Xem tất cả →</a>
       </div>
-      <div class="grid topics-grid">
-        <div class="card click media" onclick="go('chu-de','tang-huyet-ap')">
-          <div class="thumb-img"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Theo dõi huyết áp (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-          <div class="card-body">
-            <span class="mlabel m1">M1 · Bằng chứng mạnh</span>
-            <h3>Tăng huyết áp</h3>
-            <div class="desc">Dấu hiệu dễ bỏ qua và những con số cần nhớ.</div>
+      <div class="chude-layout">
+        <aside class="chude-filters">
+          <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>Bộ lọc</h4>
+          <div class="cf-group">
+            <b>Chủ đề</b>
+            <label class="cf-opt"><input type="checkbox">Tim mạch</label>
+            <label class="cf-opt"><input type="checkbox">Nội tiết · Đái tháo đường</label>
+            <label class="cf-opt"><input type="checkbox">Đột quỵ</label>
+            <label class="cf-opt"><input type="checkbox">Tiêm chủng</label>
+            <label class="cf-opt"><input type="checkbox">Giấc ngủ &amp; tâm thần</label>
+            <label class="cf-opt"><input type="checkbox">Dinh dưỡng &amp; cân nặng</label>
           </div>
-        </div>
-        <div class="card click media" onclick="go('chu-de','dai-thao-duong')">
-          <div class="thumb-img"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Nhân viên y tế (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-          <div class="card-body">
-            <span class="mlabel m1">M1 · Bằng chứng mạnh</span>
-            <h3>Đái tháo đường típ 2</h3>
-            <div class="desc">Ai cần tầm soát, khi nào và bằng xét nghiệm gì.</div>
+          <div class="cf-group">
+            <b>Mức bằng chứng</b>
+            <label class="cf-opt"><input type="checkbox"><span class="cf-dot" style="background:#1d6b4e"></span>M1 · Bằng chứng mạnh</label>
+            <label class="cf-opt"><input type="checkbox"><span class="cf-dot" style="background:#1D4ED8"></span>M2 · Bằng chứng khá</label>
+            <label class="cf-opt"><input type="checkbox"><span class="cf-dot" style="background:#FF9013"></span>M3 · Tham khảo</label>
+            <label class="cf-opt"><input type="checkbox"><span class="cf-dot" style="background:#5A6478"></span>M4 · Định hướng chung</label>
           </div>
-        </div>
-        <div class="card click media" onclick="go('chu-de','dot-quy')">
-          <div class="thumb-img"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Bác sĩ dùng máy tính bảng (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-          <div class="card-body">
-            <span class="mlabel m2">M2 · Bằng chứng khá</span>
-            <h3>Đột quỵ</h3>
-            <div class="desc">Nhận biết sớm theo quy tắc F.A.S.T, xử trí kịp thời.</div>
+          <div class="cf-group">
+            <b>Định dạng</b>
+            <label class="cf-opt"><input type="checkbox">Bài viết</label>
+            <label class="cf-opt"><input type="checkbox">Video</label>
+            <label class="cf-opt"><input type="checkbox">Hỏi–đáp chuyên gia</label>
           </div>
-        </div>
-        <div class="card click media" onclick="go('article-tiemchung')">
-          <div class="thumb-img"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Tiêm chủng (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-          <div class="card-body">
-            <span class="mlabel m2">M2 · Bằng chứng khá</span>
-            <h3>Tiêm chủng</h3>
-            <div class="desc">Những mũi người lớn hay bỏ quên và lịch nhắc lại.</div>
+          <span class="cf-reset">Đặt lại bộ lọc</span>
+        </aside>
+        <div class="grid topics-grid">
+          <div class="card click media" onclick="go('chu-de','tang-huyet-ap')">
+            <div class="thumb-img"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Theo dõi huyết áp (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"><span class="mlabel m1" title="M1 · Bằng chứng mạnh">M1</span></div>
+            <div class="card-body">
+              <h3>Tăng huyết áp</h3>
+              <div class="desc">Dấu hiệu dễ bỏ qua và những con số cần nhớ.</div>
+              <span class="cta">Xem hồ sơ chủ đề →</span>
+            </div>
+          </div>
+          <div class="card click media" onclick="go('chu-de','dai-thao-duong')">
+            <div class="thumb-img"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Nhân viên y tế (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"><span class="mlabel m1" title="M1 · Bằng chứng mạnh">M1</span></div>
+            <div class="card-body">
+              <h3>Đái tháo đường típ 2</h3>
+              <div class="desc">Ai cần tầm soát, khi nào và bằng xét nghiệm gì.</div>
+              <span class="cta">Xem hồ sơ chủ đề →</span>
+            </div>
+          </div>
+          <div class="card click media" onclick="go('chu-de','dot-quy')">
+            <div class="thumb-img"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Bác sĩ dùng máy tính bảng (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"><span class="mlabel m2" title="M2 · Bằng chứng khá">M2</span></div>
+            <div class="card-body">
+              <h3>Đột quỵ</h3>
+              <div class="desc">Nhận biết sớm theo quy tắc F.A.S.T, xử trí kịp thời.</div>
+              <span class="cta">Xem hồ sơ chủ đề →</span>
+            </div>
+          </div>
+          <div class="card click media" onclick="go('article-tiemchung')">
+            <div class="thumb-img"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Tiêm chủng (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"><span class="mlabel m2" title="M2 · Bằng chứng khá">M2</span></div>
+            <div class="card-body">
+              <h3>Tiêm chủng</h3>
+              <div class="desc">Những mũi người lớn hay bỏ quên và lịch nhắc lại.</div>
+              <span class="cta">Đọc bài →</span>
+            </div>
+          </div>
+          <div class="card click media" onclick="go('article-giacngu')">
+            <div class="thumb-img"><img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Giấc ngủ (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"><span class="mlabel m3" title="M3 · Tham khảo">M3</span></div>
+            <div class="card-body">
+              <h3>Giấc ngủ</h3>
+              <div class="desc">Ngủ bao nhiêu là đủ và làm sao để ngủ ngon hơn.</div>
+              <span class="cta">Đọc bài →</span>
+            </div>
+          </div>
+          <div class="card click media" onclick="go('article-bmi')">
+            <div class="thumb-img"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Bữa ăn lành mạnh (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"><span class="mlabel m4" title="M4 · Định hướng chung">M4</span></div>
+            <div class="card-body">
+              <h3>Chỉ số BMI</h3>
+              <div class="desc">BMI nói lên điều gì và không nói điều gì về sức khỏe.</div>
+              <span class="cta">Đọc bài →</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="blk alt fn-sec hometab-panel" id="sec-tuvan">
+  <!-- Lớp 8 (v6): Băng Tham gia mạng lưới — hạ tông nền sáng -->
+  <section class="blk fn-sec" id="sec-thamgia">
+    <div class="wrap">
+      <div class="mbox-head">
+        <div class="mbox-l"><div class="eyebrow">Mạng lưới chuyên gia</div><h2>Cùng đưa tri thức y học chính thống tới cộng đồng</h2><p>Mỗi bài viết trên CCHC đều qua phản biện của chuyên gia thuộc mạng lưới Tổng hội Y học Việt Nam — công khai danh tính, công khai xung đột lợi ích.</p></div>
+        <a class="mbox-all" onclick="go('chuyen-gia')">Xem tất cả →</a>
+      </div>
+      <div class="grid expert-grid">
+        <a class="expert-mini" onclick="go('expert','na')">
+          <div class="avatar" style="width:76px;height:76px;font-size:1.6rem">NA<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&amp;h=200&amp;fit=crop&amp;auto=format" alt="Ảnh chân dung minh hoạ" onerror="this.style.display='none'"></div>
+          <h3>PGS.TS Nguyễn Văn An</h3>
+          <p class="desc">Chuyên khoa Tim mạch · Hội Tim mạch học Việt Nam</p>
+          <span class="coi-badge">✓ Không xung đột lợi ích</span>
+        </a>
+        <a class="expert-mini" onclick="go('expert','lb')">
+          <div class="avatar" style="width:76px;height:76px;font-size:1.6rem">LB<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&amp;h=200&amp;fit=crop&amp;auto=format" alt="Ảnh chân dung minh hoạ" onerror="this.style.display='none'"></div>
+          <h3>TS.BS Lê Thị Bình</h3>
+          <p class="desc">Chuyên khoa Nội tiết · Hội Nội tiết – ĐTĐ Việt Nam</p>
+          <span class="coi-badge">✓ Không xung đột lợi ích</span>
+        </a>
+        <a class="expert-mini" onclick="go('expert','td')">
+          <div class="avatar" style="width:76px;height:76px;font-size:1.6rem">TĐ<img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&amp;h=200&amp;fit=crop&amp;auto=format" alt="Ảnh chân dung minh hoạ" onerror="this.style.display='none'"></div>
+          <h3>BS.CKII Trần Minh Đức</h3>
+          <p class="desc">Chuyên khoa Y học dự phòng · Hội Y học Dự phòng VN</p>
+          <span class="coi-badge">✓ Không xung đột lợi ích</span>
+        </a>
+        <a class="expert-mini" onclick="go('expert','qh')">
+          <div class="avatar" style="width:76px;height:76px;font-size:1.6rem">QH<img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=200&amp;h=200&amp;fit=crop&amp;auto=format" alt="Ảnh chân dung minh hoạ" onerror="this.style.display='none'"></div>
+          <h3>GS.TS Phạm Quốc Hùng</h3>
+          <p class="desc">Chuyên khoa Tim mạch · Hội Tim mạch học Việt Nam</p>
+          <span class="coi-badge">✓ Không xung đột lợi ích</span>
+        </a>
+      </div>
+      <div class="thamgia-foot">
+        <ul class="member-checklist">
+          <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Phản biện có ghi nhận tên trên từng bài viết</li>
+          <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Công khai xung đột lợi ích (COI) minh bạch</li>
+          <li><span class="mc-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Không thương mại hóa quan điểm chuyên môn</li>
+        </ul>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" onclick="go('form','Tham gia mạng lưới chuyên gia','ca-nhan')">Tham gia mạng lưới</a>
+          <a class="btn sec" onclick="go('lien-he')">Liên hệ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minh bạch & Đạo đức — port từ reference -->
+  <section class="blk" id="sec-minhbach">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Minh bạch &amp; Đạo đức</div>
+          <h2>Quy trình kiểm soát có trách nhiệm</h2>
+          <p class="u-sec-sub">Mọi nội dung đều trải qua 8 bước kiểm soát chất lượng</p>
+        </div>
+        <a class="more" onclick="go('minh-bach')">Xem trung tâm minh bạch →</a>
+      </div>
+      <div class="grid g4">
+        <a class="res-card" onclick="go('minh-bach')">
+          <span class="u-stat-num">8</span>
+          <h3>Quy trình kiểm soát 8 bước</h3>
+          <p>Mọi bài đi qua trợ lý AI, thẩm định y khoa, pháp chế, biên tập và hội đồng.</p>
+          <span class="cta-link">Xem quy trình →</span>
+        </a>
+        <a class="res-card" onclick="go('minh-bach')">
+          <span class="u-stat-num">14</span>
+          <h3>Đính chính đã công khai</h3>
+          <p>Nhật ký đính chính không xóa, ghi rõ nội dung cũ và lý do sửa.</p>
+          <span class="cta-link">Xem nhật ký →</span>
+        </a>
+        <a class="res-card" onclick="go('minh-bach')">
+          <span class="u-stat-num">42</span>
+          <h3>Bản khai lợi ích đang hiệu lực</h3>
+          <p>Xung đột lợi ích của chuyên gia và đối tác công khai kèm thời hạn hiệu lực.</p>
+          <span class="cta-link">Xem bản khai →</span>
+        </a>
+        <a class="res-card" onclick="go('doi-tac')">
+          <span class="u-stat-num coral">0</span>
+          <h3>Nhà tài trợ can thiệp nội dung</h3>
+          <p>Lằn ranh đỏ: tài trợ không được đề xuất chủ đề hay duyệt bài.</p>
+          <span class="cta-link">Đọc lằn ranh đỏ →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chuỗi giá trị CCHC — port từ reference -->
+  <section class="blk alt" id="sec-flow">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Chuỗi giá trị CCHC</div>
+          <h2>Mạch vận hành CCHC</h2>
+          <p class="u-sec-sub">6 nhóm hoạt động cốt lõi từ truyền thông đến tác động xã hội</p>
+        </div>
+        <a class="more" onclick="go('minh-bach')">Xem quy trình đầy đủ →</a>
+      </div>
+      <div class="flow">
+        <div class="flow-step"><span class="n">1</span><h4>Truyền thông</h4><p>Tạo nhịp cập nhật và kéo người dùng vào chủ đề</p></div>
+        <div class="flow-step"><span class="n">2</span><h4>Tri thức sức khỏe</h4><p>Diễn giải dễ hiểu, có nguồn, có người chịu trách nhiệm</p></div>
+        <div class="flow-step"><span class="n">3</span><h4>Nghiên cứu &amp; Dữ liệu</h4><p>Báo cáo, khảo sát, insight, policy brief</p></div>
+        <div class="flow-step"><span class="n">4</span><h4>Đào tạo</h4><p>Học liệu, tập huấn, hội thảo, tài liệu sau sự kiện</p></div>
+        <div class="flow-step"><span class="n">5</span><h4>Tư vấn khoa học</h4><p>Thiết kế chương trình, kiểm soát claim, phản biện độc lập</p></div>
+        <div class="flow-step"><span class="n">6</span><h4>Tác động xã hội</h4><p>Chương trình cộng đồng, hồ sơ đối tác, minh bạch tài trợ</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lớp 5 (v6): Feature 7/5 — Tổng hội & Chính sách -->
+  <section class="navy-panel" id="sec-tonghoi">
+    <div class="wrap">
+      <div class="tonghoi-intro">
+        <div class="eyebrow">Nguồn chính thống</div>
+        <h2 style="font-size:1.8rem">Tổng hội &amp; Chính sách y tế</h2>
+        <p style="max-width:60ch;margin:0">Chuyển tải khuyến cáo của Tổng hội Y học Việt Nam và các hội chuyên khoa thành viên; giải mã văn bản chính sách thành nội dung dân hiểu — trung lập, trích đúng số hiệu, kèm link văn bản gốc.</p>
+      </div>
+      <div class="grid g3 tonghoi-cards">
+        <a class="org-card" onclick="go('tong-hoi-chinh-sach','#tong-hoi')">
+          <strong>Tổng hội Y học Việt Nam</strong>
+          <span>Giới thiệu vai trò, hoạt động nổi bật, thông tin chính thống và liên kết chương trình với CCHC.</span>
+          <span class="cta">Tìm hiểu Tổng hội →</span>
+        </a>
+        <a class="org-card" onclick="go('chuyen-gia')">
+          <strong>Hội chuyên khoa &amp; hội địa phương</strong>
+          <span>Tin hoạt động, khuyến cáo chuyên môn, chương trình phối hợp và mạng lưới chuyên gia.</span>
+          <span class="cta">Xem mạng lưới chuyên gia →</span>
+        </a>
+        <a class="org-card" onclick="go('tong-hoi-chinh-sach','#chinh-sach')">
+          <strong>Chính sách y tế</strong>
+          <span>Giải mã văn bản chính sách thành nội dung dễ hiểu — trung lập, trích đúng số hiệu, kèm link gốc.</span>
+          <span class="cta">Tra cứu chính sách →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logo carousels — Đối tác -->
+  <section class="navy-panel">
+    <div class="wrap">
+      <div class="hero-logos-big">
+        <div class="hlb-label">Đối tác chiến lược</div>
+        <div class="hlb-viewport">
+          <div class="hlb-track">
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
+            <!-- duplicate for seamless loop -->
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/vien_nghien_cuu.jpg" alt="Viện Nghiên cứu &amp; Huấn luyện Cấp cứu Ngoại viện 115" loading="lazy"></span><span class="hlb-name">Viện Nghiên cứu &amp; Đào tạo Cấp cứu Ngoại viện</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/trung_tam_ho_tro.png" alt="Trung tâm Hỗ trợ, Đào tạo Liên tục" loading="lazy"></span><span class="hlb-name">Trung tâm Hỗ trợ Đào tạo Liên tục</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/chitta.png" alt="Chitta Group" loading="lazy"></span><span class="hlb-name">Chitta Group</span></div>
+            <div class="hlb-logo"><span class="hlb-mark"><img src="assets/images/logo/trien_luoc/viam.png" alt="VIAM — Viện Y học Ứng dụng Việt Nam" loading="lazy"></span><span class="hlb-name">VIAM — Viện Y học Ứng dụng Việt Nam</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-logos-small">
+        <div class="hls-label">Đối tác truyền thông</div>
+        <div class="hls-viewport">
+          <div class="hls-track">
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vnexpress.webp" alt="VnExpress" loading="lazy"></span><span class="hls-name">VnExpress</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/tuoitre.svg" alt="Tuổi Trẻ" loading="lazy"></span><span class="hls-name">Tuổi Trẻ</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/thanhnien.webp" alt="Thanh Niên" loading="lazy"></span><span class="hls-name">Thanh Niên</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/dantri.webp" alt="Dân Trí" loading="lazy"></span><span class="hls-name">Dân Trí</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamnet.svg" alt="VietNamNet" loading="lazy"></span><span class="hls-name">VietNamNet</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/laodong.webp" alt="Lao Động" loading="lazy"></span><span class="hls-name">Lao Động</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/nguoilaodong.webp" alt="Người Lao Động" loading="lazy"></span><span class="hls-name">Người Lao Động</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/suckhoedoisong.webp" alt="Sức Khỏe &amp; Đời Sống" loading="lazy"></span><span class="hls-name">Sức Khỏe &amp; Đời Sống</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamplus.png" alt="VietnamPlus" loading="lazy"></span><span class="hls-name">VietnamPlus</span></div>
+            <!-- duplicate for seamless loop -->
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vnexpress.webp" alt="VnExpress" loading="lazy"></span><span class="hls-name">VnExpress</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/tuoitre.svg" alt="Tuổi Trẻ" loading="lazy"></span><span class="hls-name">Tuổi Trẻ</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/thanhnien.webp" alt="Thanh Niên" loading="lazy"></span><span class="hls-name">Thanh Niên</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/dantri.webp" alt="Dân Trí" loading="lazy"></span><span class="hls-name">Dân Trí</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamnet.svg" alt="VietNamNet" loading="lazy"></span><span class="hls-name">VietNamNet</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/laodong.webp" alt="Lao Động" loading="lazy"></span><span class="hls-name">Lao Động</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/nguoilaodong.webp" alt="Người Lao Động" loading="lazy"></span><span class="hls-name">Người Lao Động</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/suckhoedoisong.webp" alt="Sức Khỏe &amp; Đời Sống" loading="lazy"></span><span class="hls-name">Sức Khỏe &amp; Đời Sống</span></div>
+            <div class="hls-logo"><span class="hls-mark"><img src="assets/images/logo/truyen_thong/vietnamplus.png" alt="VietnamPlus" loading="lazy"></span><span class="hls-name">VietnamPlus</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk alt fn-sec" id="sec-tuvan">
     <div class="wrap">
       <div class="feat75">
         <div>
@@ -1431,41 +1661,138 @@
     </div>
   </section>
 
-  <!-- Minh bạch & Trách nhiệm (navy panel) -->
-  <section class="navy-panel">
-    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between">
-      <div style="max-width:62ch">
-        <div class="eyebrow">Minh bạch &amp; Trách nhiệm</div>
-        <h2>Cách chúng tôi làm ra mỗi nội dung</h2>
-        <p style="margin:0">Quy trình biên soạn 8 bước công khai, chuyên gia phản biện ghi rõ tên, công khai tài trợ và nhật ký đính chính. Mọi nội dung trên trang đều dẫn về đây.</p>
+
+
+  <!-- Mạng lưới đối tác — port từ reference -->
+  <section class="blk alt u-pb-72" id="sec-doitac">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Mạng lưới đối tác</div>
+          <h2>Đối tác &amp; Nguyên tắc hợp tác</h2>
+          <p class="u-sec-sub">Hợp tác phải thể hiện vai trò, đóng góp, kết quả và giới hạn quyền can thiệp</p>
+        </div>
+        <a class="more" onclick="go('doi-tac')">Xem tất cả đối tác →</a>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn white" onclick="go('minh-bach')">Xem quy trình &amp; minh bạch</a>
-        <a class="btn ghost" onclick="go('chinh-sach-tai-tro')">Chính sách tài trợ</a>
+
+      <div class="grid g3 u-mb-28">
+        <div class="panel">
+          <h3 class="u-principle-h3">Chuyên môn</h3>
+          <p class="u-principle-desc">Viện – trường – bệnh viện. Nghiên cứu, đào tạo, phản biện, truyền thông giáo dục sức khỏe.</p>
+        </div>
+        <div class="panel">
+          <h3 class="u-principle-h3">Cộng đồng</h3>
+          <p class="u-principle-desc">Doanh nghiệp / nhà tài trợ. Chương trình cộng đồng, tài trợ minh bạch, tác động đo lường được.</p>
+        </div>
+        <div class="panel">
+          <h3 class="u-principle-h3">Nền tảng</h3>
+          <p class="u-principle-desc">Chitta &amp; đối tác tri thức. Cung cấp nguồn lực / tri thức nền nhưng không có quyền publish nội dung CCHC.</p>
+        </div>
+      </div>
+
+      <div class="grid g3 u-mb-28">
+        <div class="panel u-border-coral">
+          <span class="u-principle-num coral">⚠</span>
+          <h3 class="u-principle-h3">Tài trợ ≠ quyền phê duyệt nội dung</h3>
+          <p class="u-principle-desc">Tài trợ không kèm quyền duyệt bài, chọn chuyên gia hay quảng bá sản phẩm.</p>
+        </div>
+        <div class="panel u-border-coral">
+          <span class="u-principle-num coral">⚠</span>
+          <h3 class="u-principle-h3">Nghiệm thu bằng tác động</h3>
+          <p class="u-principle-desc">Đo bằng sản phẩm &amp; tác động, không bằng lượt truyền thông.</p>
+        </div>
+        <div class="panel u-border-coral">
+          <span class="u-principle-num coral">⚠</span>
+          <h3 class="u-principle-h3">Tách hồ sơ từng vai trò</h3>
+          <p class="u-principle-desc">Mỗi vai trò có hồ sơ riêng — minh bạch, không trộn lẫn.</p>
+        </div>
+      </div>
+
+      <div class="u-mb-20">
+        <h3 class="u-sec-title">Chín nhóm đối tác trong hệ sinh thái</h3>
+        <div class="chip-list">
+          <span class="chip-tag">Cơ quan chính sách</span>
+          <span class="chip-tag">Hội chuyên khoa</span>
+          <span class="chip-tag">Bệnh viện</span>
+          <span class="chip-tag">Viện / Trường</span>
+          <span class="chip-tag">Doanh nghiệp dược</span>
+          <span class="chip-tag">Bác sĩ / Điều dưỡng</span>
+          <span class="chip-tag">NGO y tế</span>
+          <span class="chip-tag">Báo chí / KOL</span>
+          <span class="chip-tag">Nhà tài trợ</span>
+        </div>
+      </div>
+
+      <a class="btn-outline" onclick="go('doi-tac')">Xem danh sách đối tác &amp; biểu mẫu hợp tác →</a>
+    </div>
+  </section>
+
+  <!-- Tham gia cùng CCHC — port từ reference -->
+  <section class="blk" id="sec-thamgia-cta">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker">Tham gia cùng CCHC</div>
+          <h2>Liên hệ &amp; Tham gia</h2>
+        </div>
+      </div>
+      <div class="grid g3">
+        <a class="cta-card" onclick="go('form','Đăng ký bản tin &amp; sự kiện cộng đồng','ca-nhan')">
+          <svg class="cta-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M4 4h16v12H4z"></path><path d="M4 8h16"></path><path d="M8 4v16"></path><path d="M4 20h16"></path></svg>
+          <div class="cta-text">
+            <h3>Đăng ký nhận bản tin</h3>
+            <p>Theo dõi chủ đề sức khỏe đáng tin.</p>
+            <span class="cta-link-sm">Đăng ký →</span>
+          </div>
+        </a>
+        <a class="cta-card" onclick="go('su-kien')">
+          <svg class="cta-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+          <div class="cta-text">
+            <h3>Đăng ký sự kiện</h3>
+            <p>Hội thảo, tọa đàm, chương trình cộng đồng.</p>
+            <span class="cta-link-sm">Xem sự kiện →</span>
+          </div>
+        </a>
+        <a class="cta-card" onclick="go('bao-chi')">
+          <svg class="cta-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z"></path><path d="M12 8v4l3 3"></path></svg>
+          <div class="cta-text">
+            <h3>Yêu cầu kiểm chứng thông tin</h3>
+            <p>Dành cho nhà báo và biên tập viên.</p>
+            <span class="badge-live">Phản hồi 48 giờ</span>
+            <span class="cta-link-sm">Kiểm chứng ngay →</span>
+          </div>
+        </a>
+        <a class="cta-card" onclick="go('chuyen-gia')">
+          <svg class="cta-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg>
+          <div class="cta-text">
+            <h3>Tìm chuyên gia phỏng vấn</h3>
+            <p>Danh bạ phát ngôn đã xác thực.</p>
+            <span class="badge-live">Phản hồi 24 giờ</span>
+            <span class="cta-link-sm">Tìm chuyên gia →</span>
+          </div>
+        </a>
+        <a class="cta-card" onclick="go('form','Đề xuất hợp tác đối tác','to-chuc')">
+          <svg class="cta-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 11l-3 3-2-2"></path></svg>
+          <div class="cta-text">
+            <h3>Đề xuất hợp tác</h3>
+            <p>Dành cho tổ chức, viện/trường, doanh nghiệp.</p>
+            <span class="badge-live">Phản hồi 5 ngày</span>
+            <span class="cta-link-sm">Gửi đề xuất →</span>
+          </div>
+        </a>
+        <a class="cta-card" onclick="go('form','Gửi phản ánh / đính chính','ca-nhan')">
+          <svg class="cta-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M12 7v4M12 13h.01"></path></svg>
+          <div class="cta-text">
+            <h3>Gửi phản ánh / đính chính</h3>
+            <p>Bảo vệ chất lượng nội dung và niềm tin xã hội.</p>
+            <span class="badge-live">Phản hồi 24 giờ</span>
+            <span class="cta-link-sm">Gửi phản ánh →</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Lớp 6b (v15): Khối rút gọn — Cách CCHC hợp tác & giới hạn quyền can thiệp (snap point cuối) -->
-  <section class="blk" id="sec-hoptac">
-    <div class="wrap">
-      <div class="hoptac-compact">
-        <div class="hc-tx">
-          <div class="eyebrow">Đối tác &amp; Tác động</div>
-          <h2 style="font-size:1.5rem;margin-bottom:6px">Cách CCHC hợp tác — và giới hạn của mỗi đối tác</h2>
-          <p class="muted" style="max-width:64ch;margin:0">Mọi hợp tác thể hiện rõ vai trò, đóng góp, kết quả và ranh giới quyền can thiệp. Đối tác đóng góp nguồn lực và tri thức — quyền công bố và kết luận chuyên môn thuộc về CCHC. </p>
-          <div class="hc-mini">
-            <span class="hc-pill">Viện – trường – cơ sở y tế</span>
-            <span class="hc-pill">Doanh nghiệp / nhà tài trợ</span>
-            <span class="hc-pill">Đối tác nền tảng (Chitta)</span>
-          </div>
-        </div>
-        <div class="hc-cta">
-          <a class="btn" onclick="go('hop-tac')">Xem cách chúng tôi hợp tác →</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Lớp 9 (v6): Băng sứ mệnh một dòng -->
   <section class="vision-band">
@@ -1473,7 +1800,6 @@
       <p class="vision-line">Vì sức khỏe cộng đồng, dựa trên bằng chứng. <a onclick="go('ve-chung-toi')">Về CCHC →</a></p>
     </div>
   </section>
-</div>
 </div>
 
 <!-- ============ 2. GIỚI THIỆU ============ -->
@@ -1543,7 +1869,7 @@
           <h3 style="margin-top:8px">Hội thảo phòng chống tăng huyết áp cộng đồng (06/2026)</h3>
           <div class="desc">Chương trình truyền thông sức khỏe cộng đồng, phối hợp chuyên gia tim mạch. Kèm báo cáo kết quả truyền thông.</div>
           <div style="font-weight:600;font-size:.86rem;color:var(--blue-d);margin:12px 0 6px">Kết quả </div>
-          <div class="grid g3" style="gap:8px"><div style="background:var(--blue-l);border:1px solid #cfe0e8;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">320</b><br><span class="muted" style="font-size:.78rem">người tham dự</span></div><div style="background:var(--blue-l);border:1px solid #cfe0e8;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">4</b><br><span class="muted" style="font-size:.78rem">tài liệu tải về</span></div><div style="background:var(--blue-l);border:1px solid #cfe0e8;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">12</b><br><span class="muted" style="font-size:.78rem">bài truyền thông</span></div></div>
+          <div class="grid g3" style="gap:8px"><div style="background:var(--blue-l);border:1px solid #DDE6F5;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">320</b><br><span class="muted" style="font-size:.78rem">người tham dự</span></div><div style="background:var(--blue-l);border:1px solid #DDE6F5;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">4</b><br><span class="muted" style="font-size:.78rem">tài liệu tải về</span></div><div style="background:var(--blue-l);border:1px solid #DDE6F5;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">12</b><br><span class="muted" style="font-size:.78rem">bài truyền thông</span></div></div>
           <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
             <button class="btn sm" onclick="go('su-kien','recap-tha')">Chi tiết sự kiện</button>
             <button class="btn sec sm" onclick="alert('Demo: tải tài liệu tóm tắt (mô phỏng)')">Tải tài liệu</button>
@@ -1556,7 +1882,7 @@
           <h3 style="margin-top:8px">Diễn đàn phòng chống đột quỵ cộng đồng (05/2026)</h3>
           <div class="desc">Chia sẻ cách nhận biết sớm và xử trí đột quỵ theo quy tắc F.A.S.T. <a onclick="go('article-dotquy')">Xem bài liên quan →</a></div>
           <div style="font-weight:600;font-size:.86rem;color:var(--blue-d);margin:12px 0 6px">Kết quả </div>
-          <div class="grid g3" style="gap:8px"><div style="background:var(--blue-l);border:1px solid #cfe0e8;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">210</b><br><span class="muted" style="font-size:.78rem">người tham dự</span></div><div style="background:var(--blue-l);border:1px solid #cfe0e8;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">3</b><br><span class="muted" style="font-size:.78rem">tài liệu tải về</span></div><div style="background:var(--blue-l);border:1px solid #cfe0e8;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">8</b><br><span class="muted" style="font-size:.78rem">bài truyền thông</span></div></div>
+          <div class="grid g3" style="gap:8px"><div style="background:var(--blue-l);border:1px solid #DDE6F5;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">210</b><br><span class="muted" style="font-size:.78rem">người tham dự</span></div><div style="background:var(--blue-l);border:1px solid #DDE6F5;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">3</b><br><span class="muted" style="font-size:.78rem">tài liệu tải về</span></div><div style="background:var(--blue-l);border:1px solid #DDE6F5;border-radius:8px;padding:10px 8px;text-align:center"><b style="font-size:1.4rem;color:var(--blue-d)">8</b><br><span class="muted" style="font-size:.78rem">bài truyền thông</span></div></div>
           <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
             <button class="btn sm" onclick="go('su-kien','recap-dotquy')">Chi tiết sự kiện</button>
             <button class="btn sec sm" onclick="alert('Demo: tải tài liệu tóm tắt (mô phỏng)')">Tải tài liệu</button>
@@ -1937,7 +2263,7 @@
     <div class="eyebrow">Trung tâm báo chí</div>
     <h1>Nguồn chính thống, phản hồi nhanh</h1>
     <!-- press contact top -->
-    <div class="trust-strip" style="background:var(--teal-l);border-color:#04B2D9">
+    <div class="trust-strip" style="background:var(--teal-l);border-color:#2563EB">
       <span class="meta"><b>Đầu mối báo chí:</b> baochi@cchc.org.vn</span>
       <span class="meta"><b>Điện thoại:</b> 024 3936 5127 (số minh hoạ)</span>
       <span class="meta"><b>Kiểm chứng trong:</b> 24–48 giờ</span>
@@ -2098,7 +2424,7 @@
     <div class="card" style="border-left:5px solid var(--blue);margin:26px 0">
       <h3 style="color:var(--blue-d)">Hai loại phản biện — không trộn lẫn</h3>
       <div class="grid g2" style="margin-top:10px">
-        <div style="background:var(--blue-l);border:1px solid #04B2D9;border-radius:var(--radius);padding:14px 16px">
+        <div style="background:var(--blue-l);border:1px solid #2563EB;border-radius:var(--radius);padding:14px 16px">
           <b style="display:block;color:var(--blue-d);margin-bottom:4px">Phản biện biên tập</b>
           <p style="margin:0;font-size:.92rem">Miễn phí. Là governance nội dung nội bộ của CCHC, hiển thị trên dải tin cậy mỗi bài viết. Gắn với quy trình biên soạn 8 bước.</p>
         </div>
@@ -2173,7 +2499,7 @@
     <div class="card" style="border-left:5px solid var(--blue);margin:22px 0 0">
       <h3 style="color:var(--blue-d)">Hai loại phản biện — không trộn lẫn</h3>
       <div class="grid g2" style="margin-top:10px">
-        <div style="background:var(--blue-l);border:1px solid #04B2D9;border-radius:var(--radius);padding:14px 16px">
+        <div style="background:var(--blue-l);border:1px solid #2563EB;border-radius:var(--radius);padding:14px 16px">
           <b style="display:block;color:var(--blue-d);margin-bottom:4px">Phản biện biên tập</b>
           <p style="margin:0;font-size:.92rem">Miễn phí. Là governance nội dung nội bộ của CCHC, hiển thị trên dải tin cậy mỗi bài viết. Gắn với quy trình biên soạn 8 bước.</p>
         </div>
@@ -2419,7 +2745,7 @@
       <li>Triệu chứng kéo dài, lặp lại hoặc không rõ nguyên nhân.</li>
     </ul>
 
-    <div style="background:#CDF5FE;border-left:4px solid var(--blue);padding:12px 16px;border-radius:6px;font-style:italic;color:var(--blue-d);margin:22px 0">Đây là hướng dẫn chung, không thay thế thăm khám và tư vấn y tế cá nhân. Khi nghi ngờ, hãy liên hệ cơ sở y tế gần nhất.</div>
+    <div style="background:#E6EDFB;border-left:4px solid var(--blue);padding:12px 16px;border-radius:6px;font-style:italic;color:var(--blue-d);margin:22px 0">Đây là hướng dẫn chung, không thay thế thăm khám và tư vấn y tế cá nhân. Khi nghi ngờ, hãy liên hệ cơ sở y tế gần nhất.</div>
 
     <p style="display:flex;gap:20px;flex-wrap:wrap"><a onclick="go('tri-thuc')">← Về Thư viện tri thức</a><a onclick="go('ve-chung-toi')">Về CCHC →</a></p>
   <div class="read-next" aria-label="Đọc tiếp an toàn"><span class="rn-lb">Đọc tiếp an toàn</span><a class="rn-btn" onclick="go('tri-thuc')">Chủ đề liên quan</a><a class="rn-btn rn-alert" onclick="go('khi-nao')">Khi nào cần đi khám</a><a class="rn-btn" onclick="go('home')">Về trang chủ</a></div></div></div></section>
@@ -3170,70 +3496,23 @@
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
-    <div class="fgrid" style="grid-template-columns:1fr">
+    <div class="fgrid" style="grid-template-columns:1fr 1fr">
       <div>
         <div class="brand" style="margin-bottom:10px"><div class="logo" style="background:transparent"><img src="assets/images/logo.png" alt="CCHC" style="width:100%;height:100%;object-fit:contain"></div></div>
-        <p style="font-size:.86rem;color:#82E6FD;max-width:52ch">Trung tâm Truyền thông và Chăm sóc Sức khỏe Cộng đồng. Đưa tri thức y học chính thống tới cộng đồng. AI hỗ trợ, con người chịu trách nhiệm cuối cùng.</p>
-      </div>
-    </div>
-    <!-- v19-A3: sơ đồ trang phân nhóm theo 4 tầng (cùng cấu trúc panel Khám phá) -->
-    <div class="fmap">
-      <div>
-        <h4><span class="fnum">01</span> Chính danh</h4>
-        <ul>
-          <li><a onclick="go('ve-chung-toi')">Giới thiệu CCHC</a></li>
-          <li><a onclick="go('ve-chung-toi')">Tư cách pháp lý</a></li>
-          <li><a onclick="go('ve-chung-toi','#tamnhin')">Tầm nhìn – Sứ mệnh</a></li>
-          <li><a onclick="go('ve-chung-toi','#hoidong')">Hội đồng khoa học</a></li>
-          <li><a onclick="go('ve-chung-toi','#nangluc')">Năng lực cốt lõi</a></li>
-          <li><a onclick="go('tong-hoi-chinh-sach')">Tổng hội &amp; Chính sách</a></li>
-          <li><a onclick="go('tong-hoi-chinh-sach','#hoi-ck-list')">Hội chuyên khoa</a></li>
-          <li><a onclick="go('bao-chi')">Dành cho báo chí</a></li>
-        </ul>
+        <p style="font-size:.86rem;color:#8FB4FF;max-width:52ch">Trung tâm Truyền thông và Chăm sóc Sức khỏe Cộng đồng. Đưa tri thức y học chính thống tới cộng đồng. AI hỗ trợ, con người chịu trách nhiệm cuối cùng.</p>
       </div>
       <div>
-        <h4><span class="fnum">02</span> Tri thức</h4>
-        <ul>
-          <li><a onclick="go('tri-thuc')">Thư viện tri thức</a></li>
-          <li><a onclick="go('chu-de')">Hồ sơ chủ đề</a></li>
-          <li><a onclick="go('article')">Bài viết</a></li>
-          <li><a onclick="go('video')">Video / Podcast</a></li>
-          <li><a onclick="go('myth')">Myth-busting</a></li>
-          <li><a onclick="go('faq')">FAQ / tài liệu</a></li>
-          <li><a onclick="go('soon','Nghiên cứu &amp; Dữ liệu','nghien-cuu')">Nghiên cứu &amp; Dữ liệu</a></li>
-          <li><a onclick="go('dao-tao')">Đào tạo</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4><span class="fnum">03</span> Hành động</h4>
-        <ul>
-          <li><a onclick="go('form','Tham gia mạng lưới chuyên gia','ca-nhan')">Tham gia mạng lưới chuyên gia</a></li>
-          <li><a onclick="go('tvpbcd')">Tư vấn – Phản biện – Cộng đồng</a></li>
-          <li><a onclick="go('dich-vu')">Dịch vụ &amp; KHCN</a></li>
-          <li><a onclick="go('doi-tac')">Đối tác &amp; Hợp tác</a></li>
-          <li><a onclick="go('form','Đăng ký sự kiện cộng đồng','ca-nhan')">Đăng ký sự kiện</a></li>
-          <li><a onclick="go('tvpbcd','#tv-brief')">Gửi brief</a></li>
-          <li><a onclick="go('lien-he')">Liên hệ / Tham gia</a></li>
-          <li><a onclick="go('form','Yêu cầu phỏng vấn / phát ngôn','to-chuc')">Yêu cầu phỏng vấn</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4><span class="fnum">04</span> Minh bạch</h4>
-        <ul>
-          <li><a onclick="go('minh-bach','#cms8')">Quy trình biên soạn 8 bước</a></li>
-          <li><a onclick="go('minh-bach','#bientap')">Chính sách biên tập</a></li>
-          <li><a onclick="go('chinh-sach-tai-tro')">Tài trợ &amp; COI</a></li>
-          <li><a onclick="go('coi-ai')">AI có kiểm soát</a></li>
-          <li><a onclick="go('minh-bach','#disclaimer')">Medical disclaimer</a></li>
-          <li><a onclick="go('minh-bach','#dinhchinh')">Nhật ký đính chính</a></li>
-          <li><a onclick="go('hop-tac')">Cách CCHC hợp tác &amp; giới hạn</a></li>
-          <li>lienhe@cchc.org.vn · 024 3936 5127 <span style="color:#82E6FD">(minh hoạ)</span></li>
+        <h4 style="color:#fff;font-size:.95rem;margin-bottom:10px">Liên hệ</h4>
+        <ul style="list-style:none;padding:0;margin:0;font-size:.86rem;color:#8FB4FF">
+          <li style="margin-bottom:7px">📧 lienhe@cchc.org.vn <span style="color:#8FB4FF;font-size:.78rem">(minh hoạ)</span></li>
+          <li style="margin-bottom:7px">📞 024 3936 5127 <span style="color:#8FB4FF;font-size:.78rem">(minh hoạ)</span></li>
+          <li style="margin-bottom:7px">📍 [Địa chỉ trụ sở — sẽ cập nhật]</li>
         </ul>
       </div>
     </div>
     <div class="fbot">
-      <span>© 2026 CCHC — Bản demo định hướng giao diện, không phải thiết kế cuối cùng.</span>
-      <span>Nội dung trên trang là minh hoạ.</span>
+      <span>© 2026 CCHC — Trung tâm Truyền thông và Chăm sóc Sức khỏe Cộng đồng. Trực thuộc Tổng hội Y học Việt Nam.</span>
+      <span>Bản demo định hướng giao diện. Nội dung là minh hoạ.</span>
     </div>
   </div>
 </footer>

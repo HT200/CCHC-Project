@@ -1,9 +1,9 @@
   // Logo carousels now use pure CSS marquee animation — no JS needed
 
-  // ===== Measure sticky header/tabs height so snap targets aren't hidden underneath them =====
+  // ===== Measure sticky header height so anchor scrolling isn't hidden underneath it =====
   (function(){
     var root = document.documentElement;
-    var header, tabs;
+    var header;
     function stuckHeight(el){
       if(!el) return 0;
       var cs = getComputedStyle(el);
@@ -12,40 +12,12 @@
     }
     function measure(){
       root.style.setProperty('--snap-header-h', stuckHeight(header) + 'px');
-      root.style.setProperty('--snap-tabs-h', stuckHeight(tabs) + 'px');
     }
     function init(){
       header = document.querySelector('header');
-      tabs = document.querySelector('.hometabs-wrap');
       measure();
       window.addEventListener('resize', measure);
       window.addEventListener('orientationchange', measure);
-    }
-    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-    else init();
-  })();
-
-  // ===== Disable snap once the user has scrolled to/past the last snap point (sec-hoptac) =====
-  (function(){
-    var html = document.documentElement;
-    var lastSnap = null;
-    var snapping = true;
-    function init(){
-      lastSnap = document.getElementById('sec-hoptac');
-      if(!lastSnap) return;
-      window.addEventListener('scroll', checkSnap, {passive:true});
-    }
-    function checkSnap(){
-      if(!lastSnap || !html.classList.contains('is-home')) return;
-      var lastTop = lastSnap.getBoundingClientRect().top;
-      var pastLast = lastTop <= 10; // user has reached/scrolled past the last snap point
-      if(pastLast && snapping){
-        html.style.scrollSnapType = 'none';
-        snapping = false;
-      } else if(!pastLast && !snapping){
-        html.style.scrollSnapType = '';
-        snapping = true;
-      }
     }
     if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();
@@ -444,20 +416,6 @@
       if(pf) pf.style.display='none';
     }
   })();
-
-  // ===== Home tabs — đổi nội dung dưới hero ngay tại chỗ, không cuộn =====
-  function homeTab(key){
-    var panels=document.querySelectorAll('.hometab-panel');
-    for(var i=0;i<panels.length;i++) panels[i].classList.remove('on');
-    var panel=document.getElementById('sec-'+key);
-    if(panel) panel.classList.add('on');
-    var tabs=document.querySelectorAll('.htab');
-    for(var j=0;j<tabs.length;j++){
-      var isActive = tabs[j].getAttribute('data-hometab')===key;
-      tabs[j].classList.toggle('on', isActive);
-      tabs[j].setAttribute('aria-selected', isActive ? 'true' : 'false');
-    }
-  }
 
   // ===== v19-A: mega-panel "Bản đồ nội dung" (tầng ngoài) =====
   function openMap(){
