@@ -146,54 +146,56 @@
     return false;
   }
 
-  // ===== Article filters =====
-  var curTopic='all', curM='all';
-  function applyFilters(){
-    var cards = document.querySelectorAll('#articleGrid .card');
-    var shown=0;
-    for(var i=0;i<cards.length;i++){
-      var okT = (curTopic==='all' || cards[i].getAttribute('data-topic')===curTopic);
-      var okM = (curM==='all' || cards[i].getAttribute('data-m')===curM);
-      if(okT&&okM){cards[i].style.display='flex';shown++;} else {cards[i].style.display='none';}
+  // ===== Article filters (chude-filters sidebar, checkbox facets) =====
+  // Mỗi .cf-group mang data-facet khớp với data-* trên .card (topic/m/format).
+  // Không có checkbox nào được chọn trong một nhóm = không lọc theo nhóm đó.
+  function applyChudeFilters(){
+    var filters = document.querySelector('.chude-filters');
+    var grid = document.getElementById('articleGrid');
+    if(!filters || !grid) return;
+    var groups = filters.querySelectorAll('.cf-group');
+    var active = [];
+    for(var g=0; g<groups.length; g++){
+      var checked = groups[g].querySelectorAll('input:checked');
+      if(checked.length){
+        var vals=[];
+        for(var i=0;i<checked.length;i++) vals.push(checked[i].getAttribute('data-val'));
+        active.push({facet: groups[g].getAttribute('data-facet'), vals: vals});
+      }
     }
-    document.getElementById('artEmpty').style.display = shown? 'none':'block';
+    var cards = grid.querySelectorAll('.card');
+    var shown=0;
+    for(var c=0;c<cards.length;c++){
+      var ok=true;
+      for(var a=0;a<active.length;a++){
+        if(active[a].vals.indexOf(cards[c].getAttribute('data-'+active[a].facet))===-1){ ok=false; break; }
+      }
+      cards[c].style.display = ok?'flex':'none';
+      if(ok) shown++;
+    }
+    var empty = document.getElementById('artEmpty');
+    if(empty) empty.style.display = shown? 'none':'block';
   }
-  function filterTopic(el,v){
-    curTopic=v;
-    var sib=el.parentNode.querySelectorAll('.fchip');
-    // clear only topic group (first group up to divider) — simple: toggle within siblings before divider
-    setChipGroup(el);
-    applyFilters();
-  }
-  function filterM(el,v){
-    curM=v; setChipGroup(el); applyFilters();
-  }
-  function setChipGroup(el){
-    // find the contiguous group of .fchip immediately around el separated by non-chip spacers
-    var group=[], node=el;
-    // walk back
-    var p=el.previousElementSibling;
-    while(p && p.classList && p.classList.contains('fchip')){group.push(p);p=p.previousElementSibling;}
-    var n=el.nextElementSibling;
-    while(n && n.classList && n.classList.contains('fchip')){group.push(n);n=n.nextElementSibling;}
-    group.push(el);
-    for(var i=0;i<group.length;i++) group[i].classList.remove('on');
-    el.classList.add('on');
-  }
-  function resetFilters(){
-    curTopic='all';curM='all';
-    var chips=document.querySelectorAll('.filterbar .fchip');
-    // re-set the "Tất cả" ones
-    applyFilters();
-    // visually reset: activate first chip of each group
+  function resetChudeFilters(){
+    var filters = document.querySelector('.chude-filters');
+    if(!filters) return;
+    var inputs = filters.querySelectorAll('input[type=checkbox]');
+    for(var i=0;i<inputs.length;i++) inputs[i].checked=false;
     location.hash='';
-    var all=document.querySelectorAll('#page-tri-thuc .fchip');
-    // crude: turn all off then on the two "Tất cả"
-    for(var i=0;i<all.length;i++) all[i].classList.remove('on');
-    all[0].classList.add('on'); // topic Tất cả
-    // find M "Tất cả": it's the chip after divider labelled Tất cả -> index of first M group
-    for(var j=0;j<all.length;j++){ if(all[j].textContent.trim()==='Tất cả'){ all[j].classList.add('on'); } }
+    applyChudeFilters();
   }
+  // Cho phép link "tri-thuc.html#tim" (topic-strip) tự động chọn sẵn bộ lọc tương ứng
+  (function(){
+    function preselectFromHash(){
+      var filters = document.querySelector('.chude-filters');
+      var hash = location.hash.replace('#','');
+      if(!filters || !hash) return;
+      var inp = filters.querySelector('.cf-group[data-facet="topic"] input[data-val="'+hash+'"]');
+      if(inp){ inp.checked=true; applyChudeFilters(); }
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', preselectFromHash);
+    else preselectFromHash();
+  })();
 
   // ===== Expert filters =====
   function filterExpert(v, el){

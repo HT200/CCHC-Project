@@ -218,100 +218,94 @@
 </div>
 
 <main id="app">
-<section class="blk"><div class="wrap">
+<section class="blk" id="nguoi-dan"><div class="wrap">
     <div class="eyebrow">Tri thức sức khỏe</div>
     <h1>Thư viện tri thức đã thẩm định</h1>
-    <p class="muted">Lọc theo chủ đề và mức bằng chứng M1–M4. </p>
 
-    <div class="filterbar">
-      <span style="font-weight:600;font-size:.85rem;margin-right:4px">Chủ đề:</span>
-      <span class="fchip on" onclick="filterTopic(this,'all')">Tất cả</span>
-      <span class="fchip" onclick="filterTopic(this,'tim')">Tim mạch</span>
-      <span class="fchip" onclick="filterTopic(this,'noi-tiet')">Nội tiết</span>
-      <span class="fchip" onclick="filterTopic(this,'du-phong')">Dự phòng</span>
-      <span style="width:1px;height:22px;background:var(--line);margin:0 6px"></span>
-      <span style="font-weight:600;font-size:.85rem;margin-right:4px">Mức bằng chứng:</span>
-      <span class="fchip on" onclick="filterM(this,'all')">Tất cả</span>
-      <span class="fchip" onclick="filterM(this,'M1')">M1</span>
-      <span class="fchip" onclick="filterM(this,'M2')">M2</span>
-      <span class="fchip" onclick="filterM(this,'M3')">M3</span>
-      <span class="fchip" onclick="filterM(this,'M4')">M4</span>
-    </div>
+    <div class="eyebrow" style="margin-top:30px">Đúng nguồn · Đúng bằng chứng · Đúng ngôn ngữ</div>
+    <h2>Hồ sơ chủ đề làm xương sống cho bài viết, video, sự kiện và báo chí</h2>
+    <p class="muted" style="max-width:74ch">Mỗi hồ sơ chủ đề cần có: tóm tắt dễ hiểu · bài chuyên sâu · nguồn tham chiếu · chuyên gia phản biện · sự kiện liên quan · tài liệu tải xuống · cảnh báo phạm vi áp dụng</p>
 
-    <p class="muted" style="font-size:.8rem;margin:-6px 0 16px">Mức bằng chứng: <b>M1</b> Bằng chứng mạnh → <b>M2</b> Bằng chứng khá → <b>M3</b> Tham khảo → <b>M4</b> Định hướng chung.</p>
-    <div class="grid g3" id="articleGrid">
-      <div class="card click" data-topic="tim" data-m="M1" onclick="location.href='index.html#!article'">
-        <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Ống nghe và điện thoại (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-        <span class="mlabel m1">M1 · Bằng chứng mạnh</span>
-        <h3 style="margin-top:10px">Tăng huyết áp ở người trẻ: những dấu hiệu dễ bỏ qua</h3>
-        <div class="desc">Phản biện: PGS.TS Nguyễn Văn An · Cập nhật 18/07/2026</div>
-        <span class="cta">Đọc bài →</span>
-      </div>
-      <div class="card click" data-topic="noi-tiet" data-m="M1" onclick="location.href='index.html#!article-dtd'">
-        <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Nhân viên y tế (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-        <span class="mlabel m1">M1 · Bằng chứng mạnh</span>
-        <h3 style="margin-top:10px">Tầm soát đái tháo đường típ 2: ai cần làm và khi nào</h3>
-        <div class="desc">Phản biện: TS.BS Lê Thị Bình · Cập nhật 15/07/2026</div>
-        <span class="cta">Đọc bài →</span>
-      </div>
-      <div class="card click" data-topic="tim" data-m="M2" onclick="location.href='index.html#!article-dotquy'">
-        <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Bác sĩ dùng máy tính bảng (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-        <span class="mlabel m2">M2 · Bằng chứng khá</span>
-        <h3 style="margin-top:10px">Nhận biết sớm dấu hiệu đột quỵ theo quy tắc F.A.S.T <span class="muted" style="font-weight:400;font-size:.85rem">(quy tắc nhận biết đột quỵ)</span></h3>
-        <div class="desc">Phản biện: PGS.TS Nguyễn Văn An · Cập nhật 01/07/2026</div>
-        <span class="cta">Đọc bài →</span>
-      </div>
-      <div class="card click" data-topic="du-phong" data-m="M3" onclick="location.href='index.html#!article-giammuoi'">
-        <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Rau củ tươi (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-        <span class="mlabel m3">M3 · Tham khảo</span>
-        <h3 style="margin-top:10px">Ăn giảm muối thế nào cho đúng trong bữa cơm Việt?</h3>
-        <div class="desc">Phản biện: GS.TS Phạm Quốc Hùng · Cập nhật 12/07/2026</div>
-        <span class="cta">Đọc bài →</span>
-      </div>
-      <div class="card click" data-topic="noi-tiet" data-m="M4" onclick="location.href='index.html#!article-bmi'">
-        <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Bữa ăn lành mạnh (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-        <span class="mlabel m4">M4 · Định hướng chung</span>
-        <h3 style="margin-top:10px">BMI nói lên điều gì và không nói điều gì?</h3>
-        <div class="desc">Phản biện: TS.BS Đỗ Thị Mai · Cập nhật 08/07/2026</div>
-        <span class="cta">Đọc bài →</span>
-      </div>
-      <div class="card click" data-topic="du-phong" data-m="M2" onclick="location.href='index.html#!article-tiemchung'">
-        <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Tiêm chủng (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-        <span class="mlabel m2">M2 · Bằng chứng khá</span>
-        <h3 style="margin-top:10px">Người lớn có cần tiêm chủng không? Những mũi hay bị quên</h3>
-        <div class="desc">Phản biện: BS.CKII Trần Minh Đức · Cập nhật 10/07/2026</div>
-        <span class="cta">Đọc bài →</span>
-      </div>
-      <div class="card click" data-topic="du-phong" data-m="M3" onclick="location.href='index.html#!article-giacngu'">
-        <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Giấc ngủ (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-        <span class="mlabel m3">M3 · Tham khảo</span>
-        <h3 style="margin-top:10px">Ngủ bao nhiêu là đủ và làm sao để ngủ ngon hơn?</h3>
-        <div class="desc">Phản biện: BS.CKII Hoàng Văn Sơn · Cập nhật 06/07/2026</div>
-        <span class="cta">Đọc bài →</span>
-      </div>
-      <div class="card click" data-topic="du-phong" data-m="M3" onclick="location.href='index.html#!article-tamthan'">
-        <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Thư giãn ngoài trời (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-        <span class="mlabel m3">M3 · Tham khảo</span>
-        <h3 style="margin-top:10px">Căng thẳng kéo dài ảnh hưởng đến sức khỏe như thế nào?</h3>
-        <div class="desc">Phản biện: BS.CKI Vũ Hoàng Nam · Cập nhật 04/07/2026</div>
-        <span class="cta">Đọc bài →</span>
-      </div>
-      <div class="card click" data-topic="du-phong" data-m="M2" onclick="location.href='index.html#!article-bknly'">
-        <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Thiết bị y tế (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-        <span class="mlabel m2">M2 · Bằng chứng khá</span>
-        <h3 style="margin-top:10px">Bệnh không lây nhiễm là gì và phòng ngừa thế nào?</h3>
-        <div class="desc">Phản biện: BS.CKII Trần Minh Đức · Cập nhật 03/07/2026</div>
-        <span class="cta">Đọc bài →</span>
-      </div>
-      <div class="card click" data-topic="du-phong" data-m="M2" onclick="location.href='index.html#!article-socapcuu'">
-        <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Găng tay y tế (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
-        <span class="mlabel m2">M2 · Bằng chứng khá</span>
-        <h3 style="margin-top:10px">Sơ cấp cứu cơ bản: vài kỹ năng ai cũng nên biết</h3>
-        <div class="desc">Phản biện: BS.CKII Hoàng Văn Sơn · Cập nhật 30/06/2026</div>
-        <span class="cta">Đọc bài →</span>
+    <div class="chude-layout">
+      <aside class="chude-filters">
+        <h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>Bộ lọc</h4>
+        <div class="cf-group" data-facet="topic">
+          <b>Chủ đề</b>
+          <label class="cf-opt"><input type="checkbox" data-val="tim" onchange="applyChudeFilters()">Tim mạch</label>
+          <label class="cf-opt"><input type="checkbox" data-val="noi-tiet" onchange="applyChudeFilters()">Nội tiết · Đái tháo đường</label>
+          <label class="cf-opt"><input type="checkbox" data-val="du-phong" onchange="applyChudeFilters()">Dự phòng &amp; sức khỏe cộng đồng</label>
+        </div>
+        <div class="cf-group" data-facet="m">
+          <b>Mức bằng chứng</b>
+          <label class="cf-opt"><input type="checkbox" data-val="M1" onchange="applyChudeFilters()"><span class="cf-dot" style="background:#1d6b4e"></span>M1 · Bằng chứng mạnh</label>
+          <label class="cf-opt"><input type="checkbox" data-val="M2" onchange="applyChudeFilters()"><span class="cf-dot" style="background:#1D4ED8"></span>M2 · Bằng chứng khá</label>
+          <label class="cf-opt"><input type="checkbox" data-val="M3" onchange="applyChudeFilters()"><span class="cf-dot" style="background:#FF9013"></span>M3 · Tham khảo</label>
+          <label class="cf-opt"><input type="checkbox" data-val="M4" onchange="applyChudeFilters()"><span class="cf-dot" style="background:#5A6478"></span>M4 · Định hướng chung</label>
+        </div>
+        <div class="cf-group" data-facet="format">
+          <b>Định dạng</b>
+          <label class="cf-opt"><input type="checkbox" data-val="baiviet" onchange="applyChudeFilters()">Bài viết</label>
+          <label class="cf-opt"><input type="checkbox" data-val="video" onchange="applyChudeFilters()">Video</label>
+          <label class="cf-opt"><input type="checkbox" data-val="hoidap" onchange="applyChudeFilters()">Hỏi–đáp chuyên gia</label>
+        </div>
+        <span class="cf-reset" onclick="resetChudeFilters()">Đặt lại bộ lọc</span>
+      </aside>
+      <div>
+        <div class="grid g3" id="articleGrid">
+          <div class="card click" data-topic="tim" data-m="M1" data-format="baiviet" onclick="location.href='index.html#!article'">
+            <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Ống nghe và điện thoại (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+            <span class="mlabel m1">M1 · Bằng chứng mạnh</span>
+            <h3 style="margin-top:10px">Tăng huyết áp ở người trẻ: những dấu hiệu dễ bỏ qua</h3>
+            <div class="desc">Phản biện: PGS.TS Nguyễn Văn An · Cập nhật 18/07/2026</div>          </div>
+          <div class="card click" data-topic="noi-tiet" data-m="M1" data-format="baiviet" onclick="location.href='index.html#!article-dtd'">
+            <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Nhân viên y tế (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+            <span class="mlabel m1">M1 · Bằng chứng mạnh</span>
+            <h3 style="margin-top:10px">Tầm soát đái tháo đường típ 2: ai cần làm và khi nào</h3>
+            <div class="desc">Phản biện: TS.BS Lê Thị Bình · Cập nhật 15/07/2026</div>          </div>
+          <div class="card click" data-topic="tim" data-m="M2" data-format="baiviet" onclick="location.href='index.html#!article-dotquy'">
+            <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Bác sĩ dùng máy tính bảng (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+            <span class="mlabel m2">M2 · Bằng chứng khá</span>
+            <h3 style="margin-top:10px">Nhận biết sớm dấu hiệu đột quỵ theo quy tắc F.A.S.T <span class="muted" style="font-weight:400;font-size:.85rem">(quy tắc nhận biết đột quỵ)</span></h3>
+            <div class="desc">Phản biện: PGS.TS Nguyễn Văn An · Cập nhật 01/07/2026</div>          </div>
+          <div class="card click" data-topic="du-phong" data-m="M3" data-format="baiviet" onclick="location.href='index.html#!article-giammuoi'">
+            <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Rau củ tươi (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+            <span class="mlabel m3">M3 · Tham khảo</span>
+            <h3 style="margin-top:10px">Ăn giảm muối thế nào cho đúng trong bữa cơm Việt?</h3>
+            <div class="desc">Phản biện: GS.TS Phạm Quốc Hùng · Cập nhật 12/07/2026</div>          </div>
+          <div class="card click" data-topic="noi-tiet" data-m="M4" data-format="baiviet" onclick="location.href='index.html#!article-bmi'">
+            <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Bữa ăn lành mạnh (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+            <span class="mlabel m4">M4 · Định hướng chung</span>
+            <h3 style="margin-top:10px">BMI nói lên điều gì và không nói điều gì?</h3>
+            <div class="desc">Phản biện: TS.BS Đỗ Thị Mai · Cập nhật 08/07/2026</div>          </div>
+          <div class="card click" data-topic="du-phong" data-m="M2" data-format="baiviet" onclick="location.href='index.html#!article-tiemchung'">
+            <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Tiêm chủng (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+            <span class="mlabel m2">M2 · Bằng chứng khá</span>
+            <h3 style="margin-top:10px">Người lớn có cần tiêm chủng không? Những mũi hay bị quên</h3>
+            <div class="desc">Phản biện: BS.CKII Trần Minh Đức · Cập nhật 10/07/2026</div>          </div>
+          <div class="card click" data-topic="du-phong" data-m="M3" data-format="baiviet" onclick="location.href='index.html#!article-giacngu'">
+            <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Giấc ngủ (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+            <span class="mlabel m3">M3 · Tham khảo</span>
+            <h3 style="margin-top:10px">Ngủ bao nhiêu là đủ và làm sao để ngủ ngon hơn?</h3>
+            <div class="desc">Phản biện: BS.CKII Hoàng Văn Sơn · Cập nhật 06/07/2026</div>          </div>
+          <div class="card click" data-topic="du-phong" data-m="M3" data-format="baiviet" onclick="location.href='index.html#!article-tamthan'">
+            <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Thư giãn ngoài trời (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+            <span class="mlabel m3">M3 · Tham khảo</span>
+            <h3 style="margin-top:10px">Căng thẳng kéo dài ảnh hưởng đến sức khỏe như thế nào?</h3>
+            <div class="desc">Phản biện: BS.CKI Vũ Hoàng Nam · Cập nhật 04/07/2026</div>          </div>
+          <div class="card click" data-topic="du-phong" data-m="M2" data-format="baiviet" onclick="location.href='index.html#!article-bknly'">
+            <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Thiết bị y tế (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+            <span class="mlabel m2">M2 · Bằng chứng khá</span>
+            <h3 style="margin-top:10px">Bệnh không lây nhiễm là gì và phòng ngừa thế nào?</h3>
+            <div class="desc">Phản biện: BS.CKII Trần Minh Đức · Cập nhật 03/07/2026</div>          </div>
+          <div class="card click" data-topic="du-phong" data-m="M2" data-format="baiviet" onclick="location.href='index.html#!article-socapcuu'">
+            <div class="thumb-flush"><img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=800&amp;h=450&amp;fit=crop&amp;auto=format" alt="Găng tay y tế (ảnh minh hoạ)" onerror="this.style.display='none';this.parentNode.classList.add('img-fallback')"></div>
+            <span class="mlabel m2">M2 · Bằng chứng khá</span>
+            <h3 style="margin-top:10px">Sơ cấp cứu cơ bản: vài kỹ năng ai cũng nên biết</h3>
+            <div class="desc">Phản biện: BS.CKII Hoàng Văn Sơn · Cập nhật 30/06/2026</div>          </div>
+        </div>
+        <div class="empty" id="artEmpty" style="display:none">Không có bài viết khớp bộ lọc này. <a onclick="resetChudeFilters()">Xóa bộ lọc</a></div>
       </div>
     </div>
-    <div class="empty" id="artEmpty" style="display:none">Không có bài viết khớp bộ lọc này. <a onclick="resetFilters()">Xóa bộ lọc</a></div>
   </div></section>
 </main>
 
