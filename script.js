@@ -25,18 +25,19 @@
 
   // ===== SPA navigation with back stack =====
   var navStack = ['home'];
+  var scrollStack = []; // scrollY của trang đang đứng, lưu lại mỗi khi go() rời sang trang khác — dùng để khôi phục khi back()
   var soonData = {
     'nghien-cuu':{t:'Nghiên cứu &amp; Dữ liệu',m:'Chuyên trang Nghiên cứu &amp; Dữ liệu đang được xây dựng — bạn vẫn có thể gửi đề xuất ngay.',cta:'Gửi đề xuất nghiên cứu',fn:function(){go('form','Đề xuất nghiên cứu / hợp tác','to-chuc')}},
     'doi-tac':{t:'Đối tác &amp; Hợp tác',m:'Chuyên trang Đối tác &amp; Hợp tác đang được xây dựng — bạn vẫn có thể liên hệ hợp tác ngay.',cta:'Liên hệ hợp tác',fn:function(){go('lien-he')}},
     'dao-tao':{t:'Đào tạo',m:'Chuyên trang Đào tạo đang được xây dựng — đăng ký quan tâm để nhận thông tin khóa sớm nhất.',cta:'Đăng ký quan tâm',fn:function(){go('form','Đăng ký bản tin &amp; sự kiện cộng đồng','ca-nhan')}}
   };
 
-  function show(id){
+  function show(id, skipScroll){
     var pages = document.querySelectorAll('.page');
     for(var i=0;i<pages.length;i++) pages[i].classList.remove('on');
     var el = document.getElementById('page-'+id);
     if(el) el.classList.add('on');
-    window.scrollTo(0,0);
+    if(!skipScroll) window.scrollTo(0,0);
     // Một điểm search mỗi màn: trang chủ dùng ô hero, ẩn icon search header
     document.body.classList.toggle('is-home', id==='home');
     document.documentElement.classList.toggle('is-home', id==='home');
@@ -83,12 +84,14 @@
     if(id==='su-kien'){ fillEvent(a || 'dtd'); }
     // Cuộn tới mỏ neo trong trang đích: go(page, '#anchorId')
     if(typeof a==='string' && a.charAt(0)==='#'){
+      scrollStack.push(window.scrollY);
       show(id);
       navStack.push(id);
       var anchorId=a.slice(1);
       setTimeout(function(){var e=document.getElementById(anchorId);if(e)e.scrollIntoView({behavior:'smooth'});},60);
       return;
     }
+    scrollStack.push(window.scrollY);
     navStack.push(id);
     show(id);
   }
@@ -96,7 +99,9 @@
   function back(){
     if(navStack.length>1){
       navStack.pop();
-      show(navStack[navStack.length-1]);
+      var restoreY = scrollStack.pop();
+      show(navStack[navStack.length-1], true);
+      window.scrollTo(0, restoreY || 0);
     } else {
       show('home');
     }
@@ -485,8 +490,16 @@
     }
   })();
 
-  // init
-  show('home');
+  // init — chỉ chạy trên index.html (nơi thực sự có các div .page); các trang .html độc lập không cần bước này
+  // skipScroll=true: không ép cuộn lên đầu trang khi tải lần đầu / quay lại bằng nút Back của trình duyệt
+  if(document.getElementById('page-home')) show('home', true);
+
+  // ===== Deep-link vào SPA từ các trang .html độc lập: index.html#!id/arg1/arg2 =====
+  (function(){
+    if(location.hash.indexOf('#!') !== 0) return;
+    var parts = location.hash.slice(2).split('/').map(decodeURIComponent);
+    go.apply(null, parts);
+  })();
 
   // ===== Banner carousel (big) — tự động chuyển =====
   var bannerCarousel = (function(){
@@ -532,4 +545,56 @@
       var heroH = window.innerHeight * 0.6;
       btn.classList.toggle('visible', window.pageYOffset > heroH);
     }, {passive:true});
+  })();
+
+  // ===== Animate <details class="collapse-block"> open/close (height transition) =====
+  (function(){
+    var blocks = document.querySelectorAll('.collapse-block');
+    for(var i=0;i<blocks.length;i++) initCollapse(blocks[i]);
+
+    function initCollapse(details){
+      var summary = details.querySelector('summary');
+      var body = details.querySelector('.collapse-content');
+      if(!summary || !body || !details.animate) return; // không hỗ trợ Web Animations API → giữ hành vi mặc định của trình duyệt
+      var anim = null, isClosing = false, isExpanding = false;
+
+      summary.addEventListener('click', function(e){
+        e.preventDefault();
+        details.style.overflow = 'hidden';
+        if(isClosing || !details.open) open();
+        else if(isExpanding || details.open) shrink();
+      });
+
+      function shrink(){
+        isClosing = true;
+        var startH = details.offsetHeight + 'px';
+        var endH = summary.offsetHeight + 'px';
+        if(anim) anim.cancel();
+        anim = details.animate({height:[startH,endH]}, {duration:280, easing:'ease-out'});
+        anim.onfinish = function(){ onFinish(false); };
+        anim.oncancel = function(){ isClosing = false; };
+      }
+      function open(){
+        details.style.height = details.offsetHeight + 'px';
+        details.open = true;
+        requestAnimationFrame(expand);
+      }
+      function expand(){
+        isExpanding = true;
+        var startH = details.offsetHeight + 'px';
+        var endH = (summary.offsetHeight + body.offsetHeight) + 'px';
+        if(anim) anim.cancel();
+        anim = details.animate({height:[startH,endH]}, {duration:280, easing:'ease-out'});
+        anim.onfinish = function(){ onFinish(true); };
+        anim.oncancel = function(){ isExpanding = false; };
+      }
+      function onFinish(isOpen){
+        details.open = isOpen;
+        anim = null;
+        isClosing = false;
+        isExpanding = false;
+        details.style.height = '';
+        details.style.overflow = '';
+      }
+    }
   })();

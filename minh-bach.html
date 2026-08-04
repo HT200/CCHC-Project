@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minh bạch & Trách nhiệm | CCHC</title>
+<meta name="description" content="Quy trình kiểm soát 8 bước, chính sách biên tập và nhật ký đính chính.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;subset=vietnamese,latin-ext&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="demobar">Bản demo định hướng giao diện — không phải thiết kế cuối cùng. Nội dung là minh hoạ.</div>
+
+<!-- ============ HEADER (hai tầng · ngôn ngữ AMA) ============ -->
+<header>
+  <!-- Tầng 1: utility bar -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="tb-left">
+        <button class="util-explore" onclick="openMap()" aria-label="Khám phá toàn bộ nội dung — bản đồ nội dung"><span class="ux-ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg></span> Bản đồ nội dung</button>
+        <span class="sep">·</span>
+        <a class="util-strong" href="index.html#!lien-he">Liên hệ</a>
+      </div>
+      <div class="tb-right">
+        <button class="util-search" onclick="openSearch()" aria-label="Tìm kiếm tri thức"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Tìm kiếm</button>
+        <span class="sep">·</span>
+        <a class="util-strong" href="index.html#!soon/%C4%90%C4%83ng%20nh%E1%BA%ADp/">Đăng nhập</a>
+        <a class="util-strong" href="index.html#!soon/%C4%90%C4%83ng%20k%C3%BD/" style="background:var(--blue);color:#fff;padding:5px 14px;border-radius:20px;font-weight:700">Đăng ký</a>
+      </div>
+    </div>
+  </div>
+  <!-- Tầng 2: nav chính -->
+  <div class="mainbar">
+    <div class="wrap mainbar-inner">
+      <div class="brand">
+        <div class="logo" onclick="location.href='index.html'"><img src="assets/images/logo.png" alt="CCHC"></div>
+        <div style="display:flex;flex-direction:column;justify-content:center">
+          <small>Trực thuộc Tổng hội<br>Y học Việt Nam</small>
+        </div>
+      </div>
+      <button class="m-search-btn" aria-label="Mở tìm kiếm" onclick="openSearch()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+      <button class="menu-toggle" aria-label="Mở menu" onclick="toggleMenu()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+      <nav class="main" id="mainnav">
+        <div class="nav-head"><b>Menu</b><button class="so-close" aria-label="Đóng menu" onclick="closeMenu()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+        <ul class="navlist">
+          <li class="navitem">
+            <a class="navlink" href="tin-tuc-su-kien.html">Tin tức &amp; Sự kiện <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <button class="subtoggle" aria-label="Mở mục con Tin tức và Sự kiện" onclick="toggleSub(this)">+</button>
+            <div class="mega"><div class="mega-inner">
+              <a class="mega-link" href="tin-tuc-su-kien.html#tin-hoatdong"><b>Tin hoạt động</b><span>Hoạt động truyền thông sức khỏe của CCHC.</span></a>
+              <a class="mega-link" href="tin-tuc-su-kien.html#lich-sukien"><b>Lịch sự kiện</b><span>Tọa đàm, hội thảo cộng đồng có thể đăng ký.</span></a>
+              <a class="mega-link" href="tin-tuc-su-kien.html#recap"><b>Diễn đàn &amp; Chiến dịch cộng đồng</b><span>Tóm tắt &amp; tài liệu các diễn đàn, chiến dịch đã diễn ra.</span></a>
+            </div></div>
+          </li>
+          <li class="navitem">
+            <a class="navlink" href="tri-thuc.html">Tri thức <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <button class="subtoggle" aria-label="Mở mục con Tri thức" onclick="toggleSub(this)">+</button>
+            <div class="mega"><div class="mega-inner">
+              <a class="mega-link" href="index.html#!chu-de"><b>Chủ đề sức khỏe</b><span>Gom bài nền, video, chuyên gia theo từng chủ đề sức khỏe.</span></a>
+              <a class="mega-link" href="tri-thuc.html"><b>Bài viết</b><span>Bài đã thẩm định, lọc theo chủ đề và mức bằng chứng M1–M4.</span></a>
+              <a class="mega-link" href="index.html#!khi-nao"><b>Khi nào cần đi khám</b><span>Dấu hiệu cần cấp cứu ngay và dấu hiệu nên khám sớm.</span></a>
+            </div></div>
+          </li>
+          <li class="navitem">
+            <a class="navlink" href="nghien-cuu.html">Nghiên cứu &amp; Dữ liệu <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <button class="subtoggle" aria-label="Mở mục con Nghiên cứu và Dữ liệu" onclick="toggleSub(this)">+</button>
+            <div class="mega"><div class="mega-inner">
+              <a class="mega-link" href="nghien-cuu.html"><b>Danh mục nghiên cứu</b><span>Báo cáo, khảo sát và insight sức khỏe cộng đồng.</span></a>
+              <a class="mega-link" href="nghien-cuu.html"><b>Đạo đức nghiên cứu</b><span>Nguyên tắc đạo đức khi thực hiện và công bố nghiên cứu.</span></a>
+              <a class="mega-link" href="index.html#!form/%C4%90%E1%BB%81%20xu%E1%BA%A5t%20nghi%C3%AAn%20c%E1%BB%A9u%20%2F%20h%E1%BB%A3p%20t%C3%A1c/to-chuc"><b>Hợp tác nghiên cứu</b><span>Gửi đề xuất hợp tác nghiên cứu cùng CCHC.</span></a>
+              <a class="mega-link" href="nghien-cuu.html"><b>Chuyên mục dữ liệu &amp; kinh tế y tế</b><span>Dữ liệu, phân tích kinh tế y tế phục vụ hoạch định chính sách.</span></a>
+            </div></div>
+          </li>
+          <li class="navitem">
+            <a class="navlink" href="chuyen-gia.html">Chuyên gia <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <button class="subtoggle" aria-label="Mở mục con Chuyên gia" onclick="toggleSub(this)">+</button>
+            <div class="mega"><div class="mega-inner">
+              <a class="mega-link" href="chuyen-gia.html"><b>Danh bạ chuyên gia</b><span>Thư viện chuyên gia đã tham gia phản biện, lọc theo chuyên khoa.</span></a>
+              <a class="mega-link" href="index.html#!faq"><b>Góc chuyên gia (Hỏi đáp)</b><span>Câu hỏi thường gặp do chuyên gia trả lời.</span></a>
+              <a class="mega-link" href="chinh-sach.html#hoi-ck-list"><b>Hồ sơ hội chuyên khoa</b><span>Các hội thành viên tham gia phản biện, thẩm định nội dung.</span></a>
+            </div></div>
+          </li>
+          <li class="navitem">
+            <a class="navlink" href="bao-chi.html">Trung tâm báo chí <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <button class="subtoggle" aria-label="Mở mục con Trung tâm báo chí" onclick="toggleSub(this)">+</button>
+            <div class="mega"><div class="mega-inner">
+              <a class="mega-link" href="bao-chi.html"><b>Thông cáo báo chí</b><span>Tải bản đầy đủ, không cần đăng nhập.</span></a>
+              <a class="mega-link" href="bao-chi.html"><b>Media kit &amp; Tài liệu</b><span>Logo, bộ nhận diện, ảnh tư liệu dùng cho bài báo.</span></a>
+              <a class="mega-link" href="minh-bach.html#dinhchinh"><b>Yêu cầu kiểm chứng</b><span>Gửi yêu cầu kiểm chứng thông tin sức khỏe.</span></a>
+            </div></div>
+          </li>
+          <li class="navitem">
+            <a class="navlink" href="chinh-sach.html#chinh-sach">Chính sách <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <button class="subtoggle" aria-label="Mở mục con Chính sách" onclick="toggleSub(this)">+</button>
+            <div class="mega"><div class="mega-inner">
+              <a class="mega-link" href="chinh-sach.html#chinh-sach"><b>Giải mã chính sách</b><span>Diễn giải văn bản luật thành nội dung dân hiểu.</span></a>
+              <a class="mega-link" href="chinh-sach.html#doithoai"><b>Diễn đàn đối thoại</b><span>CCHC làm cầu nối đối thoại chính sách y tế.</span></a>
+            </div></div>
+          </li>
+          <li class="navitem">
+            <a class="navlink" href="doi-tac.html">Đối tác <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <button class="subtoggle" aria-label="Mở mục con Đối tác" onclick="toggleSub(this)">+</button>
+            <div class="mega"><div class="mega-inner">
+              <a class="mega-link" href="doi-tac.html"><b>Mạng lưới đối tác &amp; Tài trợ</b><span>Danh mục nhóm đối tác và chính sách tài trợ minh bạch.</span></a>
+              <a class="mega-link" href="index.html#!tvpbcd"><b>Tư vấn &amp; Phản biện (Dịch vụ)</b><span>Hai loại phản biện tách bạch — biên tập và dịch vụ có hợp đồng.</span></a>
+              <a class="mega-link" href="index.html#!hop-tac"><b>Nguyên tắc hợp tác</b><span>Vai trò, đóng góp và ranh giới can thiệp của từng nhóm đối tác.</span></a>
+            </div></div>
+          </li>
+          <li class="navitem">
+            <a class="navlink" href="minh-bach.html">Minh bạch <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <button class="subtoggle" aria-label="Mở mục con Minh bạch" onclick="toggleSub(this)">+</button>
+            <div class="mega"><div class="mega-inner">
+              <a class="mega-link" href="minh-bach.html#cms8"><b>Quy trình kiểm soát 8 bước</b><span>Timeline biên soạn công khai, tải PDF.</span></a>
+              <a class="mega-link" href="index.html#!coi-ai"><b>Minh bạch lợi ích (COI)</b><span>Xung đột lợi ích và ranh giới trách nhiệm AI.</span></a>
+              <a class="mega-link" href="minh-bach.html#dinhchinh"><b>Nhật ký đính chính</b><span>Nhật ký đính chính bốn trạng thái, công khai.</span></a>
+            </div></div>
+          </li>
+          <li class="navitem">
+            <a class="navlink" href="ve-chung-toi.html">Về chúng tôi <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <button class="subtoggle" aria-label="Mở mục con Về chúng tôi" onclick="toggleSub(this)">+</button>
+            <div class="mega"><div class="mega-inner">
+              <a class="mega-link" href="ve-chung-toi.html"><b>Giới thiệu CCHC</b><span>Trung tâm truyền thông &amp; chăm sóc sức khỏe cộng đồng — vai trò &amp; sứ mệnh.</span></a>
+              <a class="mega-link" href="ve-chung-toi.html#hoidong"><b>Đội ngũ &amp; Hội đồng</b><span>Chuyên gia từ các hội chuyên khoa thẩm định nội dung.</span></a>
+              <a class="mega-link" href="index.html#!lien-he"><b>Gửi yêu cầu / Liên hệ</b><span>Gửi câu hỏi, đề xuất hợp tác hoặc phản ánh tới CCHC.</span></a>
+            </div></div>
+          </li>
+        </ul>
+        <button class="nav-explore" onclick="closeMenu();openMap()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg> Bản đồ nội dung</button>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="nav-backdrop" id="navBackdrop" onclick="closeMenu()"></div>
+
+<!-- v6: overlay tìm kiếm (mobile) -->
+<div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+  <div class="so-box">
+    <div class="wrap">
+      <div class="so-head"><b>Tìm kiếm</b><button class="so-close" aria-label="Đóng tìm kiếm" onclick="closeSearch()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+      <form onsubmit="submitSearch(event)">
+        <div class="searchbox">
+          <input type="text" id="soInput" placeholder="Tìm chủ đề: tăng huyết áp, tiêm chủng…" aria-label="Từ khóa tìm kiếm">
+          <button class="btn" type="submit">Tìm</button>
+        </div>
+      </form>
+      <p class="so-pop">Tìm kiếm phổ biến</p>
+      <div class="chips">
+        <span class="chip" onclick="searchChip()"># Tăng huyết áp</span>
+        <span class="chip" onclick="searchChip()"># Đái tháo đường</span>
+        <span class="chip" onclick="searchChip()"># Đột quỵ</span>
+        <span class="chip" onclick="searchChip()"># Tiêm chủng</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ v19-A: MEGA-PANEL "BẢN ĐỒ NỘI DUNG" — tầng ngoài (chính trị), 4 tầng, được phép dày ============ -->
+<div class="map-overlay" id="mapOverlay" onclick="if(event.target===this)closeMap()">
+  <div class="map-panel" role="dialog" aria-modal="true" aria-label="Bản đồ nội dung">
+    <div class="wrap">
+      <div class="map-head">
+        <div><b>Bản đồ nội dung</b><span>Toàn bộ hệ sinh thái CCHC — sắp theo 4 tầng: Chính danh · Tri thức · Hành động · Minh bạch.</span></div>
+        <button class="map-close" onclick="closeMap()" aria-label="Đóng bản đồ nội dung">Đóng ✕</button>
+      </div>
+      <div class="map-grid">
+        <div class="map-col">
+          <div class="map-col-h"><span class="map-num">01</span> Chính danh <small>Trust</small></div>
+          <a class="map-link" href="ve-chung-toi.html">Giới thiệu CCHC</a>
+          <a class="map-link" href="ve-chung-toi.html">Tư cách pháp lý</a>
+          <a class="map-link" href="ve-chung-toi.html#tamnhin">Tầm nhìn – Sứ mệnh</a>
+          <a class="map-link" href="ve-chung-toi.html#hoidong">Hội đồng khoa học</a>
+          <a class="map-link" href="ve-chung-toi.html#nangluc">Năng lực cốt lõi</a>
+          <a class="map-link" href="chinh-sach.html">Tổng hội &amp; Chính sách</a>
+          <a class="map-link" href="chinh-sach.html#hoi-ck-list">Hội chuyên khoa</a>
+          <a class="map-link" href="bao-chi.html">Dành cho báo chí</a>
+        </div>
+        <div class="map-col">
+          <div class="map-col-h"><span class="map-num">02</span> Tri thức <small>Knowledge</small></div>
+          <a class="map-link" href="tri-thuc.html">Thư viện tri thức</a>
+          <a class="map-link" href="index.html#!chu-de">Hồ sơ chủ đề</a>
+          <a class="map-link" href="index.html#!article">Bài viết</a>
+          <a class="map-link" href="index.html#!video">Video / Podcast</a>
+          <a class="map-link" href="index.html#!myth">Myth-busting</a>
+          <a class="map-link" href="index.html#!faq">FAQ / tài liệu</a>
+          <a class="map-link" href="nghien-cuu.html">Nghiên cứu &amp; Dữ liệu</a>
+          <a class="map-link" href="index.html#!dao-tao">Đào tạo</a>
+        </div>
+        <div class="map-col">
+          <div class="map-col-h"><span class="map-num">03</span> Hành động <small>Action</small></div>
+          <a class="map-link" href="index.html#!form/Tham%20gia%20m%E1%BA%A1ng%20l%C6%B0%E1%BB%9Bi%20chuy%C3%AAn%20gia/ca-nhan">Tham gia mạng lưới chuyên gia</a>
+          <a class="map-link" href="index.html#!tvpbcd">Tư vấn – Phản biện – Cộng đồng</a>
+          <a class="map-link" href="index.html#!dich-vu">Dịch vụ &amp; KHCN</a>
+          <a class="map-link" href="doi-tac.html">Đối tác &amp; Hợp tác</a>
+          <a class="map-link" href="index.html#!form/%C4%90%C4%83ng%20k%C3%BD%20s%E1%BB%B1%20ki%E1%BB%87n%20c%E1%BB%99ng%20%C4%91%E1%BB%93ng/ca-nhan">Đăng ký sự kiện</a>
+          <a class="map-link" href="index.html#!tvpbcd/%23tv-brief">Gửi brief</a>
+          <a class="map-link" href="index.html#!lien-he">Liên hệ / Tham gia</a>
+          <a class="map-link" href="index.html#!form/Y%C3%AAu%20c%E1%BA%A7u%20ph%E1%BB%8Fng%20v%E1%BA%A5n%20%2F%20ph%C3%A1t%20ng%C3%B4n/to-chuc">Yêu cầu phỏng vấn</a>
+        </div>
+        <div class="map-col">
+          <div class="map-col-h"><span class="map-num">04</span> Minh bạch <small>Governance</small></div>
+          <a class="map-link" href="minh-bach.html#cms8">Quy trình biên soạn 8 bước</a>
+          <a class="map-link" href="minh-bach.html#bientap">Chính sách biên tập</a>
+          <a class="map-link" href="index.html#!chinh-sach-tai-tro">Tài trợ &amp; COI</a>
+          <a class="map-link" href="index.html#!coi-ai">AI có kiểm soát</a>
+          <a class="map-link" href="minh-bach.html#disclaimer">Medical disclaimer</a>
+          <a class="map-link" href="minh-bach.html#dinhchinh">Nhật ký đính chính</a>
+          <a class="map-link" href="index.html#!hop-tac">Cách CCHC hợp tác &amp; giới hạn</a>
+        </div>
+      </div>
+      <div class="map-foot">
+        <span>Bản demo định hướng giao diện — nội dung là minh hoạ.</span>
+        <span>AI hỗ trợ, con người chịu trách nhiệm cuối cùng.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="app">
+<section class="blk"><div class="wrap">
+    <div class="eyebrow">Minh bạch &amp; Trách nhiệm</div>
+    <h1>Cách chúng tôi làm ra mỗi nội dung</h1>
+    <p class="muted">Mọi nội dung trên trang đều dẫn về đây. </p>
+
+    <div class="grid g4" style="margin-top:8px">
+      <div class="card"><h3>Quy trình biên soạn 8 bước</h3><div class="desc">Timeline biên soạn công khai, tải PDF.</div><a class="cta" onclick="document.getElementById('cms8').scrollIntoView({behavior:'smooth'})">Xem timeline ↓</a></div>
+      <div class="card"><h3>Chính sách tài trợ</h3><div class="desc">Bảng 2 cột "được gì / giới hạn".</div><a class="cta" href="index.html#!chinh-sach-tai-tro">Xem chi tiết →</a></div>
+      <div class="card"><h3>COI &amp; AI có kiểm soát</h3><div class="desc">Xung đột lợi ích và ranh giới trách nhiệm AI.</div><a class="cta" href="index.html#!coi-ai">Xem chi tiết →</a></div>
+      <div class="card"><h3>Nhật ký đính chính</h3><div class="desc">4 trạng thái, công khai, cập nhật liên tục.</div><a class="cta" onclick="document.getElementById('dinhchinh').scrollIntoView({behavior:'smooth'})">Xem nhật ký ↓</a></div>
+    </div>
+
+    <!-- Chính sách biên tập -->
+    <h2 id="bientap" style="margin-top:38px">Chính sách biên tập</h2>
+    <p class="muted" style="max-width:74ch">Mọi nội dung của CCHC tuân theo nguyên tắc biên tập nhất quán: dẫn nguồn chính thống, ngôn ngữ dễ hiểu, tách bạch đưa tin với quan điểm, không quảng cáo sản phẩm trong nội dung chuyên môn, và luôn ghi rõ chuyên gia phản biện. Quy trình biên soạn 8 bước dưới đây hiện thực hóa các nguyên tắc này. </p>
+    <!-- Timeline quy trình biên soạn 8 bước -->
+    <h2 id="cms8" style="margin-top:24px">Quy trình biên soạn 8 bước</h2>
+    <div class="timeline">
+      <div class="tstep done"><div class="num">1</div><b>Đề xuất chủ đề</b><small>Từ nhu cầu cộng đồng, hội chuyên khoa hoặc chính sách mới.</small></div>
+      <div class="tstep done"><div class="num">2</div><b>Bản thảo</b><small>Ban nội dung soạn thảo, dẫn nguồn đầy đủ.</small></div>
+      <div class="tstep done"><div class="num">3</div><b>Biên tập khoa học</b><small>Rà soát tính chính xác và ngôn ngữ dễ hiểu.</small></div>
+      <div class="tstep done"><div class="num">4</div><b>Phản biện chuyên gia</b><small>Chuyên gia có ghi nhận tên thẩm định chuyên môn.</small></div>
+      <div class="tstep done"><div class="num">5</div><b>Rà soát pháp lý</b><small>Kiểm tra tuân thủ quy định và miễn trừ.</small></div>
+      <div class="tstep done"><div class="num">6</div><b>Phê duyệt xuất bản</b><small>Người chịu trách nhiệm cuối phê duyệt.</small></div>
+      <div class="tstep done"><div class="num">7</div><b>Xuất bản</b><small>Gắn dải thông tin tin cậy, mã tra cứu, và công khai tài trợ (nếu có).</small></div>
+      <div class="tstep corr"><div class="num">8</div><b>Theo dõi &amp; đính chính</b><small>Cập nhật, đính chính công khai khi cần.</small></div>
+    </div>
+    <button class="btn sec sm" onclick="alert('Demo: tải quy trình biên soạn 8 bước (PDF mô phỏng)')">Tải PDF quy trình</button>
+
+    <!-- Medical disclaimer -->
+    <h2 id="disclaimer" style="margin-top:38px">Medical disclaimer</h2>
+    <div class="safety-note" style="max-width:none">Nội dung này mang tính giáo dục, không thay thế thăm khám và tư vấn y tế cá nhân.</div>
+    <p class="muted" style="max-width:74ch">Câu miễn trừ trên xuất hiện ở mọi bài viết của CCHC. Nội dung trên trang nhằm cung cấp kiến thức chung; khi có triệu chứng hoặc lo ngại về sức khỏe, hãy liên hệ cơ sở y tế. <a href="index.html#!khi-nao">Khi nào cần đi khám →</a></p>
+
+    <!-- Nhật ký đính chính -->
+    <h2 id="dinhchinh" style="margin-top:38px">Nhật ký đính chính</h2>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:10px">
+        <span>Bài "Chế độ ăn giảm muối" — cập nhật số liệu khuyến nghị lượng muối/ngày</span>
+        <span class="status status-done"><span class="dotmark"></span>Đã đính chính</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:10px">
+        <span>Bài "BMI nói lên điều gì" — làm rõ giới hạn áp dụng cho vận động viên</span>
+        <span class="status status-doing"><span class="dotmark"></span>Đang xử lý</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:10px">
+        <span>Phản hồi bạn đọc về liều tiêm nhắc — đang chờ chuyên gia xác minh</span>
+        <span class="status status-received"><span class="dotmark"></span>Đã tiếp nhận</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+        <span>Phản ánh về "ngưỡng huyết áp cao" — đã đối chiếu hướng dẫn hiện hành, nội dung chính xác nên giữ nguyên</span>
+        <span class="status status-nochange"><span class="dotmark"></span>Không đủ căn cứ / Đã thẩm định — không đổi</span>
+      </div>
+    </div>
+    <p class="muted" style="font-size:.85rem;margin-top:10px">Bốn trạng thái: <b>Đã đính chính</b> (đã sửa và công khai) · <b>Đang xử lý</b> (đang rà soát để chỉnh) · <b>Đã tiếp nhận</b> (đã ghi nhận, chờ xác minh) · <b>Không đủ căn cứ / Đã thẩm định — không đổi</b> (đã kiểm chứng, nội dung đúng nên giữ nguyên).</p>
+  </div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid" style="grid-template-columns:1fr 1fr">
+      <div>
+        <div class="brand" style="margin-bottom:10px"><div class="logo" style="background:transparent"><img src="assets/images/logo.png" alt="CCHC" style="width:100%;height:100%;object-fit:contain"></div></div>
+        <p style="font-size:.86rem;color:#8FB4FF;max-width:52ch">Trung tâm Truyền thông và Chăm sóc Sức khỏe Cộng đồng. Đưa tri thức y học chính thống tới cộng đồng. AI hỗ trợ, con người chịu trách nhiệm cuối cùng.</p>
+      </div>
+      <div>
+        <h4 style="color:#fff;font-size:.95rem;margin-bottom:10px">Thông tin liên hệ</h4>
+        <ul style="list-style:none;padding:0;margin:0;font-size:.86rem;color:#8FB4FF">
+          <li style="margin-bottom:7px">📧 lienhe@cchc.org.vn <span style="color:#8FB4FF;font-size:.78rem">(minh hoạ)</span></li>
+          <li style="margin-bottom:7px">📞 024 3936 5127 <span style="color:#8FB4FF;font-size:.78rem">(minh hoạ)</span></li>
+          <li style="margin-bottom:7px">📍 [Địa chỉ trụ sở — sẽ cập nhật]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fmap">
+      <div>
+        <h4>Điều hướng</h4>
+        <ul>
+          <li><a href="tin-tuc-su-kien.html">Tin tức &amp; Sự kiện</a></li>
+          <li><a href="tri-thuc.html">Tri thức</a></li>
+          <li><a href="nghien-cuu.html">Nghiên cứu &amp; Dữ liệu</a></li>
+          <li><a href="chuyen-gia.html">Chuyên gia</a></li>
+          <li><a href="bao-chi.html">Trung tâm báo chí</a></li>
+          <li><a href="chinh-sach.html#chinh-sach">Chính sách</a></li>
+          <li><a href="doi-tac.html">Đối tác</a></li>
+          <li><a href="ve-chung-toi.html">Về chúng tôi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Minh bạch</h4>
+        <ul>
+          <li><a href="minh-bach.html#cms8">Quy trình kiểm soát 8 bước</a></li>
+          <li><a href="index.html#!coi-ai">Minh bạch lợi ích (COI)</a></li>
+          <li><a href="minh-bach.html#dinhchinh">Nhật ký đính chính</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <ul>
+          <li><a href="index.html#!lien-he">Gửi yêu cầu</a></li>
+          <li><a href="minh-bach.html#dinhchinh">Yêu cầu kiểm chứng (48h)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 CCHC — Trung tâm Truyền thông và Chăm sóc Sức khỏe Cộng đồng. Trực thuộc Tổng hội Y học Việt Nam.</span>
+      <span>Bản demo định hướng giao diện. Nội dung là minh hoạ.</span>
+    </div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Về đầu trang" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+
+
+<!-- v7: nút + khung xem trên điện thoại (nhấn #7 · mobile-first) -->
+<button class="phone-fab" id="phoneFab" aria-label="Xem bản điện thoại" onclick="openPhone()">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"></rect><line x1="10" y1="18" x2="14" y2="18"></line></svg>
+  Xem trên điện thoại
+</button>
+<div class="phone-overlay" id="phoneOverlay" onclick="if(event.target===this)closePhone()">
+  <div class="phone-shell">
+    <div class="phone-topbar">
+      <span>Xem bản điện thoại · khung 390px</span>
+      <button class="phone-close" onclick="closePhone()" aria-label="Đóng khung điện thoại">Xem bản máy tính ✕</button>
+    </div>
+    <div class="phone-device">
+      <div class="phone-notch" aria-hidden="true"></div>
+      <div class="phone-screen">
+        <div class="phone-fallback" id="phoneFallback">Mở trực tiếp trên điện thoại để xem bản mobile.</div>
+        <iframe id="phoneFrame" title="Bản xem trên điện thoại" onerror="document.getElementById('phoneFallback').style.zIndex='2'"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body></html>
