@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cập nhật &amp; tin tức | CCHC Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="cms-layout">
+  <aside class="cms-sidebar" aria-label="Menu CMS">
+    <strong>CCHC CMS</strong>
+    <a href="admin.html">Tổng quan</a>
+    <a href="admin-editor.html">Soạn &amp; kiểm nguồn</a>
+    <a href="admin-review.html">Phản biện &amp; phê duyệt</a>
+    <a href="admin-updates.html" class="is-active">Cập nhật &amp; tin</a>
+    <a href="admin-corrections.html">Đính chính</a>
+    <a href="admin-emergency.html">Công bố khẩn</a>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Quản trị</div>
+      <a href="admin-verification.html">Xác minh chuyên gia</a>
+      <a href="admin-ai.html">Nhật ký AI</a>
+    </div>
+    <div class="cms-side-group">
+      <div class="cms-side-label">Công khai</div>
+      <a href="minh-bach.html">← Trang minh bạch</a>
+      <a href="cap-nhat.html">← Trang cập nhật</a>
+      <a href="index.html">← Website công khai</a>
+    </div>
+  </aside>
+
+  <div class="cms-content">
+    <header class="cms-topbar">
+      <div>
+        <strong>Cập nhật &amp; tin tức</strong><br>
+        <span class="cms-role">Vai trò: Content Editor · Prototype — dữ liệu minh họa</span>
+      </div>
+      <span class="cms-status">Quyền đề xuất — cần duyệt</span>
+    </header>
+
+    <div class="cms-body">
+      <a class="cms-back-link" href="admin.html">← Tổng quan CMS</a>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap;">
+        <div>
+          <span style="font-size:13px;color:var(--ink-3);">Dynamic Hub · TL1 Mục 6.5 + 4.4</span>
+          <h1 style="font-size:24px;font-weight:700;margin:4px 0 0;">Quản lý cập nhật &amp; tin tức</h1>
+          <p style="color:var(--ink-3);font-size:14px;margin:6px 0 0;">Đăng tin cho #sec-tin (homepage) và cap-nhat.html — mỗi tin gắn tag định tuyến, trỏ về trang nguồn gốc.</p>
+        </div>
+        <button class="btn" style="background:var(--cobalt);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:600;cursor:pointer;" type="button" onclick="document.querySelectorAll('.cms-tab-btn').forEach(b=>b.classList.remove('is-active'));document.getElementById('tab-btn-compose').classList.add('is-active');document.querySelectorAll('.cms-tab-panel').forEach(p=>p.hidden=true);document.getElementById('tab-compose').hidden=false;">+ Đăng tin mới</button>
+      </div>
+
+      <div class="cms-tabs">
+        <button class="cms-tab-btn is-active" id="tab-btn-list" type="button" onclick="switchTab('list')">Danh sách tin</button>
+        <button class="cms-tab-btn" id="tab-btn-compose" type="button" onclick="switchTab('compose')">Soạn tin mới</button>
+        <button class="cms-tab-btn" id="tab-btn-review" type="button" onclick="switchTab('review')">Theo dõi &amp; rà soát</button>
+      </div>
+
+      <!-- Tab 1: Danh sách tin -->
+      <div class="cms-tab-panel" id="tab-list">
+        <div class="cms-update-table-wrap">
+          <table class="cms-update-table">
+            <thead>
+              <tr>
+                <th>Tiêu đề</th>
+                <th>Tag</th>
+                <th>Trang đích</th>
+                <th>Vị trí</th>
+                <th>Ngày XB</th>
+                <th>Risk</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CCHC công bố báo cáo minh bạch tài trợ 6 tháng đầu năm 2026</strong></td>
+                <td><span class="cms-tag-pill" style="background:#e8f0fe;color:#1a56db">Minh bạch</span></td>
+                <td><code>minh-bach.html</code></td>
+                <td>Nổi bật</td>
+                <td>24/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M2</span></td>
+                <td><span class="cms-status-badge published">Đã xuất bản</span></td>
+                <td><a href="#" style="font-size:13px">Sửa</a></td>
+              </tr>
+              <tr>
+                <td><strong>Thông qua 12 hồ sơ chủ đề bệnh không lây nhiễm</strong></td>
+                <td><span class="cms-tag-pill" style="background:#f0e8fe;color:#6b21a8">Hội đồng KH</span></td>
+                <td><code>ve-chung-toi.html</code></td>
+                <td>Tin nhỏ</td>
+                <td>18/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M2</span></td>
+                <td><span class="cms-status-badge published">Đã xuất bản</span></td>
+                <td><a href="#" style="font-size:13px">Sửa</a></td>
+              </tr>
+              <tr>
+                <td><strong>Ký kết hợp tác truyền thông phòng chống đột quỵ</strong></td>
+                <td><span class="cms-tag-pill" style="background:#e8feee;color:#065f46">Đối tác</span></td>
+                <td><code>doi-tac.html</code></td>
+                <td>Tin nhỏ</td>
+                <td>02/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M2</span></td>
+                <td><span class="cms-status-badge published">Đã xuất bản</span></td>
+                <td><a href="#" style="font-size:13px">Sửa</a></td>
+              </tr>
+              <tr>
+                <td><strong>Ra mắt thư viện bản nghe y khoa cho người cao tuổi</strong></td>
+                <td><span class="cms-tag-pill" style="background:#e8f5f9;color:#0e7490">Tri thức</span></td>
+                <td><code>tri-thuc.html</code></td>
+                <td>Tin nhỏ</td>
+                <td>09/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M1</span></td>
+                <td><span class="cms-status-badge published">Đã xuất bản</span></td>
+                <td><a href="#" style="font-size:13px">Sửa</a></td>
+              </tr>
+              <tr>
+                <td><strong>Cập nhật nhật ký đính chính quý II/2026: 8 nội dung được hiệu chỉnh</strong></td>
+                <td><span class="cms-tag-pill" style="background:#fef3c7;color:#92400e">Đính chính</span></td>
+                <td><code>minh-bach.html#dinh-chinh</code></td>
+                <td>Tin ngắn</td>
+                <td>29/07/2026</td>
+                <td><span style="color:var(--coral);font-weight:600">M3</span></td>
+                <td><span class="cms-status-badge published">Đã xuất bản</span></td>
+                <td><a href="#" style="font-size:13px">Sửa</a></td>
+              </tr>
+              <tr>
+                <td><strong>Bổ sung 5 chuyên gia vào Hội đồng thẩm định nội dung</strong></td>
+                <td><span class="cms-tag-pill" style="background:#fce7f3;color:#9d174d">Chuyên gia</span></td>
+                <td><code>chuyen-gia.html</code></td>
+                <td>Tin ngắn</td>
+                <td>28/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M2</span></td>
+                <td><span class="cms-status-badge published">Đã xuất bản</span></td>
+                <td><a href="#" style="font-size:13px">Sửa</a></td>
+              </tr>
+              <tr>
+                <td><strong>Tổng kết chiến dịch truyền thông phòng chống sốt xuất huyết 2026</strong></td>
+                <td><span class="cms-tag-pill" style="background:#fff3e0;color:#c2410c">Sự kiện</span></td>
+                <td><code>su-kien.html</code></td>
+                <td>Tin ngắn</td>
+                <td>22/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M1</span></td>
+                <td><span class="cms-status-badge published">Đã xuất bản</span></td>
+                <td><a href="#" style="font-size:13px">Sửa</a></td>
+              </tr>
+              <tr>
+                <td><strong>Công bố khảo sát nhận thức sức khỏe cộng đồng 2026</strong></td>
+                <td><span class="cms-tag-pill" style="background:#e8f0fe;color:#1a56db">Nghiên cứu</span></td>
+                <td><code>nghien-cuu.html</code></td>
+                <td>Tin ngắn</td>
+                <td>15/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M2</span></td>
+                <td><span class="cms-status-badge published">Đã xuất bản</span></td>
+                <td><a href="#" style="font-size:13px">Sửa</a></td>
+              </tr>
+              <tr style="background:#fffbeb">
+                <td><strong>Ra mắt cẩm nang chăm sóc người cao tuổi tại nhà</strong></td>
+                <td><span class="cms-tag-pill" style="background:#e8f5f9;color:#0e7490">Tri thức</span></td>
+                <td><code>tri-thuc.html</code></td>
+                <td>—</td>
+                <td>—</td>
+                <td><span style="color:var(--coral);font-weight:600">M3</span></td>
+                <td><span class="cms-status-badge draft">Nháp</span></td>
+                <td><a href="#" style="font-size:13px">Sửa</a> · <a href="#" style="font-size:13px;color:var(--coral)">Xóa</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 2: Soạn tin mới -->
+      <div class="cms-tab-panel" id="tab-compose" hidden>
+        <div class="cms-update-form">
+          <div class="cms-update-form-main">
+            <div style="margin-bottom:20px">
+              <label class="form-label">
+                <span style="font-size:13px;font-weight:600;margin-bottom:6px;display:block">Tiêu đề <span style="color:var(--coral)">*</span></span>
+                <input class="form-control" placeholder="VD: CCHC công bố báo cáo minh bạch tài trợ..." style="width:100%;min-height:38px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;font-size:15px">
+              </label>
+            </div>
+            <div style="margin-bottom:20px">
+              <label class="form-label">
+                <span style="font-size:13px;font-weight:600;margin-bottom:6px;display:block">Mô tả ngắn <span style="color:var(--coral)">*</span></span>
+                <textarea class="form-control" rows="3" placeholder="1-2 câu tóm tắt, hiển thị dưới tiêu đề..." style="width:100%;padding:8px 12px;border:1px solid var(--line);border-radius:6px;font-size:14px;resize:vertical"></textarea>
+              </label>
+            </div>
+            <div style="margin-bottom:20px">
+              <label class="form-label">
+                <span style="font-size:13px;font-weight:600;margin-bottom:6px;display:block">URL ảnh thumbnail</span>
+                <input class="form-control" placeholder="https://cchc.vn/wp-content/uploads/..." style="width:100%;min-height:38px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;font-size:14px" oninput="document.getElementById('thumb-preview').src=this.value;document.getElementById('thumb-preview').style.display=this.value?'block':'none'">
+                <img id="thumb-preview" style="display:none;margin-top:8px;max-width:300px;border-radius:6px;border:1px solid var(--line)" alt="Preview">
+              </label>
+            </div>
+            <div style="margin-bottom:20px">
+              <span style="font-size:13px;font-weight:600;margin-bottom:8px;display:block">Vị trí hiển thị</span>
+              <div style="display:flex;gap:12px;flex-wrap:wrap">
+                <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer"><input type="radio" name="position" value="feature"> Tin nổi bật</label>
+                <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer"><input type="radio" name="position" value="sub" checked> Tin nhỏ</label>
+                <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer"><input type="radio" name="position" value="brief"> Tin ngắn</label>
+                <label style="display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer"><input type="radio" name="position" value="update-only"> Chỉ cap-nhat.html</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="cms-update-form-meta">
+            <h3 style="font-size:16px;font-weight:600;margin:0 0 16px">Định tuyến &amp; metadata</h3>
+
+            <div style="margin-bottom:16px">
+              <label class="form-label">
+                <span style="font-size:13px;font-weight:600;margin-bottom:6px;display:block">Tag định tuyến <span style="color:var(--coral)">*</span></span>
+                <select class="form-select" id="tag-select" style="width:100%;min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:6px" onchange="autoMapRoute()">
+                  <option value="">— Chọn tag —</option>
+                  <option value="minh-bach">Minh bạch</option>
+                  <option value="hoi-dong">Hội đồng KH</option>
+                  <option value="doi-tac">Đối tác</option>
+                  <option value="nghien-cuu">Nghiên cứu</option>
+                  <option value="su-kien">Sự kiện</option>
+                  <option value="dinh-chinh">Đính chính</option>
+                  <option value="chuyen-gia">Chuyên gia</option>
+                  <option value="tri-thuc">Tri thức</option>
+                </select>
+              </label>
+            </div>
+
+            <div style="margin-bottom:16px">
+              <label class="form-label">
+                <span style="font-size:13px;font-weight:600;margin-bottom:6px;display:block">Trang đích</span>
+                <input class="form-control" id="route-input" readonly style="width:100%;min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:6px;background:#f8fafb;font-size:13px" placeholder="Tự động điền khi chọn tag">
+              </label>
+              <div id="route-preview" class="cms-route-preview" style="display:none">
+                → Xem chi tiết tại <strong id="route-name">—</strong>
+              </div>
+            </div>
+
+            <div style="margin-bottom:16px">
+              <label class="form-label">
+                <span style="font-size:13px;font-weight:600;margin-bottom:6px;display:block">Ngày xuất bản</span>
+                <input type="date" class="form-control" style="width:100%;min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:6px">
+              </label>
+            </div>
+
+            <div style="margin-bottom:16px">
+              <label class="form-label">
+                <span style="font-size:13px;font-weight:600;margin-bottom:6px;display:block">Risk tier</span>
+                <select class="form-select" style="width:100%;min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:6px">
+                  <option>M1 — Thấp</option>
+                  <option selected>M2 — Trung bình</option>
+                  <option>M3 — Cao</option>
+                  <option>M4 — Nghiêm trọng</option>
+                </select>
+              </label>
+            </div>
+
+            <div style="display:flex;gap:8px;margin-top:24px">
+              <button class="btn btn-outline" type="button" style="padding:10px 16px;border-radius:8px;font-weight:600;cursor:pointer">Lưu nháp</button>
+              <button class="btn" style="background:var(--cobalt);color:#fff;border:none;padding:10px 16px;border-radius:8px;font-weight:600;cursor:pointer" type="button">Gửi duyệt</button>
+            </div>
+
+            <div class="cms-alert cms-alert-warn" style="margin-top:16px;margin-bottom:0">
+              <strong>Prototype</strong>
+              <p>Form mockup — không lưu dữ liệu thật. Workflow 8 bước (TL1 Mục 6.5) áp dụng khi triển khai backend.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Theo dõi & rà soát -->
+      <div class="cms-tab-panel" id="tab-review" hidden>
+        <p style="color:var(--ink-3);font-size:14px;margin:0 0 16px">Lịch rà soát định kỳ theo Risk Tier — M1: 6 tháng, M2–M4: 3 tháng (RTM bổ sung).</p>
+        <div class="cms-update-table-wrap">
+          <table class="cms-update-table">
+            <thead>
+              <tr>
+                <th>Tiêu đề</th>
+                <th>Ngày XB</th>
+                <th>Risk</th>
+                <th>Chu kỳ rà soát</th>
+                <th>Rà soát tiếp</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CCHC công bố báo cáo minh bạch tài trợ 6 tháng đầu năm 2026</strong></td>
+                <td>24/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M2</span></td>
+                <td>3 tháng</td>
+                <td>24/10/2026</td>
+                <td><span class="cms-status-badge ok">Đúng hạn</span></td>
+              </tr>
+              <tr>
+                <td><strong>Thông qua 12 hồ sơ chủ đề bệnh không lây nhiễm</strong></td>
+                <td>18/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M2</span></td>
+                <td>3 tháng</td>
+                <td>18/10/2026</td>
+                <td><span class="cms-status-badge ok">Đúng hạn</span></td>
+              </tr>
+              <tr>
+                <td><strong>Ra mắt thư viện bản nghe y khoa cho người cao tuổi</strong></td>
+                <td>09/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M1</span></td>
+                <td>6 tháng</td>
+                <td>09/01/2027</td>
+                <td><span class="cms-status-badge ok">Đúng hạn</span></td>
+              </tr>
+              <tr>
+                <td><strong>Cập nhật nhật ký đính chính quý II/2026</strong></td>
+                <td>29/07/2026</td>
+                <td><span style="color:var(--coral);font-weight:600">M3</span></td>
+                <td>3 tháng</td>
+                <td>29/10/2026</td>
+                <td><span class="cms-status-badge ok">Đúng hạn</span></td>
+              </tr>
+              <tr>
+                <td><strong>Tổng kết chiến dịch truyền thông phòng chống sốt xuất huyết</strong></td>
+                <td>22/07/2026</td>
+                <td><span style="color:var(--cobalt);font-weight:600">M1</span></td>
+                <td>6 tháng</td>
+                <td>22/01/2027</td>
+                <td><span class="cms-status-badge ok">Đúng hạn</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.cms-tab-btn').forEach(function(b) { b.classList.remove('is-active'); });
+  document.getElementById('tab-btn-' + tab).classList.add('is-active');
+  document.querySelectorAll('.cms-tab-panel').forEach(function(p) { p.hidden = true; });
+  document.getElementById('tab-' + tab).hidden = false;
+}
+
+var tagRouteMap = {
+  'minh-bach': { url: 'minh-bach.html', name: 'trang Minh bạch' },
+  'hoi-dong': { url: 've-chung-toi.html', name: 'trang Về chúng tôi' },
+  'doi-tac': { url: 'doi-tac.html', name: 'trang Đối tác' },
+  'nghien-cuu': { url: 'nghien-cuu.html', name: 'trang Nghiên cứu & Dữ liệu' },
+  'su-kien': { url: 'su-kien.html', name: 'trang Sự kiện' },
+  'dinh-chinh': { url: 'minh-bach.html#dinh-chinh', name: 'Nhật ký đính chính' },
+  'chuyen-gia': { url: 'chuyen-gia.html', name: 'trang Chuyên gia' },
+  'tri-thuc': { url: 'tri-thuc.html', name: 'trang Tri thức' }
+};
+
+function autoMapRoute() {
+  var tag = document.getElementById('tag-select').value;
+  var routeInput = document.getElementById('route-input');
+  var preview = document.getElementById('route-preview');
+  var routeName = document.getElementById('route-name');
+  if (tag && tagRouteMap[tag]) {
+    routeInput.value = tagRouteMap[tag].url;
+    routeName.textContent = tagRouteMap[tag].name;
+    preview.style.display = 'block';
+  } else {
+    routeInput.value = '';
+    preview.style.display = 'none';
+  }
+}
+</script>
+</body>
+</html>
